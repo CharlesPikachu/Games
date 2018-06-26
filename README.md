@@ -10,6 +10,7 @@ Game2: Pikachu Go Go Go~~~
 Version: V1.0  
 ### 2018-06-26  
 Game3: Puzzle pieces  
+Version: V1.0  
 # More:
 ## WeChat Official Accounts:
 Charles_pikachu  
