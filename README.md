@@ -8,6 +8,8 @@ Reference: https://www.raywenderlich.com/24252/beginning-game-programming-for-te
 ### 2018-06-14  
 Game2: Pikachu Go Go Go~~~  
 Version: V1.0  
+### 2018-06-26  
+Game3: Puzzle pieces  
 # More:
 ## WeChat Official Accounts:
 Charles_pikachu  
