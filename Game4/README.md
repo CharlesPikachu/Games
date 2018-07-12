@@ -1,5 +1,5 @@
 # Introduction:
-
+https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg
 # Usage:
 python Game4.py
 # Running Screenshot:

@@ -1,3 +1,4 @@
+# coding: utf-8
 # 公众号: Charles的皮卡丘
 # 作者: Charles
 # 滑雪小游戏
@@ -89,8 +90,8 @@ def Show_Start_Interface(Demo, width, height):
 	Demo.fill((255, 255, 255))
 	tfont = pygame.font.Font('./font/simkai.ttf', width//4)
 	cfont = pygame.font.Font('./font/simkai.ttf', width//20)
-	title = tfont.render('滑雪游戏', True, (255, 0, 0))
-	content = cfont.render('按任意键开始游戏', True, (0, 0, 255))
+	title = tfont.render(u'滑雪游戏', True, (255, 0, 0))
+	content = cfont.render(u'按任意键开始游戏', True, (0, 0, 255))
 	trect = title.get_rect()
 	trect.midtop = (width/2, height/10)
 	crect = content.get_rect()
