@@ -11,6 +11,9 @@ Version: V1.0
 ### 2018-06-26  
 Game3: Puzzle pieces  
 Version: V1.0  
+### 2018-07-12  
+Game4: Skier  
+Version: V1.0
 # More:
 ## WeChat Official Accounts:
 Charles_pikachu  
