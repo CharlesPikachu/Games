@@ -424,18 +424,15 @@ def main():
 							for tank_player in mytanksGroup:
 								if pygame.sprite.collide_rect(each.bullet, tank_player):
 									if not tank_player.protected:
-										if tank_player.level == 0:
-											bang_sound.play()
-											tank_player.life -= 1
-											if tank_player.life < 0:
-												mytanksGroup.remove(tank_player)
-												tanksGroup.remove(tank_player)
-												if len(mytanksGroup) < 1:
-													is_gameover = True
-											else:
-												tank_player.reset()
+										bang_sound.play()
+										tank_player.life -= 1
+										if tank_player.life < 0:
+											mytanksGroup.remove(tank_player)
+											tanksGroup.remove(tank_player)
+											if len(mytanksGroup) < 1:
+												is_gameover = True
 										else:
-											tank_player.down_level()
+											tank_player.reset()
 									each.bullet.being = False
 									enemybulletsGroup.remove(each.bullet)
 									break
