@@ -1,5 +1,5 @@
 # Introduction:
-
+https://mp.weixin.qq.com/s/KuktB_f1vxZCNIAHaaXdsQ
 # Usage:
 python Game5.py
 # Running Screenshot:
