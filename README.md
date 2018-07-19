@@ -14,6 +14,9 @@ Version: V1.0
 ### 2018-07-12  
 Game4: Skier  
 Version: V1.0
+### 2018-07-19  
+Game5: Tank War   
+Version: V1.0
 # More:
 ## WeChat Official Accounts:
 Charles_pikachu  
