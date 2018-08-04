@@ -17,6 +17,9 @@ Version: V1.0
 ### 2018-07-19  
 Game5: Tank War   
 Version: V1.0
+### 2018-08-05   
+Game6: FlappyBird   
+Version: V1.0
 # More:
 ## WeChat Official Accounts:
 Charles_pikachu  
