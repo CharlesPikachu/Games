@@ -1,5 +1,5 @@
 # Introduction:
-
+https://mp.weixin.qq.com/s/k4YaHbPfQOKi0nCvnLwvVg  
 # Usage:
 python Game6.py
 # Running Screenshot:
