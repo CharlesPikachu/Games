@@ -1,5 +1,5 @@
 # Introduction:
- 
+https://mp.weixin.qq.com/s/jpIJWXrW6O35cfELeplOtQ
 # Usage:
 python Game7.py
 # Running Screenshot:
