@@ -1,5 +1,6 @@
 # Games
 Some games created by python code.
+
 # Record:
 ### 2018-06-13  
 Game1: Bunnies and Badgers  
@@ -23,6 +24,7 @@ Version: V1.0
 ### 2018-08-18
 Game7: T-Rex Rush  
 Version: V1.0
+
 # More:
 ## WeChat Official Accounts:
 Charles_pikachu  
