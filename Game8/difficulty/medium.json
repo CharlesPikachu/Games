@@ -1,0 +1,11 @@
+{
+	"enemy":{
+			"8": {"enemyRange": 1, "numEnemy": 10},
+			"15": {"enemyRange": 3, "numEnemy": 15},
+			"30": {"enemyRange": 3, "numEnemy": 18},
+			"50": {"enemyRange": 4, "numEnemy": 20},
+			"51": {"enemyRange": 4, "numEnemy": 22}
+			},
+	"money": 2000,
+	"health": 40
+}

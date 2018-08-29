@@ -24,6 +24,9 @@ Version: V1.0
 ### 2018-08-18
 Game7: T-Rex Rush  
 Version: V1.0
+### 2018-08-29
+Game8: Tower Defense  
+Version: V1.0  
 
 # More:
 ## WeChat Official Accounts:
