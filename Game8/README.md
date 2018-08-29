@@ -2,8 +2,8 @@
 https://mp.weixin.qq.com/s/mcnN3dF5tzWlRg91cnWTEw
 # Usage:
 python Game8.py
-# Running Screenshot:
-![img](Screenshot.png)
+# Game Display:
+![giphy](running.gif)
 # Python Version[Tested]:
 Python3.6
 # Packages:
