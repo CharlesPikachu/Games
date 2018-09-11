@@ -27,6 +27,9 @@ Version: V1.0
 ### 2018-08-29
 Game8: Tower Defense  
 Version: V1.0  
+### 2018-09-11
+Game9: Catch apples and coins  
+Version: V1.0  
 
 # More:
 ## WeChat Official Accounts:
