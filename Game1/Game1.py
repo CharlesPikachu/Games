@@ -2,7 +2,7 @@
 # 作者: Charles
 # 公众号: Charles的皮卡丘
 # 导入pygame库，这一步能让你使用库里提供的功能
-import pygame
+import pygame #Add comment
 from pygame.locals import *
 import math   # 因为需要计算旋转的角度
 import random # 因为需要用到随机的功能
