@@ -32,7 +32,7 @@ Game9: Catch apples and coins
 Version: V1.0  
 ### 2018-10-07
 Game10: Aircraft war  
-Version: V1.0  
+Version: V1.0  // Comment added
 
 # More:
 ## WeChat Official Accounts:
