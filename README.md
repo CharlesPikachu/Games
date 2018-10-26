@@ -45,6 +45,6 @@ Some games created by python code.
 ![giphy](Game10/effect/running.gif)
 
 # More
-### WeChat Official Accounts:
+### WeChat Official Accounts
 Charles_pikachu  
 ![img](pikachu.jpg)
