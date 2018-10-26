@@ -1,7 +1,7 @@
 # Games
 Some games created by python code.
 
-# Record:
+# Record
 ### 2018-06-13
 - Game1: [Bunnies and Badgers](https://github.com/CharlesPikachu/Games/tree/master/Game1)
 - Version: V1.0
@@ -44,7 +44,7 @@ Some games created by python code.
 - Version: V1.0
 ![giphy](Game10/effect/running.gif)
 
-# More:
+# More
 ### WeChat Official Accounts:
 Charles_pikachu  
 ![img](pikachu.jpg)

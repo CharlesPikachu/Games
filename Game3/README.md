@@ -1,13 +1,17 @@
-# Introduction:
+# Introduction
 https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg
-# Usage:
+
+# Usage
 - pip install -r requirements.txt
 - python Game3.py
-# Game Display:
+
+# Game Display
 ![giphy](effect/running.gif)
-# Python Version[Tested]:
+
+# Python Version[Tested]
 - Python3.6
-# Packages:
+
+# Packages
 - pygame
 - random
 - sys

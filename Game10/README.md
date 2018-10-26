@@ -1,13 +1,17 @@
-# Introduction:
+# Introduction
 https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg
-# Usage:
+
+# Usage
 - pip install -r requirements.txt
 - python Game10.py
-# Game Display:
+
+# Game Display
 ![giphy](effect/running.gif)
-# Python Version[Tested]:
+
+# Python Version[Tested]
 - Python3.6
-# Packages:
+
+# Packages
 - pygame
 - random
 - sys
