@@ -43,8 +43,12 @@ Some games created by python code.
 - Game10: [Aircraft war](https://github.com/CharlesPikachu/Games/tree/master/Game10)
 - Version: V1.0
 ![giphy](Game10/effect/running.gif)
+### 2018-11-08
+- Game11: [Tetris](https://github.com/CharlesPikachu/Games/tree/master/Game11)
+- Version: V1.0
+![giphy](Game11/effect/running.gif)
 
 # More
 ### WeChat Official Accounts
-Charles_pikachu  
+*Charles_pikachu*  
 ![img](pikachu.jpg)
