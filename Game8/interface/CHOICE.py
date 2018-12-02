@@ -110,8 +110,8 @@ class EasyButton(pygame.sprite.Sprite):
 		self.text = 'easy'
 		self.font = pygame.font.Font('./resource/fonts/m04.ttf', 42)
 		self.textRender = self.font.render(self.text, 1, (255, 255, 255))
-		self.img_1.blit(self.textRender, (46, 29))
-		self.img_2.blit(self.textRender, (46, 29))
+		self.img_1.blit(self.textRender, (60, 29))
+		self.img_2.blit(self.textRender, (60, 29))
 		self.image = self.img_1
 		self.rect = self.image.get_rect()
 		self.rect.center = position
@@ -140,8 +140,8 @@ class MediumButton(pygame.sprite.Sprite):
 		self.text = 'medium'
 		self.font = pygame.font.Font('./resource/fonts/m04.ttf', 42)
 		self.textRender = self.font.render(self.text, 1, (255, 255, 255))
-		self.img_1.blit(self.textRender, (46, 29))
-		self.img_2.blit(self.textRender, (46, 29))
+		self.img_1.blit(self.textRender, (15, 29))
+		self.img_2.blit(self.textRender, (15, 29))
 		self.image = self.img_1
 		self.rect = self.image.get_rect()
 		self.rect.center = position
@@ -170,8 +170,8 @@ class HardButton(pygame.sprite.Sprite):
 		self.text = 'hard'
 		self.font = pygame.font.Font('./resource/fonts/m04.ttf', 42)
 		self.textRender = self.font.render(self.text, 1, (255, 255, 255))
-		self.img_1.blit(self.textRender, (46, 29))
-		self.img_2.blit(self.textRender, (46, 29))
+		self.img_1.blit(self.textRender, (60, 29))
+		self.img_2.blit(self.textRender, (60, 29))
 		self.image = self.img_1
 		self.rect = self.image.get_rect()
 		self.rect.center = position
