@@ -71,6 +71,11 @@ You can star this repository to keep track of the project if it's helpful for yo
 - Version: V1.0
 - effect:  
 ![giphy](Game13/effect/running.gif)
+#### 2019-02-12
+- Game14: [Pacman](https://github.com/CharlesPikachu/Games/tree/master/Game14)
+- Version: V1.0
+- effect:  
+![giphy](Game14/effect/running.gif)
 
 # More
 #### WeChat Official Accounts
