@@ -122,7 +122,7 @@ def startLevelGame(level, screen, font):
 
 
 '''显示文字'''
-def showText(screen, font, is_clearance):
+def showText(screen, font, is_clearance, flag=False):
 	clock = pygame.time.Clock()
 	msg = 'Game Over!' if not is_clearance else 'Congratulations, you won!'
 	positions = [[235, 233], [65, 303], [170, 333]] if not is_clearance else [[145, 233], [65, 303], [170, 333]]
@@ -141,7 +141,10 @@ def showText(screen, font, is_clearance):
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_RETURN:
 					if is_clearance:
-						return
+						if not flag:
+							return
+						else:
+							main(initialize())
 					else:
 						main(initialize())
 				elif event.key == pygame.K_ESCAPE:
@@ -175,10 +178,11 @@ def main(screen):
 		if num_level == 1:
 			level = Levels.Level1()
 			is_clearance = startLevelGame(level, screen, font_small)
-			if not is_clearance:
+			if num_level == Levels.NUMLEVELS:
+				showText(screen, font_big, is_clearance, True)
+			else:
 				showText(screen, font_big, is_clearance)
-				
-
+	
 
 if __name__ == '__main__':
 	main(initialize())
