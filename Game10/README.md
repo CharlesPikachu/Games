@@ -1,7 +1,7 @@
 # Introduction
 https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg
 
-# Environment(Tested):
+# Environment(Tested)
 - Windows10
 - Python3.5+(have installed necessary dependencies)
 
