@@ -20,7 +20,7 @@ You can star this repository to keep track of the project if it's helpful for yo
 - Game13: [Alien Invasion](https://github.com/CharlesPikachu/Games/tree/master/Game13)
 - Game14: [Pacman](https://github.com/CharlesPikachu/Games/tree/master/Game14)
 - Game15: [GemGem](https://github.com/CharlesPikachu/Games/tree/master/Game15)
-- Game16: [GemGem](https://github.com/CharlesPikachu/Games/tree/master/Game16)
+- Game16: [24 point](https://github.com/CharlesPikachu/Games/tree/master/Game16)
 
 # Record
 [click](./RECORD)
