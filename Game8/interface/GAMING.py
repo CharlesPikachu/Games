@@ -359,7 +359,7 @@ class GAMING():
 		for turret in self.builtTurretGroup:
 			if coord == turret.coord:
 				self.builtTurretGroup.remove(turret)
-				self.money += turret.price * 0.5
+				self.money += int(turret.price * 0.5)
 				del turret
 				break
 	# 建造炮塔
