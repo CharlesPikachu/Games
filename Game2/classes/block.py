@@ -1,10 +1,15 @@
 # coding: utf-8
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 定义block类，用于随机生成地面块
-import random
-import cocos
+'''
+Function:
+	定义block类，用于随机生成地面块
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import os
+import cocos
+import random
 
 
 class Block(cocos.sprite.Sprite):

@@ -1,9 +1,14 @@
 # coding: utf-8
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 定义皮卡丘类(Define Pikachu Class)
-import cocos
+'''
+Function:
+	定义皮卡丘类(Define Pikachu Class)
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import os
+import cocos
 
 
 class Pikachu(cocos.sprite.Sprite):

@@ -1,7 +1,12 @@
 # coding: utf-8
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 仿八分音符的声控小游戏
+'''
+Function:
+	仿八分音符的声控小游戏
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import os
 import cocos
 import struct
@@ -11,8 +16,7 @@ from classes.pikachu import Pikachu
 from classes.block import Block
 
 
-# 定义声控游戏类
-# Voice Control Class
+'''定义声控游戏类'''
 class VCGame(cocos.layer.ColorLayer):
 	is_event_handler = True
 	def __init__(self):
