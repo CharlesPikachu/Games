@@ -1,12 +1,19 @@
 # coding: utf-8
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 导入pygame库，这一步能让你使用库里提供的功能
+'''
+Function:
+	Bunnies and Badgers
+Author: 
+	Charles
+微信公众号: 
+	Charles的皮卡丘
+'''
+import math
+import random
 import pygame
 from pygame.locals import *
-import math   # 因为需要计算旋转的角度
-import random # 因为需要用到随机的功能
 
+
+'''初始化'''
 # 初始化pygame，设置展示窗口
 pygame.init()
 width, height = 640, 480
@@ -16,7 +23,6 @@ keys = [False, False, False, False]
 # playerpos表示玩家位置
 playerpos = [100, 100]
 # 跟踪玩家的精度变量，记录了射出的箭头数和被击中的獾的数量。
-# 之后我们会用到这些信息用来计算射击精确度。
 acc = [0, 0]
 # 跟踪箭头变量
 arrows = []
@@ -27,7 +33,6 @@ badguys = [[640, 100]]
 healthvalue = 194
 # 播放声音初始化
 pygame.mixer.init()
-
 # 加载图片
 rabbit_img = pygame.image.load("resources/images/dude.png")
 # 再加一些风景~
@@ -56,6 +61,8 @@ pygame.mixer.music.load('resources/audio/moonlight.wav')
 pygame.mixer.music.play(-1, 0.0)
 pygame.mixer.music.set_volume(0.25)
 
+
+'''游戏主循环'''
 # 不停地循环执行接下来的部分
 # running变量会跟踪游戏是否结束，
 # exitcode变量会跟踪玩家是否胜利。
