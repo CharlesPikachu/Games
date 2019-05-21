@@ -1,6 +1,11 @@
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# python制作小游戏系列-FlappyBird
+'''
+Function:
+	python制作小游戏系列-FlappyBird
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import Bird
 import Pipe
 import pygame

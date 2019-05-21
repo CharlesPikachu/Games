@@ -1,6 +1,11 @@
-# 飞机大战
-# 作者: Charles
-# 公众号: Charles的皮卡丘
+'''
+Function:
+	飞机大战
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import os
 import sys
 import pygame

@@ -1,7 +1,12 @@
 # coding: utf-8
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 食物类
+'''
+Function:
+	食物类
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import pygame
 import random
 

@@ -1,6 +1,11 @@
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 鸟类
+'''
+Function:
+	鸟类
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import pygame
 
 

@@ -1,6 +1,11 @@
-# 仿Google小恐龙游戏
-# 作者: Charles
-# 公众号: Charles的皮卡丘
+'''
+Function:
+	仿Google小恐龙游戏
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import sys
 import math
 import time

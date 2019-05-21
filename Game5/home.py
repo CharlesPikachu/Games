@@ -1,7 +1,12 @@
 # coding: utf-8
-# 作者: Charles
-# 公众号: Charles的皮卡丘
-# 大本营类
+'''
+Function:
+	大本营类
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import pygame
 
 

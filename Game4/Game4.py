@@ -1,7 +1,12 @@
 # coding: utf-8
-# 公众号: Charles的皮卡丘
-# 作者: Charles
-# 滑雪小游戏
+'''
+Function:
+	滑雪小游戏
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import sys
 import pygame
 import random

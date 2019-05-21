@@ -1,6 +1,11 @@
-# 游戏进行中界面
-# 作者: Charles
-# 公众号: Charles的皮卡丘
+'''
+Function:
+	游戏进行中界面
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import sys
 import json
 import math

@@ -1,6 +1,11 @@
-# 塔防游戏
-# 作者: Charles
-# 公众号: Charles的皮卡丘
+'''
+Function:
+	塔防游戏
+作者:
+	Charles
+微信公众号:
+	Charles的皮卡丘
+'''
 import pygame
 from interface import END
 from interface import START
