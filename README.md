@@ -4,6 +4,12 @@ Some games created by python code.
 You can star this repository to keep track of the project if it's helpful for you, thank you for your support.
 ```
 
+# Statement
+```sh
+Most of the game materals(including music, fonts and pictures) in this repository collected from the web, copyright belongs to the original author.
+This repository is created just for learning python(Commercial prohibition).
+```
+
 # Contents
 - Game1: [Bunnies and Badgers](https://github.com/CharlesPikachu/Games/tree/master/Game1)
 - Game2: [Pikachu Go Go Go~~~](https://github.com/CharlesPikachu/Games/tree/master/Game2)
@@ -21,6 +27,7 @@ You can star this repository to keep track of the project if it's helpful for yo
 - Game14: [Pacman](https://github.com/CharlesPikachu/Games/tree/master/Game14)
 - Game15: [GemGem](https://github.com/CharlesPikachu/Games/tree/master/Game15)
 - Game16: [24 point](https://github.com/CharlesPikachu/Games/tree/master/Game16)
+- Game17: [Pingpong](https://github.com/CharlesPikachu/Games/tree/master/Game17)
 
 # Record
 [click](./RECORD)

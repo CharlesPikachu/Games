@@ -49,3 +49,6 @@
 #### 2019-04-17
 - Game16: [24 point](https://github.com/CharlesPikachu/Games/tree/master/Game16)
 - Version: V1.0
+#### 2019-05-22
+- Game17: [Pingpong](https://github.com/CharlesPikachu/Games/tree/master/Game17)
+- Version: V1.0
