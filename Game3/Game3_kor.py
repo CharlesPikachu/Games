@@ -107,7 +107,7 @@ def GetImagePath(filepath):
 # 게임 종료 인터페이스 표시
 def Show_End_Interface(Demo, width, height):
 	Demo.fill(Background_Color)
-	font = pygame.font.Font('./font/simkai.ttf', width//8)
+	font = pygame.font.Font('./font/H2GSRB.ttf', width//8)
 	title = font.render('Finished!', True, (233, 150, 122))
 	rect = title.get_rect()
 	rect.midtop = (width/2, height/2.5)
@@ -126,11 +126,11 @@ def Show_End_Interface(Demo, width, height):
 # 게임 시작 인터페이스 표시
 def Show_Start_Interface(Demo, width, height):
 	Demo.fill(Background_Color)
-	tfont = pygame.font.Font('./font/simkai.ttf', width//4)
-	cfont = pygame.font.Font('./font/simkai.ttf', width//20)
-	title = tfont.render('拼图游戏', True, Red)
-	content1 = cfont.render('按H或M或L键开始游戏', True, Blue)
-	content2 = cfont.render('H为5*5模式，M为4*4模式，L为3*3模式', True, Blue)
+	tfont = pygame.font.Font('./font/H2GSRB.ttf', width//4)
+	cfont = pygame.font.Font('./font/H2GSRB.ttf', width//20)
+	title = tfont.render('퍼즐게임', True, Red)
+	content1 = cfont.render('H나,L이나,M으로 게임 시작', True, Blue)
+	content2 = cfont.render('H는 5*5 모드, M은 4*4 모드, L은 3*3 모드', True, Blue)
 	trect = title.get_rect()
 	trect.midtop = (width/2, height/10)
 	crect1 = content1.get_rect()
@@ -172,7 +172,7 @@ def main(filepath):
 	Demo = pygame.display.set_mode((ImgRect.width, ImgRect.height))
 	pygame.display.set_caption('拼图游戏')
 	# 开始界面 //시작 계면?
- 	size = Show_Start_Interface(Demo, ImgRect.width, ImgRect.height)
+	size = Show_Start_Interface(Demo, ImgRect.width, ImgRect.height)
 	if isinstance(size, int):
 		row, columns = size, size
 		Num_Cell = size * size

@@ -68,7 +68,7 @@ def startGame(screen):
 	enemy_need_move_row = 6
 	enemy_max_row = 5
 	# 用于控制敌方发射子弹
-	enemy_shot_interval = 100
+	enemy_shot_interval = 5
 	enemy_shot_count = 0
 	enemy_shot_flag = False
 	# 游戏进行中

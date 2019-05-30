@@ -72,7 +72,7 @@ def startGame(screen):
 	enemy_need_move_row = 6
 	enemy_max_row = 5
 	# 적의 탄알 발사를 통제하는데 사용
-	enemy_shot_interval = 100
+	enemy_shot_interval = 20
 	enemy_shot_count = 0
 	enemy_shot_flag = False
 	# 게임 진행 중

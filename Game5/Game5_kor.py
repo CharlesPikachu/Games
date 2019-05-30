@@ -14,10 +14,10 @@ from pygame.locals import *
 
 # 인터페이스 디스플레이 시작
 def show_start_interface(screen, width, height):
-	tfont = pygame.font.Font('./font/simkai.ttf', width//4)
-	cfont = pygame.font.Font('./font/simkai.ttf', width//20)
-	title = tfont.render(u'坦克大战', True, (255, 0, 0))#탱크 전투
-	content1 = cfont.render(u'按1键进入单人游戏', True, (0, 0, 255))#싱글플레이를 시작하려면 1을 누르십시오
+	tfont = pygame.font.Font('./font/HMKMMAG.ttf', width//4)
+	cfont = pygame.font.Font('./font/HMKMMAG.ttf', width//20)
+	title = tfont.render(u'탱크게임', True, (255, 0, 0))#탱크 전투
+	content1 = cfont.render(u'탱크열심', True, (0, 0, 255))#싱글플레이를 시작하려면 1을 누르십시오
 	content2 = cfont.render(u'按2键进入双人人游戏', True, (0, 0, 255))#듀오플레이를 시작하려면 2를 누르십시오
 	trect = title.get_rect()
 	trect.midtop = (width/2, height/4)
