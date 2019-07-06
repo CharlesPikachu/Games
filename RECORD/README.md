@@ -52,3 +52,6 @@
 #### 2019-05-22
 - Game17: [Pingpong](https://github.com/CharlesPikachu/Games/tree/master/Game17)
 - Version: V1.0
+#### 2019-07-06
+- Game18: [Breakout clone](https://github.com/CharlesPikachu/Games/tree/master/Game18)
+- Version: V1.0

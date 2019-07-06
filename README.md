@@ -28,6 +28,7 @@ This repository is created just for learning python(Commercial prohibition).
 - Game15: [GemGem](https://github.com/CharlesPikachu/Games/tree/master/Game15)
 - Game16: [24 point](https://github.com/CharlesPikachu/Games/tree/master/Game16)
 - Game17: [Pingpong](https://github.com/CharlesPikachu/Games/tree/master/Game17)
+- Game18: [Breakout clone](https://github.com/CharlesPikachu/Games/tree/master/Game18)
 
 # Record
 [click](./RECORD)
