@@ -55,3 +55,6 @@
 #### 2019-07-06
 - Game18: [Breakout clone](https://github.com/CharlesPikachu/Games/tree/master/Game18)
 - Version: V1.0
+#### 2019-08-28
+- Game18: [Bomber Man](https://github.com/CharlesPikachu/Games/tree/master/Game19)
+- Version: V1.0
