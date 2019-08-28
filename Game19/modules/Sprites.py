@@ -131,7 +131,7 @@ class Bomb(pygame.sprite.Sprite):
 				break
 			explode_area.append([self.coordinate[0], ymin])
 		for ymax in range(self.coordinate[1]+1, self.coordinate[1]+5):
-			if ymax > len(instances_list) or instances_list[ymax][self.coordinate[0]] in ['w', 'x', 'z']:
+			if ymax >= len(instances_list) or instances_list[ymax][self.coordinate[0]] in ['w', 'x', 'z']:
 				break
 			explode_area.append([self.coordinate[0], ymax])
 		for xmin in range(self.coordinate[0], self.coordinate[0]-5, -1):
@@ -139,7 +139,7 @@ class Bomb(pygame.sprite.Sprite):
 				break
 			explode_area.append([xmin, self.coordinate[1]])
 		for xmax in range(self.coordinate[0]+1, self.coordinate[0]+5):
-			if xmax > len(instances_list[0]) or instances_list[self.coordinate[1]][xmax] in ['w', 'x', 'z']:
+			if xmax >= len(instances_list[0]) or instances_list[self.coordinate[1]][xmax] in ['w', 'x', 'z']:
 				break
 			explode_area.append([xmax, self.coordinate[1]])
 		return explode_area
