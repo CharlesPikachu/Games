@@ -6,7 +6,7 @@ You can star this repository to keep track of the project if it's helpful for yo
 
 # Statement
 ```sh
-Most of the game materals(including music, fonts and pictures) in this repository collected from the web, copyright belongs to the original author.
+Most of the game materals(including music, fonts and pictures) in this repository are collected from the web, copyright belongs to the original author.
 This repository is created just for learning python(Commercial prohibition).
 ```
 
@@ -30,6 +30,7 @@ This repository is created just for learning python(Commercial prohibition).
 - Game17: [Pingpong](https://github.com/CharlesPikachu/Games/tree/master/Game17)
 - Game18: [Breakout clone](https://github.com/CharlesPikachu/Games/tree/master/Game18)
 - Game19: [Bomber Man](https://github.com/CharlesPikachu/Games/tree/master/Game19)
+- Game20: [Maze](https://github.com/CharlesPikachu/Games/tree/master/Game20)
 
 # Record
 [click](./RECORD)
