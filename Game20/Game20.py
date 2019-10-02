@@ -72,13 +72,13 @@ def main(cfg):
 			if (hero_now.coordinate[0] == cfg.MAZESIZE[1] - 1) and (hero_now.coordinate[1] == cfg.MAZESIZE[0] - 1):
 				break
 			pygame.display.update()
-		# 更新最优成绩
+		# --更新最优成绩
 		if best_scores == 'None':
 			best_scores = num_steps
 		else:
 			if best_scores > num_steps:
 				best_scores = num_steps
-		# 关卡切换
+		# --关卡切换
 		Interface(screen, cfg, mode='game_switch')
 
 
