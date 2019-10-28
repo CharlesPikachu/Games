@@ -33,7 +33,7 @@ def Stop():
 
 
 # 判断游戏是否结束
-def isOver(board, blankCell, size):
+def isOver(board, size):
 	try:
 		Num_Cell = size * size
 	except:
@@ -78,9 +78,7 @@ def MoveU(board, blankCell, row, columns):
 
 # 获得打乱的拼图
 def CreateBoard(row, columns, Num_Cell):
-	board = []
-	for i in range(Num_Cell):
-		board.append(i)
+	board = [i for i in range(Num_Cell)]
 	# 去掉右下角那块
 	blankCell = Num_Cell - 1
 	board[blankCell] = -1
@@ -195,7 +193,7 @@ def main(filepath):
 	# 避免初始化为原图
 	while True:
 		gameBoard, blankCell = CreateBoard(row, columns, Num_Cell)
-		if not isOver(gameBoard, blankCell, size):
+		if not isOver(gameBoard, size):
 			break
 	while True:
 		for event in pygame.event.get():
@@ -222,7 +220,7 @@ def main(filepath):
 				if idx==blankCell-1 or idx==blankCell+1 or idx==blankCell+columns or idx==blankCell-columns:
 					gameBoard[blankCell], gameBoard[idx] = gameBoard[idx], gameBoard[blankCell]
 					blankCell = idx
-		if isOver(gameBoard, blankCell, size):
+		if isOver(gameBoard, size):
 			gameBoard[blankCell] = Num_Cell-1
 			over = True
 		Demo.fill(Background_Color)

@@ -70,11 +70,11 @@ def create_obstacles(s, e, num=10):
 	for i in range(num):
 		row = random.randint(s, e)
 		col = random.randint(0, 9)
-		location  = [col*64+20, row*64+20]
+		location = [col*64+20, row*64+20]
 		if location not in locations:
 			locations.append(location)
 			attribute = random.choice(["tree", "flag"])
-			img_path = './images/tree.png' if attribute=="tree" else './images/flag.png'
+			img_path = './images/tree.png' if attribute == "tree" else './images/flag.png'
 			obstacle = ObstacleClass(img_path, location, attribute)
 			obstacles.add(obstacle)
 	return obstacles
@@ -106,7 +106,7 @@ def Show_Start_Interface(Demo, width, height):
 	pygame.display.update()
 	while True:
 		for event in pygame.event.get():
-			if event.type == QUIT:
+			if event.type == pygame.QUIT:
 				sys.exit()
 			elif event.type == pygame.KEYDOWN:
 				return
@@ -140,7 +140,7 @@ def main():
 	# 分数
 	font = pygame.font.Font(None, 50)
 	score = 0
-	score_text = font.render("Score: "+str(score), 1, (0, 0, 0))
+	score_text = font.render("Score: %s" % score, 1, (0, 0, 0))
 	# 速度
 	speed = [0, 6]
 	Show_Start_Interface(screen, 640, 640)
@@ -196,7 +196,7 @@ def main():
 			elif is_hit[0].attribute == "flag" and not is_hit[0].passed:
 				score += 10
 				obstacles.remove(is_hit[0])
-		score_text = font.render("Score: "+str(score), 1, (0, 0, 0))
+		score_text = font.render("Score: %s " % score, 1, (0, 0, 0))
 		update()
 		clock.tick(40)
 

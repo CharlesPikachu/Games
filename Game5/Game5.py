@@ -208,7 +208,7 @@ def main():
 					for each in enemytanksGroup:
 						each.can_move = True
 				if event.type == noprotectMytankEvent:
-					for each in mytanksGroup:
+					for _ in mytanksGroup:
 						mytanksGroup.protected = False
 			# 检查用户键盘操作
 			key_pressed = pygame.key.get_pressed()

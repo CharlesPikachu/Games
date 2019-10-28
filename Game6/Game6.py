@@ -87,7 +87,7 @@ def main():
 				if bird.rect.left < pipe.x + (Pipe.pipeHead().width + Pipe.pipeBody().width) / 2:
 					running = False
 		# 显示分数
-		scoreText = font.render('Score: ' + str(SCORE), True, (0, 0, 0))
+		scoreText = font.render('Score: %s' % SCORE, True, (0, 0, 0))
 		scoreRect = scoreText.get_rect()
 		scoreRect.topleft = [10, 10]
 		screen.blit(scoreText, scoreRect)
