@@ -229,8 +229,8 @@ def main():
 			x_pos = i // num_cols
 			y_pos = i % num_cols
 			rect = pygame.Rect(y_pos*cell_width, x_pos*cell_height, cell_width, cell_height)
-			ImgArea = pygame.Rect((game_board[i]%num_cols)*cell_width, (game_board[i]//num_cols)*cell_height, cell_width, cell_height)
-			screen.blit(game_img_used, rect, ImgArea)
+			img_area = pygame.Rect((game_board[i]%num_cols)*cell_width, (game_board[i]//num_cols)*cell_height, cell_width, cell_height)
+			screen.blit(game_img_used, rect, img_area)
 		for i in range(num_cols+1):
 			pygame.draw.line(screen, BLACK, (i*cell_width, 0), (i*cell_width, game_img_used_rect.height))
 		for i in range(num_rows+1):
