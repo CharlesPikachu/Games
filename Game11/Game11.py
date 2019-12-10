@@ -114,6 +114,7 @@ class TetrisGame(QMainWindow):
 		self.updateWindow()
 
 
+'''run'''
 if __name__ == '__main__':
 	app = QApplication([])
 	tetris = TetrisGame()

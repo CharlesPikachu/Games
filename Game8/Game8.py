@@ -15,7 +15,7 @@ WIDTH = 800
 HEIGHT = 600
 
 
-# 主函数
+'''主函数'''
 def main():
 	pygame.init()
 	pygame.mixer.init()
@@ -40,5 +40,6 @@ def main():
 		end_interface.update(screen)
 
 
+'''run'''
 if __name__ == '__main__':
 	main()

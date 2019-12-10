@@ -9,7 +9,7 @@ Function:
 import pygame
 
 
-# Bird类
+'''Bird类'''
 class Bird(pygame.sprite.Sprite):
 	def __init__(self, HEIGHT, WIDTH):
 		pygame.sprite.Sprite.__init__(self)
@@ -38,19 +38,19 @@ class Bird(pygame.sprite.Sprite):
 		self.x = 150
 		self.y = (self.HEIGHT - self.ori_bird.get_height()) / 2
 		self.set_bird()
-	# 设置小鸟的位置
+	'''设置小鸟的位置'''
 	def set_bird(self):
 		self.rotated_bird = pygame.transform.rotate(self.ori_bird, self.angle)
 		delta_width = (self.rotated_bird.get_rect().width - self.ori_bird.get_rect().width) / 2
 		delta_height = (self.rotated_bird.get_rect().width - self.ori_bird.get_rect().height) / 2
 		self.rect.left, self.rect.top = self.x - delta_width, self.y - delta_height
-	# 判断小鸟是否死亡
+	'''判断小鸟是否死亡'''
 	def is_dead(self):
 		if self.y >= self.HEIGHT:
 			return True
 		else:
 			return False
-	# 更新小鸟
+	'''更新小鸟'''
 	def update(self, time_passed):
 		if self.is_jump:
 			if self.angle < self.max_angle:
@@ -70,7 +70,7 @@ class Bird(pygame.sprite.Sprite):
 			return
 		self.y += self.down_speed * time_passed
 		self.set_bird()
-	# 重置
+	'''重置'''
 	def reset(self):
 		self.angle = 0
 		self.cur_jump_height = 0

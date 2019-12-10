@@ -32,7 +32,7 @@ button_color1 = (0, 200, 0)
 button_color2 = (0, 100, 0)
 
 
-# 游戏进行中界面
+'''游戏进行中界面'''
 class GAMING():
 	def __init__(self, WIDTH=800, HEIGHT=600):
 		self.WIDTH = WIDTH
@@ -109,7 +109,7 @@ class GAMING():
 							Button(pygame.Rect((info_w+gap*5+button_w*4), button_y, button_w, button_h), 'Pause', self.pauseGame),
 							Button(pygame.Rect((info_w+gap*6+button_w*5), button_y, button_w, button_h), 'Quit', self.quitGame)
 						]
-	# 开始游戏
+	'''开始游戏'''
 	def start(self, screen, map_path=None, difficulty_path=None):
 		# 读取游戏难度对应的参数
 		with open(difficulty_path, 'r') as f:
@@ -234,7 +234,7 @@ class GAMING():
 						del arrow
 						break
 			self.draw(screen, map_path)
-	# 将场景画到游戏界面上
+	'''将场景画到游戏界面上'''
 	def draw(self, screen, map_path):
 		self.drawToolbar(screen)
 		self.loadMap(screen, map_path)
@@ -243,11 +243,11 @@ class GAMING():
 		self.drawEnemies(screen)
 		self.drawArrows(screen)
 		pygame.display.flip()
-	# 画出所有射出的箭
+	'''画出所有射出的箭'''
 	def drawArrows(self, screen):
 		for arrow in self.arrowsGroup:
 			screen.blit(arrow.image, arrow.rect)
-	# 画敌人
+	'''画敌人'''
 	def drawEnemies(self, screen):
 		for enemy in self.EnemiesGroup:
 			if enemy.life_value <= 0:
@@ -275,11 +275,11 @@ class GAMING():
 			if greenLen < self.elementSize:
 				pygame.draw.line(screen, red, (enemy.position[0]+greenLen, enemy.position[1]), (enemy.position[0]+self.elementSize, enemy.position[1]), 1)
 			screen.blit(enemy.image, enemy.rect)
-	# 画已经建造好的炮塔
+	'''画已经建造好的炮塔'''
 	def drawBuiltTurret(self, screen):
 		for turret in self.builtTurretGroup:
 			screen.blit(turret.image, turret.rect)
-	# 画鼠标携带物
+	'''画鼠标携带物'''
 	def drawMouseCarried(self, screen):
 		if self.mouseCarried:
 			position = pygame.mouse.get_pos()
@@ -294,7 +294,7 @@ class GAMING():
 					self.mouseCarried[1].rect.left, self.mouseCarried[1].rect.top = position
 				else:
 					screen.blit(self.mouseCarried[1], position)
-	# 画工具栏
+	'''画工具栏'''
 	def drawToolbar(self, screen):
 		# 信息显示框
 		# 	左
@@ -323,7 +323,7 @@ class GAMING():
 			buttonText_rect = buttonText.get_rect()
 			buttonText_rect.center = (button.rect.centerx, button.rect.centery)
 			screen.blit(buttonText, buttonText_rect)
-	# 显示被鼠标选中按钮的作用信息
+	'''显示被鼠标选中按钮的作用信息'''
 	def showSelectedInfo(self, screen, button):
 		if button.text == 'T1':
 			T1 = Turret.Turret(0)
@@ -358,7 +358,7 @@ class GAMING():
 		elif button.text == 'Quit':
 			selectedInfo = self.info_font.render('Quit game', True, white)
 			screen.blit(selectedInfo, (self.rightinfo_rect.left+5, self.rightinfo_rect.top+35))
-	# 出售炮塔(半价)
+	'''出售炮塔(半价)'''
 	def sellTurret(self, position):
 		coord = self.pos2coord(position)
 		for turret in self.builtTurretGroup:
@@ -367,7 +367,7 @@ class GAMING():
 				self.money += int(turret.price * 0.5)
 				del turret
 				break
-	# 建造炮塔
+	'''建造炮塔'''
 	def buildTurret(self, position):
 		turret = self.mouseCarried[1]
 		coord = self.pos2coord(position)
@@ -388,26 +388,26 @@ class GAMING():
 				elif self.mouseCarried[1].turret_type == 2:
 					self.mouseCarried = []
 					self.takeT3()
-	# 拿炮塔1
+	'''拿炮塔1'''
 	def takeT1(self):
 		T1 = Turret.Turret(0)
 		if self.money >= T1.price:
 			self.mouseCarried = ['turret', T1]
-	# 拿炮塔2
+	'''拿炮塔2'''
 	def takeT2(self):
 		T2 = Turret.Turret(1)
 		if self.money >= T2.price:
 			self.mouseCarried = ['turret', T2]
-	# 拿炮塔3
+	'''拿炮塔3'''
 	def takeT3(self):
 		T3 = Turret.Turret(2)
 		if self.money >= T3.price:
 			self.mouseCarried = ['turret', T3]
-	# 出售炮塔
+	'''出售炮塔'''
 	def takeXXX(self):
 		XXX = pygame.image.load('./resource/imgs/game/x.png')
 		self.mouseCarried = ['XXX', XXX]
-	# 找下一个路径单元
+	'''找下一个路径单元'''
 	def find_next_path(self, enemy):
 		x, y = enemy.coord
 		# 优先级: 下右左上
@@ -416,13 +416,13 @@ class GAMING():
 			if (neighbour in self.path_list) and (neighbour not in enemy.reached_path):
 				return neighbour
 		return None
-	# 将真实坐标转为地图坐标, 20个单位长度的真实坐标=地图坐标
+	'''将真实坐标转为地图坐标, 20个单位长度的真实坐标=地图坐标'''
 	def pos2coord(self, position):
 		return (position[0]//self.elementSize, position[1]//self.elementSize)
-	# 将地图坐标转为真实坐标, 20个单位长度的真实坐标=地图坐标
+	'''将地图坐标转为真实坐标, 20个单位长度的真实坐标=地图坐标'''
 	def coord2pos(self, coord):
 		return (coord[0]*self.elementSize, coord[1]*self.elementSize)
-	# 导入地图
+	'''导入地图'''
 	def loadMap(self, screen, map_path):
 		map_file = open(map_path, 'r')
 		idx_j = -1
@@ -458,11 +458,11 @@ class GAMING():
 			pygame.draw.line(self.map_surface, red, (740+greenLen, 400), (740+nexus_width, 400), 3)
 		screen.blit(self.map_surface, (0, 0))
 		map_file.close()
-	# 暂停游戏
+	'''暂停游戏'''
 	def pauseGame(self, screen):
 		pause_interface = PAUSE.PAUSE(self.WIDTH, self.HEIGHT)
 		pause_interface.update(screen)
-	# 退出游戏
+	'''退出游戏'''
 	def quitGame(self):
 		sys.exit(0)
 		pygame.quit()

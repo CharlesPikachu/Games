@@ -11,7 +11,7 @@ import random
 import pygame
 
 
-# 箭类
+'''箭类'''
 class Arrow(pygame.sprite.Sprite):
 	def __init__(self, arrow_type):
 		assert arrow_type in range(3)
@@ -35,11 +35,11 @@ class Arrow(pygame.sprite.Sprite):
 		elif arrow_type == 2:
 			self.speed = 7
 			self.attack_power = 15
-	# 不停移动
+	'''不停移动'''
 	def move(self):
 		self.position = self.position[0] - self.speed * math.cos(self.angle), self.position[1] - self.speed * math.sin(self.angle)
 		self.rect.left, self.rect.top = self.position
-	# 重置箭的位置
+	'''重置箭的位置'''
 	def reset(self, position, angle=None):
 		if angle is None:
 			angle = random.random() * math.pi * 2

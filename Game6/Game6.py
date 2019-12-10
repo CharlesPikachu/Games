@@ -16,7 +16,7 @@ from pygame.locals import *
 WIDTH, HEIGHT = 640, 480
 
 
-# 主函数
+'''主函数'''
 def main():
 	# 初始化
 	pygame.init()
@@ -103,5 +103,6 @@ def main():
 				exit(0)
 
 
+'''run'''
 if __name__ == "__main__":
 	main()

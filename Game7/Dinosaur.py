@@ -9,7 +9,7 @@ Function:
 import pygame
 
 
-# 恐龙类
+'''恐龙类'''
 class Dinosaur(pygame.sprite.Sprite):
 	def __init__(self, WIDTH=640, HEIGHT=500):
 		pygame.sprite.Sprite.__init__(self)
@@ -18,7 +18,7 @@ class Dinosaur(pygame.sprite.Sprite):
 		# self.imgs = ['./images/dinosaur/wait.png', './images/dinosaur/afraid.png', './images/dinosaur/running.png', './images/dinosaur/flying.png']
 		self.imgs = ['./images/dinosaur/dino.png', './images/dinosaur/dino_ducking.png']
 		self.reset()
-	# 跳跃
+	'''跳跃'''
 	def jump(self, time_passed):
 		# time_passed很小时，可近似为匀速运动
 		if self.is_jumping_up:
@@ -33,10 +33,10 @@ class Dinosaur(pygame.sprite.Sprite):
 				self.is_jumping = False
 				self.is_jumping_up = True
 				self.jump_v = self.jump_v0
-	# 跳跃时变为感到恐惧的表情
+	'''跳跃时变为感到恐惧的表情'''
 	def be_afraid(self):
 		self.dinosaur = self.dinosaurs.subsurface((352, 0), (88, 95))
-	# 把自己画到屏幕上去
+	'''把自己画到屏幕上去'''
 	def draw(self, screen):
 		if self.is_running and not self.is_jumping:
 			self.running_count += 1
@@ -48,7 +48,7 @@ class Dinosaur(pygame.sprite.Sprite):
 			else:
 				self.dinosaur = self.dinosaurs.subsurface((264, 0), (88, 95))
 		screen.blit(self.dinosaur, self.rect)
-	# 重置
+	'''重置'''
 	def reset(self):
 		# 恐龙是否在奔跑
 		self.is_running = False

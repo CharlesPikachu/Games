@@ -10,7 +10,7 @@ import pygame
 import random
 
 
-# 场景类
+'''场景类'''
 class Scene(pygame.sprite.Sprite):
 	def __init__(self, WIDTH=640, HEIGHT=500):
 		pygame.sprite.Sprite.__init__(self)
@@ -19,10 +19,10 @@ class Scene(pygame.sprite.Sprite):
 		self.speed = 5
 		self.imgs = ['./images/bg/bg1.png', './images/bg/bg2.png', './images/bg/bg3.png']
 		self.reset()
-	# 不停向左移动
+	'''不停向左移动'''
 	def move(self):
 		self.x = self.x - self.speed
-	# 把自己画到屏幕上去
+	'''把自己画到屏幕上去'''
 	def draw(self, screen):
 		if self.bg1_rect.right < 0:
 			self.x = 0
@@ -38,7 +38,7 @@ class Scene(pygame.sprite.Sprite):
 		screen.blit(self.bg1, self.bg1_rect)
 		screen.blit(self.bg2, self.bg2_rect)
 		screen.blit(self.bg3, self.bg3_rect)
-	# 重置
+	'''重置'''
 	def reset(self):
 		self.x = 0
 		self.bg1 = pygame.image.load(self.imgs[0]).convert_alpha()

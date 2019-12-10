@@ -14,19 +14,13 @@ from config import Config
 from itertools import chain
 
 
-'''
-Function:
-	退出游戏
-'''
+'''退出游戏'''
 def quitGame():
 	pygame.quit()
 	sys.exit(0)
 
 
-'''
-Function:
-	游戏地图
-'''
+'''游戏地图'''
 class gameMap():
 	def __init__(self, num_cols, num_rows):
 		self.walls = []
@@ -78,10 +72,7 @@ class gameMap():
 		return None
 
 
-'''
-Function:
-	游戏界面
-'''
+'''游戏界面'''
 class gameInterface():
 	def __init__(self, screen):
 		self.screen = screen
@@ -139,10 +130,7 @@ class gameInterface():
 				self.scroll_y += 2
 
 
-'''
-Function:
-	某一关卡的游戏主循环
-'''
+'''某一关卡的游戏主循环'''
 def runGame(screen, game_level):
 	clock = pygame.time.Clock()
 	game_interface = gameInterface(screen)
@@ -215,7 +203,7 @@ def runGame(screen, game_level):
 		clock.tick(100)
 
 
-# 定义按钮
+'''定义按钮'''
 def BUTTON(screen, position, text):
 	bwidth = 310
 	bheight = 65
@@ -231,7 +219,7 @@ def BUTTON(screen, position, text):
 	return screen.blit(text_render, (left+50, top+10))
 
 
-# 开始界面
+'''开始界面'''
 def startInterface(screen):
 	screen.fill(Config.get('bg_color'))
 	clock = pygame.time.Clock()
@@ -251,7 +239,7 @@ def startInterface(screen):
 		pygame.display.update()
 
 
-# 关卡切换界面
+'''关卡切换界面'''
 def switchInterface(screen):
 	screen.fill(Config.get('bg_color'))
 	clock = pygame.time.Clock()
@@ -271,7 +259,7 @@ def switchInterface(screen):
 		pygame.display.update()
 
 
-# 结束界面
+'''结束界面'''
 def endInterface(screen):
 	screen.fill(Config.get('bg_color'))
 	clock = pygame.time.Clock()
@@ -289,10 +277,7 @@ def endInterface(screen):
 		pygame.display.update()
 
 
-'''
-Function:
-	主函数
-'''
+'''主函数'''
 def main():
 	pygame.init()
 	pygame.mixer.init()
@@ -311,5 +296,6 @@ def main():
 	endInterface(screen)
 
 
+'''run'''
 if __name__ == '__main__':
 	main()

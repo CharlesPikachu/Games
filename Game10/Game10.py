@@ -16,7 +16,7 @@ WIDTH = 956
 HEIGHT = 560
 
 
-# 定义按钮
+'''定义按钮'''
 def BUTTON(screen, position, text):
 	bwidth = 310
 	bheight = 65
@@ -31,7 +31,7 @@ def BUTTON(screen, position, text):
 	return screen.blit(text_render, (left+50, top+10))
 
 
-# 开始界面
+'''开始界面'''
 def start_interface(screen):
 	clock = pygame.time.Clock()
 	while True:
@@ -50,7 +50,7 @@ def start_interface(screen):
 		pygame.display.update()
 
 
-# 子弹
+'''子弹'''
 class Bullet(pygame.sprite.Sprite):
 	def __init__(self, idx, position):
 		pygame.sprite.Sprite.__init__(self)
@@ -65,16 +65,16 @@ class Bullet(pygame.sprite.Sprite):
 		self.speed = 8
 		# 玩家编号
 		self.playerIdx = idx
-	# 移动子弹
+	'''移动子弹'''
 	def move(self):
 		self.position = self.position[0], self.position[1] - self.speed
 		self.rect.left, self.rect.top = self.position
-	# 画子弹
+	'''画子弹'''
 	def draw(self, screen):
 		screen.blit(self.image, self.rect)
 
 
-# 小行星
+'''小行星'''
 class Asteroid(pygame.sprite.Sprite):
 	def __init__(self):
 		pygame.sprite.Sprite.__init__(self)
@@ -89,11 +89,11 @@ class Asteroid(pygame.sprite.Sprite):
 		self.angle = 0
 		self.angular_velocity = random.randrange(1, 5)
 		self.rotate_ticks = 3
-	# 移动小行星
+	'''移动小行星'''
 	def move(self):
 		self.position = self.position[0], self.position[1] + self.speed
 		self.rect.left, self.rect.top = self.position
-	# 转动小行星
+	'''转动小行星'''
 	def rotate(self):
 		self.rotate_ticks -= 1
 		if self.rotate_ticks == 0:
@@ -105,12 +105,12 @@ class Asteroid(pygame.sprite.Sprite):
 			rot_image = rot_image.subsurface(rot_rect).copy()
 			self.image = rot_image
 			self.rotate_ticks = 3
-	# 画小行星
+	'''画小行星'''
 	def draw(self, screen):
 		screen.blit(self.image, self.rect)
 
 
-# 飞船
+'''飞船'''
 class Ship(pygame.sprite.Sprite):
 	def __init__(self, idx):
 		pygame.sprite.Sprite.__init__(self)
@@ -129,12 +129,12 @@ class Ship(pygame.sprite.Sprite):
 		self.cooling_time = 0
 		# 爆炸用
 		self.explode_step = 0
-	# 飞船爆炸
+	'''飞船爆炸'''
 	def explode(self, screen):
 		img = self.explode_img.subsurface((48*(self.explode_step-1), 0), (48, 48))
 		screen.blit(img, (self.position['x'], self.position['y']))
 		self.explode_step += 1
-	# 移动飞船
+	'''移动飞船'''
 	def move(self, direction):
 		if direction == 'left':
 			self.position['x'] = max(-self.speed['x']+self.position['x'], -10)
@@ -145,15 +145,15 @@ class Ship(pygame.sprite.Sprite):
 		elif direction == 'down':
 			self.position['y'] = min(self.speed['y']+self.position['y'], 520)
 		self.rect.left, self.rect.top = self.position['x'], self.position['y']
-	# 画飞船
+	'''画飞船'''
 	def draw(self, screen):
 		screen.blit(self.image, self.rect)
-	# 射击
+	'''射击'''
 	def shot(self):
 		return Bullet(self.playerIdx, (self.rect.center[0] - 5, self.position['y'] - 5))
 
 
-# 游戏界面
+'''游戏界面'''
 def GameDemo(num_player, screen):
 	pygame.mixer.music.load(("./resources/sounds/Cool Space Music.mp3"))
 	pygame.mixer.music.set_volume(0.4)
@@ -284,7 +284,7 @@ def GameDemo(num_player, screen):
 		clock.tick(60)
 
 
-# 结束界面
+'''结束界面'''
 def end_interface(screen):
 	clock = pygame.time.Clock()
 	while True:
@@ -304,7 +304,7 @@ def end_interface(screen):
 		pygame.display.update()
 
 
-# 主函数
+'''主函数'''
 def main():
 	pygame.init()
 	pygame.font.init()
@@ -322,5 +322,6 @@ def main():
 			end_interface(screen)
 
 
+'''run'''
 if __name__ == '__main__':
 	main()

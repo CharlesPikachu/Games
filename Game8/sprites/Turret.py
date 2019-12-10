@@ -10,7 +10,7 @@ import pygame
 from sprites import Arrow
 
 
-# 炮塔类
+'''炮塔类'''
 class Turret(pygame.sprite.Sprite):
 	def __init__(self, turret_type):
 		assert turret_type in range(3)
@@ -26,7 +26,7 @@ class Turret(pygame.sprite.Sprite):
 		self.position = 0, 0
 		self.rect.left, self.rect.top = self.position
 		self.reset()
-	# 射击
+	'''射击'''
 	def shot(self, position, angle=None):
 		arrow = None
 		if not self.is_cooling:
@@ -38,7 +38,7 @@ class Turret(pygame.sprite.Sprite):
 			if self.coolTime == 0:
 				self.reset()
 		return arrow
-	# 重置
+	'''重置'''
 	def reset(self):
 		if self.turret_type == 0:
 			# 价格

@@ -10,7 +10,7 @@ import sys
 import pygame
 
 
-# 游戏地图选择界面
+'''游戏地图选择界面'''
 class MapChoiceInterface(pygame.sprite.Sprite):
 	def __init__(self, WIDTH, HEIGHT):
 		pygame.sprite.Sprite.__init__(self)
@@ -18,12 +18,12 @@ class MapChoiceInterface(pygame.sprite.Sprite):
 		self.image = pygame.image.load(self.imgs[0]).convert()
 		self.rect = self.image.get_rect()
 		self.rect.topleft = (0, 0)
-	# just pass
+	'''just pass'''
 	def update(self):
 		pass
 
 
-# 地图1
+'''地图1'''
 class MapButton1(pygame.sprite.Sprite):
 	def __init__(self, position=(175, 240)):
 		pygame.sprite.Sprite.__init__(self)
@@ -41,7 +41,7 @@ class MapButton1(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 地图2
+'''地图2'''
 class MapButton2(pygame.sprite.Sprite):
 	def __init__(self, position=(400, 240)):
 		pygame.sprite.Sprite.__init__(self)
@@ -59,7 +59,7 @@ class MapButton2(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 地图3
+'''地图3'''
 class MapButton3(pygame.sprite.Sprite):
 	def __init__(self, position=(625, 240)):
 		pygame.sprite.Sprite.__init__(self)
@@ -77,7 +77,7 @@ class MapButton3(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 信息显示框
+'''信息显示框'''
 class InfoBox(pygame.sprite.Sprite):
 	def __init__(self, position=(400, 475)):
 		pygame.sprite.Sprite.__init__(self)
@@ -98,7 +98,7 @@ class InfoBox(pygame.sprite.Sprite):
 				break
 
 
-# 简单按钮
+'''简单按钮'''
 class EasyButton(pygame.sprite.Sprite):
 	def __init__(self, position=(400, 150)):
 		pygame.sprite.Sprite.__init__(self)
@@ -128,7 +128,7 @@ class EasyButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 中等难度按钮
+'''中等难度按钮'''
 class MediumButton(pygame.sprite.Sprite):
 	def __init__(self, position=(400, 300)):
 		pygame.sprite.Sprite.__init__(self)
@@ -158,7 +158,7 @@ class MediumButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 困难难度按钮
+'''困难难度按钮'''
 class HardButton(pygame.sprite.Sprite):
 	def __init__(self, position=(400, 450)):
 		pygame.sprite.Sprite.__init__(self)
@@ -188,7 +188,7 @@ class HardButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 游戏模式选择界面
+'''游戏模式选择界面'''
 class CHOICE():
 	def __init__(self, WIDTH, HEIGHT):
 		# part1
@@ -201,7 +201,7 @@ class CHOICE():
 		self.EB = EasyButton()
 		self.MB = MediumButton()
 		self.HB = HardButton()
-	# 外部调用
+	'''外部调用'''
 	def update(self, screen):
 		clock = pygame.time.Clock()
 		# part1

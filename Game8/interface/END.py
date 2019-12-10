@@ -10,7 +10,7 @@ import sys
 import pygame
 
 
-# 游戏结束界面
+'''游戏结束界面'''
 class EndInterface(pygame.sprite.Sprite):
 	def __init__(self, WIDTH, HEIGHT):
 		pygame.sprite.Sprite.__init__(self)
@@ -18,12 +18,12 @@ class EndInterface(pygame.sprite.Sprite):
 		self.image = pygame.image.load(self.imgs[0]).convert()
 		self.rect = self.image.get_rect()
 		self.rect.center = (WIDTH/2, HEIGHT/2)
-	# just pass
+	'''just pass'''
 	def update(self):
 		pass
 
 
-# 继续游戏按钮
+'''继续游戏按钮'''
 class ContinueButton(pygame.sprite.Sprite):
 	def __init__(self, position=(400, 409)):
 		pygame.sprite.Sprite.__init__(self)
@@ -41,13 +41,13 @@ class ContinueButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 游戏结束类
+'''游戏结束类'''
 class END():
 	def __init__(self, WIDTH, HEIGHT):
 		self.EI = EndInterface(WIDTH, HEIGHT)
 		self.CB = ContinueButton()
 		self.components = pygame.sprite.LayeredUpdates(self.EI, self.CB)
-	# 外部调用
+	'''外部调用'''
 	def update(self, screen):
 		clock = pygame.time.Clock()
 		background = pygame.Surface(screen.get_size())

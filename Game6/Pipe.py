@@ -10,7 +10,7 @@ import pygame
 import random
 
 
-# 管道头
+'''管道头'''
 class pipeHead(pygame.sprite.Sprite):
 	def __init__(self):
 		pygame.sprite.Sprite.__init__(self)
@@ -21,7 +21,7 @@ class pipeHead(pygame.sprite.Sprite):
 		self.width = self.pipe_head.get_width()
 
 
-# 管道体
+'''管道体'''
 class pipeBody(pygame.sprite.Sprite):
 	def __init__(self):
 		pygame.sprite.Sprite.__init__(self)
@@ -32,7 +32,7 @@ class pipeBody(pygame.sprite.Sprite):
 		self.width = self.pipe_body.get_width()
 
 
-# 管道类
+'''管道类'''
 class Pipe():
 	def __init__(self, HEIGHT, WIDTH):
 		# 游戏界面宽高
@@ -53,7 +53,7 @@ class Pipe():
 		# 小鸟通过该Pipe后变为True，防止重复加分
 		self.add_score = False
 		self.construct_pipe()
-	# 用管道体和管道头构建管道
+	'''用管道体和管道头构建管道'''
 	def construct_pipe(self):
 		# 管道
 		self.pipe = pygame.sprite.Group()
@@ -73,7 +73,7 @@ class Pipe():
 		pipe_head = pipeHead()
 		pipe_head.rect.left, pipe_head.rect.top = self.x - (pipeHead().width - pipeBody().width) / 2, self.HEIGHT - self.n_down_pipe_body * pipeBody().height - pipeHead().height
 		self.pipe.add(pipe_head)
-	# 更新管道
+	'''更新管道'''
 	def update(self, time_passed):
 		self.x -= time_passed * self.speed
 		self.construct_pipe()

@@ -10,7 +10,7 @@ import sys
 import pygame
 
 
-# 游戏暂停界面
+'''游戏暂停界面'''
 class PauseInterface(pygame.sprite.Sprite):
 	def __init__(self, WIDTH, HEIGHT):
 		pygame.sprite.Sprite.__init__(self)
@@ -18,12 +18,12 @@ class PauseInterface(pygame.sprite.Sprite):
 		self.image = pygame.image.load(self.imgs[0]).convert()
 		self.rect = self.image.get_rect()
 		self.rect.center = (WIDTH/2, HEIGHT/2)
-	# just pass
+	'''just pass'''
 	def update(self):
 		pass
 
 
-# 恢复游戏按钮
+'''恢复游戏按钮'''
 class ResumeButton(pygame.sprite.Sprite):
 	def __init__(self, position=(391, 380)):
 		pygame.sprite.Sprite.__init__(self)
@@ -41,13 +41,13 @@ class ResumeButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 游戏暂停类
+'''游戏暂停类'''
 class PAUSE():
 	def __init__(self, WIDTH, HEIGHT):
 		self.PI = PauseInterface(WIDTH, HEIGHT)
 		self.RB = ResumeButton()
 		self.components = pygame.sprite.LayeredUpdates(self.PI, self.RB)
-	# 外部调用
+	'''外部调用'''
 	def update(self, screen):
 		clock = pygame.time.Clock()
 		background = pygame.Surface(screen.get_size())

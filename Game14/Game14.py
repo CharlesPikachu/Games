@@ -184,5 +184,6 @@ def main(screen):
 				showText(screen, font_big, is_clearance)
 	
 
+'''test'''
 if __name__ == '__main__':
 	main(initialize())

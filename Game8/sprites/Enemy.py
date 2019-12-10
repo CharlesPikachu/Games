@@ -9,7 +9,7 @@ Function:
 import pygame
 
 
-# 敌方类
+'''敌方类'''
 class Enemy(pygame.sprite.Sprite):
 	def __init__(self, enemy_type):
 		assert enemy_type in range(4)
@@ -55,7 +55,7 @@ class Enemy(pygame.sprite.Sprite):
 			self.speed = 0.2
 			self.reward = 500
 			self.damage = 4
-	# 不停地移动
+	'''不停地移动'''
 	def move(self, cellLen):
 		is_next_cell = False
 		self.cell_move_dis += self.speed

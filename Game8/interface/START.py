@@ -10,7 +10,7 @@ import sys
 import pygame
 
 
-# 游戏开始界面
+'''游戏开始界面'''
 class StartInterface(pygame.sprite.Sprite):
 	def __init__(self, WIDTH, HEIGHT):
 		pygame.sprite.Sprite.__init__(self)
@@ -18,12 +18,12 @@ class StartInterface(pygame.sprite.Sprite):
 		self.image = pygame.image.load(self.imgs[0]).convert()
 		self.rect = self.image.get_rect()
 		self.rect.center = WIDTH/2, HEIGHT/2
-	# just pass
+	'''just pass'''
 	def update(self):
 		pass
 
 
-# 开始游戏按钮
+'''开始游戏按钮'''
 class PlayButton(pygame.sprite.Sprite):
 	def __init__(self, position=(220, 415)):
 		pygame.sprite.Sprite.__init__(self)
@@ -33,7 +33,7 @@ class PlayButton(pygame.sprite.Sprite):
 		self.image = self.img_1
 		self.rect = self.image.get_rect()
 		self.rect.center = position
-	# 不断地更新检测鼠标是否在按钮上
+	'''不断地更新检测鼠标是否在按钮上'''
 	def update(self):
 		mouse_pos = pygame.mouse.get_pos()
 		if self.rect.collidepoint(mouse_pos):
@@ -42,7 +42,7 @@ class PlayButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 结束游戏按钮
+'''结束游戏按钮'''
 class QuitButton(pygame.sprite.Sprite):
 	def __init__(self, position=(580, 415)):
 		pygame.sprite.Sprite.__init__(self)
@@ -52,7 +52,7 @@ class QuitButton(pygame.sprite.Sprite):
 		self.image = self.img_1
 		self.rect = self.image.get_rect()
 		self.rect.center = position
-	# 不断地更新检测鼠标是否在按钮上
+	'''不断地更新检测鼠标是否在按钮上'''
 	def update(self):
 		mouse_pos = pygame.mouse.get_pos()
 		if self.rect.collidepoint(mouse_pos):
@@ -61,14 +61,14 @@ class QuitButton(pygame.sprite.Sprite):
 			self.image = self.img_1
 
 
-# 游戏开始类
+'''游戏开始类'''
 class START():
 	def __init__(self, WIDTH, HEIGHT):
 		self.SI = StartInterface(WIDTH, HEIGHT)
 		self.PB = PlayButton()
 		self.QB = QuitButton()
 		self.components = pygame.sprite.LayeredUpdates(self.SI, self.PB, self.QB)
-	# 外部调用
+	'''外部调用'''
 	def update(self, screen):
 		clock = pygame.time.Clock()
 		while True:

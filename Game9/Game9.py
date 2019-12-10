@@ -12,7 +12,7 @@ import random
 import pygame
 
 
-# 获取历史最高分
+'''获取历史最高分'''
 def getScore():
 	if os.path.isfile('score'):
 		with open('score', 'r') as f:
@@ -24,13 +24,13 @@ def getScore():
 	return score
 
 
-# 保存分数(仅当超过历史最高分时)
+'''保存分数(仅当超过历史最高分时)'''
 def saveScore(score):
 	with open('score', 'w') as f:
 		f.write(score)
 
 
-# 定义接苹果/金币的人类精灵
+'''定义接苹果/金币的人类精灵'''
 class FarmerSprite(pygame.sprite.Sprite):
 	def __init__(self, WIDTH, HEIGHT):
 		pygame.sprite.Sprite.__init__(self)
@@ -58,7 +58,7 @@ class FarmerSprite(pygame.sprite.Sprite):
 		self.WIDTH, self.HEIGHT = WIDTH, HEIGHT
 		# 激活一下
 		self.move()
-	# 移动
+	'''移动'''
 	def move(self, direction='left'):
 		if direction != self.direction:
 			self.direction = direction
@@ -77,12 +77,12 @@ class FarmerSprite(pygame.sprite.Sprite):
 		self.rect.left = 0 if self.rect.left < 0 else self.rect.left
 		self.rect.top = 0 if self.rect.top < 0 else self.rect.top
 		self.rect.bottom = self.HEIGHT if self.rect.bottom > self.HEIGHT else self.rect.bottom
-	# 画上去
+	'''画上去'''
 	def draw(self, screen):
 		screen.blit(self.image, self.rect)
 
 
-# 掉落的食物类
+'''掉落的食物类'''
 class foodSprite(pygame.sprite.Sprite):
 	def __init__(self, WIDTH, HEIGHT):
 		pygame.sprite.Sprite.__init__(self)
@@ -98,16 +98,16 @@ class foodSprite(pygame.sprite.Sprite):
 		self.x = random.randint(0, WIDTH-self.rect.width)
 		self.y = -50
 		self.rect.left, self.rect.top = self.x, self.y
-	# 移动
+	'''移动'''
 	def move(self):
 		self.y += self.speed
 		self.rect.top = self.y
-	# 画到屏幕上
+	'''画到屏幕上'''
 	def draw(self, screen):
 		screen.blit(self.image, self.rect)
 
 
-# 显示游戏结束界面
+'''显示游戏结束界面'''
 def GameOver(screen, width, height, score, highest):
 	screen.fill((255, 255, 255))
 	tfont = pygame.font.Font('./font/simkai.ttf', width//10)
@@ -129,7 +129,7 @@ def GameOver(screen, width, height, score, highest):
 				return
 
 
-# 主函数
+'''主函数'''
 def main():
 	# 初始化
 	pygame.init()
@@ -213,7 +213,6 @@ def main():
 		clock.tick(60)
 
 
-
-
+'''run'''
 if __name__ == '__main__':
 	main()

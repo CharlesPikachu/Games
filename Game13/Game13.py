@@ -23,10 +23,7 @@ RED = (255, 0, 0)
 FPS = 60
 
 
-'''
-Function:
-	开始游戏
-'''
+'''开始游戏'''
 def startGame(screen):
 	clock = pygame.time.Clock()
 	# 加载字体
@@ -236,5 +233,6 @@ def main():
 		endInterface(screen, BLACK, is_win)
 
 
+'''run'''
 if __name__ == '__main__':
 	main()

@@ -23,7 +23,7 @@ WIDTH = 800
 HEIGHT = 400
 
 
-# 显示Gameover界面
+'''显示Gameover界面'''
 def show_gameover(screen):
 	screen.fill(BACKGROUND)
 	gameover_img = pygame.image.load('./images/others/gameover.png').convert_alpha()
@@ -47,13 +47,13 @@ def show_gameover(screen):
 					return True
 
 
-# 将Score转为生成障碍物的概率
+'''将Score转为生成障碍物的概率'''
 def sigmoid(score):
 	probability = 1 / (1 + math.exp(-score))
 	return min(probability, 0.6)
 
 
-# 主函数
+'''主函数'''
 def main():
 	# 初始化
 	pygame.init()
@@ -158,6 +158,7 @@ def main():
 	return res
 
 
+'''run'''
 if __name__ == '__main__':
 	res = True
 	while res:

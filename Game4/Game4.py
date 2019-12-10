@@ -1,4 +1,3 @@
-# coding: utf-8
 '''
 Function:
 	滑雪小游戏
@@ -13,7 +12,7 @@ import random
 from pygame.locals import *
 
 
-# 滑雪者类
+'''滑雪者类'''
 class SkierClass(pygame.sprite.Sprite):
 	def __init__(self):
 		pygame.sprite.Sprite.__init__(self)
@@ -24,8 +23,7 @@ class SkierClass(pygame.sprite.Sprite):
 		self.rect = self.person.get_rect()
 		self.rect.center = [320, 100]
 		self.speed = [self.direction, 6-abs(self.direction)*2]
-	# 改变滑雪者的朝向
-	# 负数为向左，正数为向右，0为向前
+	'''改变滑雪者的朝向. 负数为向左，正数为向右，0为向前'''
 	def turn(self, num):
 		self.direction += num
 		self.direction = max(-2, self.direction)
@@ -36,18 +34,21 @@ class SkierClass(pygame.sprite.Sprite):
 		self.rect.center = center
 		self.speed = [self.direction, 6-abs(self.direction)*2]
 		return self.speed
-	# 移动滑雪者
+	'''移动滑雪者'''
 	def move(self):
 		self.rect.centerx += self.speed[0]
 		self.rect.centerx = max(20, self.rect.centerx)
 		self.rect.centerx = min(620, self.rect.centerx)
 
 
-# 障碍物类
-# Input:
-# 	-img_path: 障碍物图片路径
-# 	-location: 障碍物位置
-# 	-attribute: 障碍物类别属性
+'''
+Function:
+	障碍物类
+Input:
+	-img_path: 障碍物图片路径
+	-location: 障碍物位置
+	-attribute: 障碍物类别属性
+'''
 class ObstacleClass(pygame.sprite.Sprite):
 	def __init__(self, img_path, location, attribute):
 		pygame.sprite.Sprite.__init__(self)
@@ -58,12 +59,12 @@ class ObstacleClass(pygame.sprite.Sprite):
 		self.rect.center = self.location
 		self.attribute = attribute
 		self.passed = False
-	# 移动
+	'''移动'''
 	def move(self, num):
 		self.rect.centery = self.location[1] - num
 
 
-# 创建障碍物
+'''创建障碍物'''
 def create_obstacles(s, e, num=10):
 	obstacles = pygame.sprite.Group()
 	locations = []
@@ -80,7 +81,7 @@ def create_obstacles(s, e, num=10):
 	return obstacles
 
 
-# 合并障碍物
+'''合并障碍物'''
 def AddObstacles(obstacles0, obstacles1):
 	obstacles = pygame.sprite.Group()
 	for obstacle in obstacles0:
@@ -90,7 +91,7 @@ def AddObstacles(obstacles0, obstacles1):
 	return obstacles
 
 
-# 显示游戏开始界面
+'''显示游戏开始界面'''
 def Show_Start_Interface(Demo, width, height):
 	Demo.fill((255, 255, 255))
 	tfont = pygame.font.Font('./font/simkai.ttf', width//4)
@@ -112,11 +113,9 @@ def Show_Start_Interface(Demo, width, height):
 				return
 
 
-# 主程序
+'''主程序'''
 def main():
-	'''
-	初始化
-	'''
+	# 初始化
 	pygame.init()
 	# 声音
 	pygame.mixer.init()
@@ -144,9 +143,6 @@ def main():
 	# 速度
 	speed = [0, 6]
 	Show_Start_Interface(screen, 640, 640)
-	'''
-	主循环
-	'''
 	# 更新屏幕
 	def update():
 		screen.fill([255, 255, 255])
@@ -154,6 +150,7 @@ def main():
 		screen.blit(skier.person, skier.rect)
 		screen.blit(score_text, [10, 10])
 		pygame.display.flip()
+	# 主循环
 	while True:
 		# 左右键控制人物方向
 		for event in pygame.event.get():
@@ -201,5 +198,6 @@ def main():
 		clock.tick(40)
 
 
+'''run'''
 if __name__ == '__main__':
 	main()

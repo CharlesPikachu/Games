@@ -1,4 +1,3 @@
-# coding: utf-8
 '''
 Function:
 	仿八分音符的声控小游戏
@@ -50,7 +49,7 @@ class VCGame(cocos.layer.ColorLayer):
 								 input=True, 
 								 frames_per_buffer=self.numSamples)
 		self.schedule(self.update)
-	# 碰撞检测
+	'''碰撞检测'''
 	def collide(self):
 		diffx = self.pikachu.x - self.floor.x
 		for b in self.floor.get_children():
@@ -58,7 +57,7 @@ class VCGame(cocos.layer.ColorLayer):
 				if self.pikachu.y < b.height:
 					self.pikachu.land(b.height)
 					break
-	# 定义游戏规则
+	'''定义游戏规则'''
 	def update(self, dt):
 		# 获取每帧的音量
 		audio_data = self.stream.read(self.numSamples)
@@ -69,11 +68,12 @@ class VCGame(cocos.layer.ColorLayer):
 		if k > 8000:
 			self.pikachu.jump((k - 8000) / 1000.0)
 		self.collide()
-	# 重置
+	'''重置'''
 	def reset(self):
 		self.floor.x = 0
 
 
+'''run'''
 if __name__ == '__main__':
 	cocos.director.director.init(caption="Pikachu~~~")
 	cocos.director.director.run(cocos.scene.Scene(VCGame()))
