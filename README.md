@@ -1,11 +1,11 @@
 # Games
-```sh
+```
 Some games created by python code.
 You can star this repository to keep track of the project if it's helpful for you, thank you for your support.
 ```
 
 # Statement
-```sh
+```
 Most of the game materals(including music, fonts and pictures) in this repository are collected from the web, copyright belongs to the original author.
 This repository is created just for learning python(Commercial prohibition).
 ```
@@ -33,7 +33,7 @@ This repository is created just for learning python(Commercial prohibition).
 - Game20: [Maze](https://github.com/CharlesPikachu/Games/tree/master/Game20)
 
 # Record
-[click](./RECORD)
+see RECORD dir please → [click](./RECORD)
 
 # More
 #### WeChat Official Accounts
