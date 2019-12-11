@@ -138,11 +138,12 @@ while running:
 			bulletrect = pygame.Rect(arrow_img.get_rect())
 			bulletrect.left = bullet[1]
 			bulletrect.top = bullet[2]
-			if badrect.colliderect(bulletrect):
-				enemy.play()
-				acc[0] += 1
-				badguys.pop(index_badguy)
-				arrows.pop(index_arrow)
+			if badguys:
+				if badrect.colliderect(bulletrect):
+					enemy.play()
+					acc[0] += 1
+					badguys.pop(index_badguy)
+					arrows.pop(index_arrow)
 			index_arrow += 1
 		index_badguy += 1
 	for badguy in badguys:
