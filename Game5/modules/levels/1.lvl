@@ -1,0 +1,39 @@
+##############################################
+# Explain:                                   #
+# 	Grid: 26 * 26                            #
+# 	Grid SIZE: 24 * 24 pixels                #
+#   S: Space      B: Brick      I: Iron      #
+#   R: River1/2   C: Ice        T: Tree      #
+##############################################
+%TOTALENEMYNUM:30
+%MAXENEMYNUM:6
+%HOMEPOS:12,24
+%HOMEAROUNDPOS:11,23 12,23 13,23 14,23 11,24 14,24 11,25 14,25
+%PLAYERTANKPOS:8,24 16,24
+%ENEMYTANKPOS:0,0 12,0 24,0
+S S S S S S S S S S S S S S S S S S S S S S S S S S
+S S S S S S S S S S S S S S S S S S S S S S S S S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S B B I I B B S S B B S S B B S S
+S S B B S S B B S S B B I I B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S S S S S S S S S B B S S B B S S
+S S B B S S B B S S S S S S S S S S B B S S B B S S
+S S S S S S S S S S B B S S B B S S S S S S S S S S
+S S S S S S S S S S B B S S B B S S S S S S S S S S
+S S S S B B B B S S S S S S S S S S B B B B S S S S
+I I S S B B B B S S S S S S S S S S B B B B S S I I
+S S S S S S S S S S B B S S B B S S S S S S S S S S
+S S S S S S S S S S B B B B B B S S S S S S S S S S
+S S B B S S B B S S B B B B B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S B B S S B B S S B B S S B B S S
+S S B B S S B B S S S S S S S S S S B B S S B B S S
+S S B B S S B B S S S S S S S S S S B B S S B B S S
+S S B B S S B B S S S B B B B S S S B B S S B B S S
+S S S S S S S S S S S B S S B S S S S S S S S S S S
+S S S S S S S S S S S B S S B S S S S S S S S S S S
