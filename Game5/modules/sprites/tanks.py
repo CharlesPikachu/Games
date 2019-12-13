@@ -14,7 +14,7 @@ from .bullet import Bullet
 
 '''玩家坦克类'''
 class PlayerTank(pygame.sprite.Sprite):
-	def __init__(self, name, player_tank_image_paths, position, border_len, screensize, direction='up', bullet_image_paths=None, protected_mask_path=None, **kwargs):
+	def __init__(self, name, player_tank_image_paths, position, border_len, screensize, direction='up', bullet_image_paths=None, protected_mask_path=None, boom_image_path=None, **kwargs):
 		pygame.sprite.Sprite.__init__(self)
 		# 玩家1/玩家2
 		self.name = name
@@ -35,12 +35,20 @@ class PlayerTank(pygame.sprite.Sprite):
 		self.protected_mask_flash_time = 25
 		self.protected_mask_flash_count = 0
 		self.protected_mask_pointer = False
+		# 坦克爆炸图
+		self.boom_image = pygame.image.load(boom_image_path)
+		self.boom_last_time = 5
+		self.booming_flag = False
+		self.boom_count = 0
 		# 坦克生命数量
 		self.num_lifes = 3
 		# 重置
 		self.reset()
 	'''移动'''
 	def move(self, direction, scene_elems, player_tanks_group, enemy_tanks_group, home):
+		# 爆炸时无法移动
+		if self.booming_flag:
+			return
 		# 方向不一致先改变方向
 		if self.direction != direction:
 			self.setDirection(direction)
@@ -107,6 +115,14 @@ class PlayerTank(pygame.sprite.Sprite):
 			if self.protected_count > self.protected_time:
 				self.is_protected = False
 				self.protected_count = 0
+		# 爆炸状态更新
+		if self.booming_flag:
+			self.image = self.boom_image
+			self.boom_count += 1
+			if self.boom_count > self.boom_last_time:
+				self.boom_count = 0
+				self.booming_flag = False
+				self.reset()
 	'''设置坦克方向'''
 	def setDirection(self, direction):
 		self.direction = direction
@@ -120,6 +136,10 @@ class PlayerTank(pygame.sprite.Sprite):
 			self.tank_direction_image = self.tank_image.subsurface((0, 144), (96, 48))
 	'''射击'''
 	def shoot(self):
+		# 爆炸时无法射击
+		if self.booming_flag:
+			return False
+		# 子弹不在冷却状态时
 		if not self.is_bullet_cooling:
 			self.is_bullet_cooling = True
 			if self.tanklevel == 0:
@@ -128,7 +148,7 @@ class PlayerTank(pygame.sprite.Sprite):
 			elif self.tanklevel == 1:
 				is_stronger = False
 				speed = 10
-			elif self.tanklevel == 2:
+			elif self.tanklevel >= 2:
 				is_stronger = True
 				speed = 10
 			if self.direction == 'up':
@@ -143,21 +163,24 @@ class PlayerTank(pygame.sprite.Sprite):
 		return False
 	'''提高坦克等级'''
 	def improveTankLevel(self):
+		if not self.booming_flag:
+			return
 		self.tanklevel = min(self.tanklevel+1, len(self.player_tank_image_paths)-1)
 		self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
 		self.setDirection(self.direction)
 		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
 	'''降低坦克等级'''
 	def decreaseTankLevel(self):
-		self.tanklevel -= 1
-		if self.tanklevel < 0:
-			self.num_lifes -= 1
-			self.reset()
-			return 'dead'
-		self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
-		self.setDirection(self.direction)
-		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
-		return 'down_level'
+		if not self.booming_flag:
+			self.tanklevel -= 1
+			if self.tanklevel < 0:
+				self.num_lifes -= 1
+				self.booming_flag = True
+			else:
+				self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
+				self.setDirection(self.direction)
+				self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+		return True if self.tanklevel < 0 else False
 	'''增加生命值'''
 	def addLife(self):
 		self.num_lifes += 1
@@ -206,7 +229,7 @@ class PlayerTank(pygame.sprite.Sprite):
 
 '''敌方坦克类'''
 class EnemyTank(pygame.sprite.Sprite):
-	def __init__(self, enemy_tank_image_paths, appear_image_path, position, border_len, screensize, bullet_image_paths=None, food_image_paths=None, **kwargs):
+	def __init__(self, enemy_tank_image_paths, appear_image_path, position, border_len, screensize, bullet_image_paths=None, food_image_paths=None, boom_image_path=None, **kwargs):
 		pygame.sprite.Sprite.__init__(self)
 		self.bullet_image_paths = bullet_image_paths
 		self.border_len = border_len
@@ -238,6 +261,11 @@ class EnemyTank(pygame.sprite.Sprite):
 		self.rect = self.image.get_rect()
 		self.rect.left, self.rect.top = position
 		self.image = self.appear_images[0]
+		# 坦克爆炸图
+		self.boom_image = pygame.image.load(boom_image_path)
+		self.boom_last_time = 5
+		self.boom_count = 0
+		self.booming_flag = False
 		# 子弹冷却时间
 		self.bullet_cooling_time = 120 - self.tanklevel * 10
 		self.bullet_cooling_count = 0
@@ -261,7 +289,7 @@ class EnemyTank(pygame.sprite.Sprite):
 			elif self.tanklevel == 1:
 				is_stronger = False
 				speed = 10
-			elif (self.tanklevel == 2) or (self.tanklevel == 3):
+			elif self.tanklevel >= 2:
 				is_stronger = False
 				speed = 10
 			if self.direction == 'up':
@@ -277,6 +305,16 @@ class EnemyTank(pygame.sprite.Sprite):
 	'''实时更新坦克'''
 	def update(self, scene_elems, player_tanks_group, enemy_tanks_group, home):
 		data_return = dict()
+		# 死后爆炸
+		if self.booming_flag:
+			self.image = self.boom_image
+			self.boom_count += 1
+			data_return['boomed'] = False
+			if self.boom_count > self.boom_last_time:
+				self.boom_count = 0
+				self.booming_flag = False
+				data_return['boomed'] = True
+			return data_return
 		# 禁止行动时不更新
 		if self.is_keep_still:
 			self.keep_still_count += 1
@@ -424,15 +462,14 @@ class EnemyTank(pygame.sprite.Sprite):
 			self.tank_direction_image = self.tank_image.subsurface((0, 144), (96, 48))
 	'''降低坦克等级'''
 	def decreaseTankLevel(self):
-		self.tanklevel -= 1
-		self.tank_image = pygame.image.load(self.enemy_tank_image_paths[self.tanklevel]).convert_alpha()
-		self.setDirection(self.direction)
-		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
-		if self.tanklevel < 0:
-			state = 'dead'
-		else:
-			state = 'down_level'
-		return state
+		if not self.booming_flag:
+			self.tanklevel -= 1
+			self.tank_image = pygame.image.load(self.enemy_tank_image_paths[self.tanklevel]).convert_alpha()
+			self.setDirection(self.direction)
+			self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+			if self.tanklevel < 0:
+				self.booming_flag = True
+		return True if self.tanklevel < 0 else False
 	'''设置静止'''
 	def setStill(self):
 		self.is_keep_still = True

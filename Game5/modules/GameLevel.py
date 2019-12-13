@@ -58,18 +58,18 @@ class GameLevel():
 		foods_group = pygame.sprite.Group()
 		# 定义敌方坦克生成事件
 		generate_enemies_event = pygame.constants.USEREVENT
-		pygame.time.set_timer(generate_enemies_event, 30000)
+		pygame.time.set_timer(generate_enemies_event, 20000)
 		# 我方大本营
 		home = Home(position=self.home_position, imagepaths=self.home_image_paths)
 		# 我方坦克
-		tank_player1 = PlayerTank('player1', position=self.player_tank_positions[0], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, protected_mask_path=self.other_image_paths.get('protect'))
+		tank_player1 = PlayerTank('player1', position=self.player_tank_positions[0], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, protected_mask_path=self.other_image_paths.get('protect'), boom_image_path=self.other_image_paths.get('boom_static'))
 		player_tanks_group.add(tank_player1)
 		if self.is_dual_mode:
-			tank_player2 = PlayerTank('player2', position=self.player_tank_positions[1], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, protected_mask_path=self.other_image_paths.get('protect'))
+			tank_player2 = PlayerTank('player2', position=self.player_tank_positions[1], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, protected_mask_path=self.other_image_paths.get('protect'), boom_image_path=self.other_image_paths.get('boom_static'))
 			player_tanks_group.add(tank_player2)
 		# 敌方坦克
 		for position in self.enemy_tank_positions:
-			enemy_tanks_group.add(EnemyTank(enemy_tank_image_paths=self.enemy_tank_image_paths, appear_image_path=self.other_image_paths.get('appear'), position=position, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, food_image_paths=self.food_image_paths))
+			enemy_tanks_group.add(EnemyTank(enemy_tank_image_paths=self.enemy_tank_image_paths, appear_image_path=self.other_image_paths.get('appear'), position=position, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, food_image_paths=self.food_image_paths, boom_image_path=self.other_image_paths.get('boom_static')))
 		# 游戏开始音乐
 		self.sounds['start'].play()
 		clock = pygame.time.Clock()
@@ -91,35 +91,36 @@ class GameLevel():
 						for position in self.enemy_tank_positions:
 							if len(enemy_tanks_group) == self.total_enemy_num:
 								break
-							enemy_tank = EnemyTank(enemy_tank_image_paths=self.enemy_tank_image_paths, appear_image_path=self.other_image_paths.get('appear'), position=position, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, food_image_paths=self.food_image_paths)
+							enemy_tank = EnemyTank(enemy_tank_image_paths=self.enemy_tank_image_paths, appear_image_path=self.other_image_paths.get('appear'), position=position, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, food_image_paths=self.food_image_paths, boom_image_path=self.other_image_paths.get('boom_static'))
 							if (not pygame.sprite.spritecollide(enemy_tank, enemy_tanks_group, False, None)) and (not pygame.sprite.spritecollide(enemy_tank, player_tanks_group, False, None)):
 								enemy_tanks_group.add(enemy_tank)
 			# --用户按键
 			key_pressed = pygame.key.get_pressed()
 			# 玩家一, WSAD移动, 空格键射击
-			if key_pressed[pygame.K_w]:
-				player_tanks_group.remove(tank_player1)
-				tank_player1.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
-				player_tanks_group.add(tank_player1)
-			elif key_pressed[pygame.K_s]:
-				player_tanks_group.remove(tank_player1)
-				tank_player1.move('down', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
-				player_tanks_group.add(tank_player1)
-			elif key_pressed[pygame.K_a]:
-				player_tanks_group.remove(tank_player1)
-				tank_player1.move('left', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
-				player_tanks_group.add(tank_player1)
-			elif key_pressed[pygame.K_d]:
-				player_tanks_group.remove(tank_player1)
-				tank_player1.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
-				player_tanks_group.add(tank_player1)
-			elif key_pressed[pygame.K_SPACE]:
-				self.sounds['fire'].play() if tank_player1.tanklevel < 2 else self.sounds['Gunfire'].play()
-				bullet = tank_player1.shoot()
-				if bullet:
-					player_bullets_group.add(bullet)
+			if tank_player1.num_lifes >= 0:
+				if key_pressed[pygame.K_w]:
+					player_tanks_group.remove(tank_player1)
+					tank_player1.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
+					player_tanks_group.add(tank_player1)
+				elif key_pressed[pygame.K_s]:
+					player_tanks_group.remove(tank_player1)
+					tank_player1.move('down', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
+					player_tanks_group.add(tank_player1)
+				elif key_pressed[pygame.K_a]:
+					player_tanks_group.remove(tank_player1)
+					tank_player1.move('left', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
+					player_tanks_group.add(tank_player1)
+				elif key_pressed[pygame.K_d]:
+					player_tanks_group.remove(tank_player1)
+					tank_player1.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
+					player_tanks_group.add(tank_player1)
+				elif key_pressed[pygame.K_SPACE]:
+					self.sounds['fire'].play() if tank_player1.tanklevel < 2 else self.sounds['Gunfire'].play()
+					bullet = tank_player1.shoot()
+					if bullet:
+						player_bullets_group.add(bullet)
 			# 玩家二, ↑↓←→移动, 小键盘0键射击
-			if self.is_dual_mode:
+			if self.is_dual_mode and (tank_player2.num_lifes >= 0):
 				if key_pressed[pygame.K_UP]:
 					player_tanks_group.remove(tank_player2)
 					tank_player2.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
@@ -158,19 +159,16 @@ class GameLevel():
 					if tank.food:
 						foods_group.add(tank.food)
 						tank.food = None
-					state = tank.decreaseTankLevel()
-					if state == 'dead':
+					if tank.decreaseTankLevel():
 						self.sounds['bang'].play()
 						self.total_enemy_num -= 1
-						enemy_tanks_group.remove(tank)
 			# --敌方子弹撞我方坦克
 			for tank in player_tanks_group:
 				if pygame.sprite.spritecollide(tank, enemy_bullets_group, True, None):
 					if tank.is_protected:
 						self.sounds['blast'].play()
 					else:
-						state = tank.decreaseTankLevel()
-						if state == 'dead':
+						if tank.decreaseTankLevel():
 							self.sounds['bang'].play()
 						if tank.num_lifes < 0:
 							player_tanks_group.remove(tank)
@@ -243,6 +241,8 @@ class GameLevel():
 				enemy_tanks_group.add(tank)
 				if data_return.get('bullet'):
 					enemy_bullets_group.add(data_return.get('bullet'))
+				if data_return.get('boomed'):
+					enemy_tanks_group.remove(tank)
 			enemy_tanks_group.draw(screen)
 			# 画场景地图
 			for key, value in self.scene_elems.items():
