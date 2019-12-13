@@ -115,9 +115,9 @@ class GameLevel():
 					tank_player1.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 					player_tanks_group.add(tank_player1)
 				elif key_pressed[pygame.K_SPACE]:
-					self.sounds['fire'].play() if tank_player1.tanklevel < 2 else self.sounds['Gunfire'].play()
 					bullet = tank_player1.shoot()
 					if bullet:
+						self.sounds['fire'].play() if tank_player1.tanklevel < 2 else self.sounds['Gunfire'].play()
 						player_bullets_group.add(bullet)
 			# 玩家二, ↑↓←→移动, 小键盘0键射击
 			if self.is_dual_mode and (tank_player2.num_lifes >= 0):
@@ -138,11 +138,10 @@ class GameLevel():
 					tank_player2.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 					player_tanks_group.add(tank_player2)
 				elif key_pressed[pygame.K_KP0]:
-					self.sounds['fire'].play()
-					self.sounds['fire'].play() if tank_player2.tanklevel < 2 else self.sounds['Gunfire'].play()
 					bullet = tank_player2.shoot()
 					if bullet:
 						player_bullets_group.add(bullet)
+						self.sounds['fire'].play() if tank_player2.tanklevel < 2 else self.sounds['Gunfire'].play()
 			# 碰撞检测
 			# --子弹和砖墙
 			pygame.sprite.groupcollide(player_bullets_group, self.scene_elems.get('brick_group'), True, True)
