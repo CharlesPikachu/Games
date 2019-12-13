@@ -218,6 +218,10 @@ class GameLevel():
 							self.sounds['add'].play()
 							player_tank.addLife()
 						foods_group.remove(food)
+			# 画场景地图
+			for key, value in self.scene_elems.items():
+				if key in ['ice_group', 'river_group']:
+					value.draw(screen)
 			# 更新并画我方子弹
 			for bullet in player_bullets_group:
 				if bullet.move():
@@ -242,7 +246,8 @@ class GameLevel():
 			enemy_tanks_group.draw(screen)
 			# 画场景地图
 			for key, value in self.scene_elems.items():
-				value.draw(screen)
+				if key not in ['ice_group', 'river_group']:
+					value.draw(screen)
 			# 画大本营
 			home.draw(screen)
 			# 更新并显示食物
@@ -403,6 +408,6 @@ class GameLevel():
 					elif elem == 'R':
 						self.scene_elems['river_group'].add(River(position, self.scene_image_paths.get(random.choice(['river1', 'river2']))))
 					elif elem == 'C':
-						self.scene_elems['ice_group'].add(Iron(position, self.scene_image_paths.get('ice')))
+						self.scene_elems['ice_group'].add(Ice(position, self.scene_image_paths.get('ice')))
 					elif elem == 'T':
-						self.scene_elems['tree_group'].add(Iron(position, self.scene_image_paths.get('tree')))
+						self.scene_elems['tree_group'].add(Tree(position, self.scene_image_paths.get('tree')))
