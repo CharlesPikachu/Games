@@ -26,7 +26,7 @@ class Bullet(pygame.sprite.Sprite):
 		self.is_stronger = is_stronger
 		# 子弹速度
 		self.speed = speed
-	'''移动子弹, 若子弹越界, 则返回False, 否则为True'''
+	'''移动子弹, 若子弹越界, 则返回True, 否则为False'''
 	def move(self):
 		if self.direction == 'up':
 			self.rect = self.rect.move(0, -self.speed)
@@ -37,5 +37,5 @@ class Bullet(pygame.sprite.Sprite):
 		elif self.direction == 'right':
 			self.rect = self.rect.move(self.speed, 0)
 		if (self.rect.top < self.border_len) or (self.rect.bottom > self.height) or (self.rect.left < self.border_len) or (self.rect.right > self.width):
-			return False
-		return True
+			return True
+		return False

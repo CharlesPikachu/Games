@@ -30,8 +30,8 @@ def main(cfg):
 	levelfilepaths = [os.path.join(cfg.LEVELFILEDIR, filename) for filename in sorted(os.listdir(cfg.LEVELFILEDIR))]
 	# 主循环
 	for idx, levelfilepath in enumerate(levelfilepaths):
-		switchLevelIterface(screen, cfg, idx+1)
-		game_level = GameLevel(levelfilepath, sounds, is_dual_mode, cfg)
+		# switchLevelIterface(screen, cfg, idx+1)
+		game_level = GameLevel(idx+1, levelfilepath, sounds, is_dual_mode, cfg)
 		is_win = game_level.start(screen)
 		if not is_win: break
 	is_quit_game = gameEndIterface(screen, cfg, is_win)

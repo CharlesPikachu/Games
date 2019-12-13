@@ -10,7 +10,7 @@ import os
 
 
 '''字体'''
-FONTPATH = os.path.join(os.getcwd(), 'resources/font/font.TTF')
+FONTPATH = os.path.join(os.getcwd(), 'resources/font/font.ttf')
 '''图片'''
 BULLET_IMAGE_PATHS = {
 					  'up': os.path.join(os.getcwd(), 'resources/images/bullet/bullet_up.png'),
@@ -90,6 +90,7 @@ WIDTH = 630
 HEIGHT = 630
 BORDER_LEN = 3
 GRID_SIZE = 24
+PANEL_WIDTH = 150
 TITLE = '坦克大战-微信公众号: Charles的皮卡丘'
 '''关卡'''
 LEVELFILEDIR = os.path.join(os.getcwd(), 'modules/levels')

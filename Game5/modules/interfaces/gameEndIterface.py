@@ -15,7 +15,7 @@ def gameEndIterface(screen, cfg, is_win=True):
 	background_img = pygame.image.load(cfg.OTHER_IMAGE_PATHS.get('background'))
 	color_white = (255, 255, 255)
 	color_red = (255, 0, 0)
-	font = pygame.font.Font(cfg.FONTPATH, cfg.WIDTH//15)
+	font = pygame.font.Font(cfg.FONTPATH, cfg.WIDTH//12)
 	# 游戏失败图
 	gameover_img = pygame.image.load(cfg.OTHER_IMAGE_PATHS.get('gameover'))
 	gameover_img = pygame.transform.scale(gameover_img, (150, 75))

@@ -101,3 +101,8 @@ Version: v0.1
 add Game20: Maze, in https://github.com/CharlesPikachu/Games/tree/master/Game20
 Version: v0.1
 ```
+#### 2019-12-13
+```
+update Game5: tank war, in in https://github.com/CharlesPikachu/Games/tree/master/Game20
+Version: v0.2
+```

@@ -15,7 +15,7 @@ def gameStartInterface(screen, cfg):
 	background_img = pygame.image.load(cfg.OTHER_IMAGE_PATHS.get('background'))
 	color_white = (255, 255, 255)
 	color_red = (255, 0, 0)
-	font = pygame.font.Font(cfg.FONTPATH, cfg.WIDTH//15)
+	font = pygame.font.Font(cfg.FONTPATH, cfg.WIDTH//12)
 	logo_img = pygame.image.load(cfg.OTHER_IMAGE_PATHS.get('logo'))
 	logo_img = pygame.transform.scale(logo_img, (446, 70))
 	logo_rect = logo_img.get_rect()

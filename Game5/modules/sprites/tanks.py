@@ -31,7 +31,10 @@ class PlayerTank(pygame.sprite.Sprite):
 		# 子弹图片
 		self.bullet_image_paths = bullet_image_paths
 		# 保护罩图片路径
-		self.protected_mask = pygame.image.load(protected_mask_path).subsurface((0, 0), (48, 48))
+		self.protected_mask = pygame.image.load(protected_mask_path)
+		self.protected_mask_flash_time = 25
+		self.protected_mask_flash_count = 0
+		self.protected_mask_pointer = False
 		# 坦克生命数量
 		self.num_lifes = 3
 		# 重置
@@ -143,16 +146,18 @@ class PlayerTank(pygame.sprite.Sprite):
 		self.tanklevel = min(self.tanklevel+1, len(self.player_tank_image_paths)-1)
 		self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
 		self.setDirection(self.direction)
+		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
 	'''降低坦克等级'''
 	def decreaseTankLevel(self):
 		self.tanklevel -= 1
 		if self.tanklevel < 0:
 			self.num_lifes -= 1
 			self.reset()
-		else:
-			self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
-			self.setDirection(self.direction)
-		return True if self.num_lifes < 0 else False
+			return 'dead'
+		self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
+		self.setDirection(self.direction)
+		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+		return 'down_level'
 	'''增加生命值'''
 	def addLife(self):
 		self.num_lifes += 1
@@ -163,7 +168,11 @@ class PlayerTank(pygame.sprite.Sprite):
 	def draw(self, screen):
 		screen.blit(self.image, self.rect)
 		if self.is_protected:
-			screen.blit(self.protected_mask, self.rect)
+			self.protected_mask_flash_count += 1
+			if self.protected_mask_flash_count > self.protected_mask_flash_time:
+				self.protected_mask_pointer = not self.protected_mask_pointer
+				self.protected_mask_flash_count = 0
+			screen.blit(self.protected_mask.subsurface((48*self.protected_mask_pointer, 0), (48, 48)), self.rect)
 	'''重置坦克, 重生的时候用'''
 	def reset(self):
 		# 坦克方向
@@ -228,6 +237,7 @@ class EnemyTank(pygame.sprite.Sprite):
 		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
 		self.rect = self.image.get_rect()
 		self.rect.left, self.rect.top = position
+		self.image = self.appear_images[0]
 		# 子弹冷却时间
 		self.bullet_cooling_time = 120 - self.tanklevel * 10
 		self.bullet_cooling_count = 0
@@ -417,7 +427,12 @@ class EnemyTank(pygame.sprite.Sprite):
 		self.tanklevel -= 1
 		self.tank_image = pygame.image.load(self.enemy_tank_image_paths[self.tanklevel]).convert_alpha()
 		self.setDirection(self.direction)
-		return True if self.tanklevel < 0 else False
+		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+		if self.tanklevel < 0:
+			state = 'dead'
+		else:
+			state = 'down_level'
+		return state
 	'''设置静止'''
 	def setStill(self):
 		self.is_keep_still = True
