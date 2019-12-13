@@ -14,7 +14,7 @@ from .bullet import Bullet
 
 '''玩家坦克类'''
 class PlayerTank(pygame.sprite.Sprite):
-	def __init__(self, name, player_tank_image_paths, position, border_len, screensize, direction='up', bullet_image_paths=None, **kwargs):
+	def __init__(self, name, player_tank_image_paths, position, border_len, screensize, direction='up', bullet_image_paths=None, protected_mask_path=None, **kwargs):
 		pygame.sprite.Sprite.__init__(self)
 		# 玩家1/玩家2
 		self.name = name
@@ -30,6 +30,8 @@ class PlayerTank(pygame.sprite.Sprite):
 		self.init_position = position
 		# 子弹图片
 		self.bullet_image_paths = bullet_image_paths
+		# 保护罩图片路径
+		self.protected_mask = pygame.image.load(protected_mask_path).subsurface((0, 0), (48, 48))
 		# 坦克生命数量
 		self.num_lifes = 3
 		# 重置
@@ -157,6 +159,11 @@ class PlayerTank(pygame.sprite.Sprite):
 	'''设置为无敌状态'''
 	def setProtected(self):
 		self.is_protected = True
+	'''画我方坦克'''
+	def draw(self, screen):
+		screen.blit(self.image, self.rect)
+		if self.is_protected:
+			screen.blit(self.protected_mask, self.rect)
 	'''重置坦克, 重生的时候用'''
 	def reset(self):
 		# 坦克方向
@@ -166,7 +173,7 @@ class PlayerTank(pygame.sprite.Sprite):
 		self.move_cache_count = 0
 		# 是否无敌状态
 		self.is_protected = False
-		self.protected_time = 500
+		self.protected_time = 1500
 		self.protected_count = 0
 		# 坦克移动速度
 		self.speed = 8

@@ -72,7 +72,8 @@ OTHER_IMAGE_PATHS = {
 						'logo': os.path.join(os.getcwd(), 'resources/images/others/logo.png'),
 						'mask': os.path.join(os.getcwd(), 'resources/images/others/mask.png'),
 						'protect': os.path.join(os.getcwd(), 'resources/images/others/protect.png'),
-						'tip': os.path.join(os.getcwd(), 'resources/images/others/tip.png')
+						'tip': os.path.join(os.getcwd(), 'resources/images/others/tip.png'),
+						'gamebar': os.path.join(os.getcwd(), 'resources/images/others/gamebar.png')
 					}
 '''声音'''
 AUDIO_PATHS = {

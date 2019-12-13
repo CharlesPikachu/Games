@@ -34,9 +34,13 @@ def main(cfg):
 		game_level = GameLevel(levelfilepath, sounds, is_dual_mode, cfg)
 		is_win = game_level.start(screen)
 		if not is_win: break
-	gameEndIterface(screen, cfg, is_win)
+	is_quit_game = gameEndIterface(screen, cfg, is_win)
+	return is_quit_game
 
 
 '''run'''
 if __name__ == '__main__':
-	main(cfg)
+	while True:
+		is_quit_game = main(cfg)
+		if is_quit_game:
+			break

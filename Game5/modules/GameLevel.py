@@ -57,10 +57,10 @@ class GameLevel():
 		# 我方大本营
 		home = Home(position=self.home_position, imagepaths=self.home_image_paths)
 		# 我方坦克
-		tank_player1 = PlayerTank('player1', position=self.player_tank_positions[0], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths)
+		tank_player1 = PlayerTank('player1', position=self.player_tank_positions[0], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, protected_mask_path=self.other_image_paths.get('protect'))
 		player_tanks_group.add(tank_player1)
 		if self.is_dual_mode:
-			tank_player2 = PlayerTank('player2', position=self.player_tank_positions[1], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths)
+			tank_player2 = PlayerTank('player2', position=self.player_tank_positions[1], player_tank_image_paths=self.player_tank_image_paths, border_len=self.border_len, screensize=[self.width, self.height], bullet_image_paths=self.bullet_image_paths, protected_mask_path=self.other_image_paths.get('protect'))
 			player_tanks_group.add(tank_player2)
 		# 敌方坦克
 		for position in self.enemy_tank_positions:
@@ -210,7 +210,7 @@ class GameLevel():
 			# 更新并画我方坦克
 			for tank in player_tanks_group:
 				tank.update()
-			player_tanks_group.draw(screen)
+				tank.draw(screen)
 			# 更新并画敌方坦克
 			for tank in enemy_tanks_group:
 				enemy_tanks_group.remove(tank)
