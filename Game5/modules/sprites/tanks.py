@@ -35,7 +35,7 @@ class PlayerTank(pygame.sprite.Sprite):
 		# 重置
 		self.reset()
 	'''移动'''
-	def move(self, direction, scene_elems, player_tanks_group, enemy_tanks_group):
+	def move(self, direction, scene_elems, player_tanks_group, enemy_tanks_group, home):
 		# 方向不一致先改变方向
 		if self.direction != direction:
 			self.setDirection(direction)
@@ -69,6 +69,9 @@ class PlayerTank(pygame.sprite.Sprite):
 			self.rect = rect_ori
 		# --碰到敌方坦克
 		if pygame.sprite.spritecollide(self, enemy_tanks_group, False, None):
+			self.rect = rect_ori
+		# --碰到玩家大本营
+		if pygame.sprite.collide_rect(self, home):
 			self.rect = rect_ori
 		# --碰到边界
 		if self.rect.left < self.border_len:
@@ -219,7 +222,7 @@ class EnemyTank(pygame.sprite.Sprite):
 		self.rect = self.image.get_rect()
 		self.rect.left, self.rect.top = position
 		# 子弹冷却时间
-		self.bullet_cooling_time = 200 - self.tanklevel * 50
+		self.bullet_cooling_time = 120 - self.tanklevel * 10
 		self.bullet_cooling_count = 0
 		self.is_bullet_cooling = False
 		# 用于给刚生成的坦克播放出生特效
@@ -255,7 +258,7 @@ class EnemyTank(pygame.sprite.Sprite):
 			return Bullet(bullet_image_paths=self.bullet_image_paths, screensize=self.screensize, direction=self.direction, position=position, border_len=self.border_len, is_stronger=is_stronger, speed=speed)
 		return False
 	'''实时更新坦克'''
-	def update(self, scene_elems, player_tanks_group, enemy_tanks_group):
+	def update(self, scene_elems, player_tanks_group, enemy_tanks_group, home):
 		data_return = dict()
 		# 禁止行动时不更新
 		if self.is_keep_still:
@@ -290,7 +293,7 @@ class EnemyTank(pygame.sprite.Sprite):
 		# 出生后实时更新
 		else:
 			# --坦克移动
-			self.move(scene_elems, player_tanks_group, enemy_tanks_group)
+			self.move(scene_elems, player_tanks_group, enemy_tanks_group, home)
 			# --坦克子弹冷却更新
 			if self.is_bullet_cooling:
 				self.bullet_cooling_count += 1
@@ -301,7 +304,7 @@ class EnemyTank(pygame.sprite.Sprite):
 			data_return['bullet'] = self.shoot()
 		return data_return
 	'''随机移动坦克'''
-	def move(self, scene_elems, player_tanks_group, enemy_tanks_group):
+	def move(self, scene_elems, player_tanks_group, enemy_tanks_group, home):
 		# 移动(使用缓冲)
 		self.move_cache_count += 1
 		if self.move_cache_count < self.move_cache_time:
@@ -340,6 +343,13 @@ class EnemyTank(pygame.sprite.Sprite):
 			self.move_cache_count = self.move_cache_time
 		# --碰到其他敌方坦克
 		if pygame.sprite.spritecollide(self, enemy_tanks_group, False, None):
+			self.rect = rect_ori
+			self.direction = random.choice(['up', 'down', 'left', 'right'])
+			self.setDirection(self.direction)
+			self.switch_count = self.switch_time
+			self.move_cache_count = self.move_cache_time
+		# --碰到玩家大本营
+		if pygame.sprite.collide_rect(self, home):
 			self.rect = rect_ori
 			self.direction = random.choice(['up', 'down', 'left', 'right'])
 			self.setDirection(self.direction)

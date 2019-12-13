@@ -93,19 +93,19 @@ class GameLevel():
 			# 玩家一, WSAD移动, 空格键射击
 			if key_pressed[pygame.K_w]:
 				player_tanks_group.remove(tank_player1)
-				tank_player1.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group)
+				tank_player1.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 				player_tanks_group.add(tank_player1)
 			elif key_pressed[pygame.K_s]:
 				player_tanks_group.remove(tank_player1)
-				tank_player1.move('down', self.scene_elems, player_tanks_group, enemy_tanks_group)
+				tank_player1.move('down', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 				player_tanks_group.add(tank_player1)
 			elif key_pressed[pygame.K_a]:
 				player_tanks_group.remove(tank_player1)
-				tank_player1.move('left', self.scene_elems, player_tanks_group, enemy_tanks_group)
+				tank_player1.move('left', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 				player_tanks_group.add(tank_player1)
 			elif key_pressed[pygame.K_d]:
 				player_tanks_group.remove(tank_player1)
-				tank_player1.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group)
+				tank_player1.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 				player_tanks_group.add(tank_player1)
 			elif key_pressed[pygame.K_SPACE]:
 				self.sounds['fire'].play()
@@ -116,19 +116,19 @@ class GameLevel():
 			if self.is_dual_mode:
 				if key_pressed[pygame.K_UP]:
 					player_tanks_group.remove(tank_player2)
-					tank_player2.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group)
+					tank_player2.move('up', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 					player_tanks_group.add(tank_player2)
 				elif key_pressed[pygame.K_DOWN]:
 					player_tanks_group.remove(tank_player2)
-					tank_player2.move('down', self.scene_elems, player_tanks_group, enemy_tanks_group)
+					tank_player2.move('down', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 					player_tanks_group.add(tank_player2)
 				elif key_pressed[pygame.K_LEFT]:
 					player_tanks_group.remove(tank_player2)
-					tank_player2.move('left', self.scene_elems, player_tanks_group, enemy_tanks_group)
+					tank_player2.move('left', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 					player_tanks_group.add(tank_player2)
 				elif key_pressed[pygame.K_RIGHT]:
 					player_tanks_group.remove(tank_player2)
-					tank_player2.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group)
+					tank_player2.move('right', self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 					player_tanks_group.add(tank_player2)
 				elif key_pressed[pygame.K_KP0]:
 					self.sounds['fire'].play()
@@ -190,7 +190,7 @@ class GameLevel():
 							self.__pretectHome()
 						elif food.name == 'protect':
 							self.sounds['add'].play()
-							tank_player.setProtected()
+							player_tank.setProtected()
 						elif food.name == 'star':
 							self.sounds['add'].play()
 							player_tank.improveTankLevel()
@@ -198,6 +198,7 @@ class GameLevel():
 						elif food.name == 'tank':
 							self.sounds['add'].play()
 							player_tank.addLife()
+						foods_group.remove(food)
 			# 更新并画我方子弹
 			for bullet in player_bullets_group:
 				bullet.move()
@@ -213,7 +214,7 @@ class GameLevel():
 			# 更新并画敌方坦克
 			for tank in enemy_tanks_group:
 				enemy_tanks_group.remove(tank)
-				data_return = tank.update(self.scene_elems, player_tanks_group, enemy_tanks_group)
+				data_return = tank.update(self.scene_elems, player_tanks_group, enemy_tanks_group, home)
 				enemy_tanks_group.add(tank)
 				if data_return.get('bullet'):
 					enemy_bullets_group.add(data_return.get('bullet'))
@@ -231,6 +232,10 @@ class GameLevel():
 			# 我方坦克都挂了
 			if len(player_tanks_group) == 0:
 				is_win = False
+				is_running = False
+			# 敌方坦克都挂了
+			if self.total_enemy_num <= 0:
+				is_win = True
 				is_running = False
 			pygame.display.flip()
 			clock.tick(60)
