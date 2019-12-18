@@ -103,6 +103,6 @@ Version: v0.1
 ```
 #### 2019-12-13
 ```
-update Game5: tank war, in in https://github.com/CharlesPikachu/Games/tree/master/Game20
+update Game5: tank war, in https://github.com/CharlesPikachu/Games/tree/master/Game20
 Version: v0.2
 ```
