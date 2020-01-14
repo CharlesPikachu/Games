@@ -31,6 +31,7 @@ This repository is created just for learning python(Commercial prohibition).
 - Game18: [Breakout clone](https://github.com/CharlesPikachu/Games/tree/master/Game18)
 - Game19: [Bomber Man](https://github.com/CharlesPikachu/Games/tree/master/Game19)
 - Game20: [Maze](https://github.com/CharlesPikachu/Games/tree/master/Game20)
+- Game21: [Whac-A-Mole](https://github.com/CharlesPikachu/Games/tree/master/Game21)
 
 # Record
 see RECORD dir please → [click](./RECORD)

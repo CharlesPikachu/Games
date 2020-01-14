@@ -106,3 +106,8 @@ Version: v0.1
 update Game5: tank war, in https://github.com/CharlesPikachu/Games/tree/master/Game20
 Version: v0.2
 ```
+#### 2020-01-14
+```
+add Game21: Whac A Mole, in https://github.com/CharlesPikachu/Games/tree/master/Game21
+Version: v0.1
+```
