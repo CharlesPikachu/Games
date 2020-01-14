@@ -2,18 +2,18 @@
 https://mp.weixin.qq.com/s/9UylZkV3sVTQLjThIaVObg
 
 # Environment(Tested)
-- Windows10
-- Python3.5+(have installed necessary dependencies)
+```
+OS: Windows10
+Python: Python3.5+(have installed necessary dependencies)
+```
 
 # Usage
-- pip install -r requirements.txt
-- python Game13.py
-
-# Packages
-- pygame
-- random
-- sys
-- os
+```
+Step1:
+pip install -r requirements.txt
+Step2:
+run "python Game13.py"
+```
 
 # Game Display
 ![giphy](effect/running.gif)

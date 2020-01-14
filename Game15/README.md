@@ -2,19 +2,18 @@
 https://mp.weixin.qq.com/s/H0dFwoEcJT-JPKfNvPt2Kw
 
 # Environment(Tested)
-- Windows10
-- Python3.5+(have installed necessary dependencies)
+```
+OS: Windows10
+Python: Python3.5+(have installed necessary dependencies)
+```
 
 # Usage
-- pip install -r requirements.txt
-- python Game15.py
-
-# Packages
-- pygame
-- os
-- sys
-- time
-- random
+```
+Step1:
+pip install -r requirements.txt
+Step2:
+run "python Game15.py"
+```
 
 # Reference
 http://inventwithpython.com/pygame
