@@ -53,15 +53,24 @@ def main():
 	clock = pygame.time.Clock()
 	# 分数
 	your_score = 0
+	flag = False
 	# 游戏主循环
 	while True:
 		# --游戏时间为60s
 		time_remain = round((61000 - pygame.time.get_ticks()) / 1000.)
 		# --游戏时间减少, 地鼠变位置速度变快
-		if time_remain == 40:
+		if time_remain == 40 and not flag:
+			hole_pos = random.choice(cfg.HOLE_POSITIONS)
+			mole.reset()
+			mole.setPosition(hole_pos)
 			pygame.time.set_timer(change_hole_event, 650)
-		elif time_remain == 20:
+			flag = True
+		elif time_remain == 20 and flag:
+			hole_pos = random.choice(cfg.HOLE_POSITIONS)
+			mole.reset()
+			mole.setPosition(hole_pos)
 			pygame.time.set_timer(change_hole_event, 500)
+			flag = False
 		# --倒计时音效
 		if time_remain == 10:
 			audios['count_down'].play()
