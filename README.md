@@ -40,3 +40,8 @@ see RECORD dir please → [click](./RECORD)
 #### WeChat Official Accounts
 *Charles_pikachu*  
 ![img](pikachu.jpg)
+#### Donation
+```
+Just a cup of coffee?
+```
+![img](donation.jpg)
