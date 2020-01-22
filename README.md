@@ -44,4 +44,4 @@ see RECORD dir please → [click](./RECORD)
 ```
 Just a cup of coffee?
 ```
-![img](donation.jpg)
+![img](donation.png)
