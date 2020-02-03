@@ -1,6 +1,6 @@
 '''
 Function:
-	连连看小游戏
+	消消乐小游戏
 Author:
 	Charles
 微信公众号:
