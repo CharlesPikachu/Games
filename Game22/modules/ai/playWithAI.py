@@ -148,9 +148,9 @@ class playWithAIUI(QWidget):
         if self.is_gaming and (self.winner is None) and (self.whoseround == self.player_color):
             self.winner = self.ai_color
             self.showGameEndInfo()
-    '''悔棋'''
+    '''悔棋-只有我方回合的时候可以悔棋'''
     def regret(self):
-        if (self.winner is not None) or (len(self.history_record) == 0) or (not self.is_gaming):
+        if (self.winner is not None) or (len(self.history_record) == 0) or (not self.is_gaming) and (self.whoseround != self.player_color):
             return
         for _ in range(2):
             pre_round = self.history_record.pop(-1)
