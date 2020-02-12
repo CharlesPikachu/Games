@@ -116,3 +116,8 @@ Version: v0.1
 update Game6: FlappyBird, in https://github.com/CharlesPikachu/Games/tree/master/Game6
 Version: v0.2
 ```
+#### 2020-02-12
+```
+add Game22: Gobang, in https://github.com/CharlesPikachu/Games/tree/master/Game22
+Version: v0.1
+```
