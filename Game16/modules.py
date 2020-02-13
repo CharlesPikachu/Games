@@ -15,8 +15,7 @@ import pygame
 Function:
 	卡片类
 Initial Args:
-	--x: 左上角
-	--y: 右下角
+	--x,y: 左上角坐标
 	--width: 宽
 	--height: 高
 	--text: 文本

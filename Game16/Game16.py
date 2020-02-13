@@ -237,5 +237,6 @@ def main():
 		clock.tick(30)
 
 
+'''run'''
 if __name__ == '__main__':
 	main()
