@@ -11,28 +11,30 @@ This repository is created just for learning python(Commercial prohibition).
 ```
 
 # Contents
-- Game1: [Bunnies and Badgers](https://github.com/CharlesPikachu/Games/tree/master/Game1)
-- Game2: [Pikachu Go Go Go~~~](https://github.com/CharlesPikachu/Games/tree/master/Game2)
-- Game3: [Puzzle pieces](https://github.com/CharlesPikachu/Games/tree/master/Game3)
-- Game4: [Skier](https://github.com/CharlesPikachu/Games/tree/master/Game4)
-- Game5: [Tank War](https://github.com/CharlesPikachu/Games/tree/master/Game5)
-- Game6: [FlappyBird](https://github.com/CharlesPikachu/Games/tree/master/Game6)
-- Game7: [T-Rex Rush](https://github.com/CharlesPikachu/Games/tree/master/Game7)
-- Game8: [Tower Defense](https://github.com/CharlesPikachu/Games/tree/master/Game8)
-- Game9: [Catch apples and coins](https://github.com/CharlesPikachu/Games/tree/master/Game9)
-- Game10: [Aircraft war](https://github.com/CharlesPikachu/Games/tree/master/Game10)
-- Game11: [Tetris](https://github.com/CharlesPikachu/Games/tree/master/Game11)
-- Game12: [Sokoban](https://github.com/CharlesPikachu/Games/tree/master/Game12)
-- Game13: [Alien Invasion](https://github.com/CharlesPikachu/Games/tree/master/Game13)
-- Game14: [Pacman](https://github.com/CharlesPikachu/Games/tree/master/Game14)
-- Game15: [GemGem](https://github.com/CharlesPikachu/Games/tree/master/Game15)
-- Game16: [24 point](https://github.com/CharlesPikachu/Games/tree/master/Game16)
-- Game17: [Pingpong](https://github.com/CharlesPikachu/Games/tree/master/Game17)
-- Game18: [Breakout clone](https://github.com/CharlesPikachu/Games/tree/master/Game18)
-- Game19: [Bomber Man](https://github.com/CharlesPikachu/Games/tree/master/Game19)
-- Game20: [Maze](https://github.com/CharlesPikachu/Games/tree/master/Game20)
-- Game21: [Whac-A-Mole](https://github.com/CharlesPikachu/Games/tree/master/Game21)
-- Game22: [Gobang](https://github.com/CharlesPikachu/Games/tree/master/Game22)
+|   ID      |     Name of The Game        |   Code                                                                    |   Introduction                                               |
+|   :----:  |     :----:                  |   :----:                                                                  |   :----:                                                     |
+|   Game1   |     Bunnies and Badgers     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game1)      |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
+|   Game2   |     Pikachu Go Go Go        |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game2)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) |                
+|   Game3   |     Puzzle pieces           |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game3)      |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
+|   Game4   |     Skier                   |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game4)      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
+|   Game5   |     Tank War                |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game5)      |   [click](https://mp.weixin.qq.com/s/1xXULpT36P7LTO5HDbjptg) |
+|   Game6   |     FlappyBird              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game6)      |   [click](https://mp.weixin.qq.com/s/44CZjwvjnH0kkkKIn5U9Uw) |
+|   Game7   |     T-Rex Rush              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game7)      |   [click](https://mp.weixin.qq.com/s/jpIJWXrW6O35cfELeplOtQ) |
+|   Game8   |     Tower Defense           |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game8)	  |   [click](https://mp.weixin.qq.com/s/mcnN3dF5tzWlRg91cnWTEw) |
+|   Game9   |     Catch apples and coins  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game9)	  |   [click](https://mp.weixin.qq.com/s/rrdvDh603D2S9jW27cGWdQ) |
+|   Game10  |     Aircraft war            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game10)     |   [click](https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg) |
+|   Game11  |     Tetris                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game11)     |   [click](https://mp.weixin.qq.com/s/KFqpjmH6juZ2K8uKOoEaaA) |
+|   Game12  |     Sokoban                 |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game12)     |   [click](https://mp.weixin.qq.com/s/y6CZd4h3uo7602LrI7aFdQ) |
+|   Game13  |     Alien Invasion          |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game13)     |   [click](https://mp.weixin.qq.com/s/9UylZkV3sVTQLjThIaVObg) |
+|   Game14  |     Pacman                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game14)     |   [click](https://mp.weixin.qq.com/s/UBVLDW2T-Y6R-0IaRfu81Q) |
+|   Game15  |     GemGem                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game15)     |   [click](https://mp.weixin.qq.com/s/H0dFwoEcJT-JPKfNvPt2Kw) |
+|   Game16  |     24 point                |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game16)     |   [click](https://mp.weixin.qq.com/s/raronw7X0WlntI48nUOvoQ) |
+|   Game17  |     Pingpong                |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game17)     |   [click](https://mp.weixin.qq.com/s/C6v0Zj8-fhysqRQ_lcEZIQ) |
+|   Game18  |     Breakout clone          |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game18)     |   [click](https://mp.weixin.qq.com/s/9tNVTA06dFthdugNs3TePA) |
+|   Game19  |     Bomber Man              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game19)     |   [click](https://mp.weixin.qq.com/s/XzB_cJMFEtz6p_MvqiaCrA) |
+|   Game20  |     Maze                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game20)     |   [click](https://mp.weixin.qq.com/s/s9jburcC4WaOO_0ce54-Rg) |
+|   Game21  |     Whac-A-Mole             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game21)     |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
+|   Game22  |     Gobang                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game22)     |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
 
 # Record
 see RECORD dir please → [click](./RECORD)
