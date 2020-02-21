@@ -121,3 +121,8 @@ Version: v0.2
 add Game22: Gobang, in https://github.com/CharlesPikachu/Games/tree/master/Game22
 Version: v0.1
 ```
+#### 2020-02-21
+```
+update Game1: Bunnies and Badgers, in https://github.com/CharlesPikachu/Games/tree/master/Game1
+Version: v0.2
+```
