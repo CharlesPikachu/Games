@@ -42,4 +42,4 @@ see RECORD dir please → [click](./RECORD)
 # More
 #### WeChat Official Accounts
 *Charles_pikachu*  
-![img](pikachu.jpg)
+![img](https://github.com/CharlesPikachu/Games/tree/master/.github/pictures/pikachu.jpg)
