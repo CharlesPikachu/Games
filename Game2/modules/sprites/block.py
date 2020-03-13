@@ -6,15 +6,14 @@ Function:
 微信公众号:
 	Charles的皮卡丘
 '''
-import os
 import cocos
 import random
 
 
+'''地面块'''
 class Block(cocos.sprite.Sprite):
-	def __init__(self, position):
-		super(Block, self).__init__('black.png')
-		# 锚点
+	def __init__(self, imagepath, position, **kwargs):
+		super(Block, self).__init__(imagepath)
 		self.image_anchor = 0, 0
 		x, y = position
 		if x == 0:

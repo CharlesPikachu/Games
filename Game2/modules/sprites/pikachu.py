@@ -1,37 +1,34 @@
 '''
 Function:
-	定义皮卡丘类(Define Pikachu Class)
+	定义皮卡丘类
 作者:
 	Charles
 微信公众号:
 	Charles的皮卡丘
 '''
-import os
 import cocos
 
 
+'''皮卡丘类'''
 class Pikachu(cocos.sprite.Sprite):
-	def __init__(self):
-		super(Pikachu, self).__init__('pikachu.png')
-		# 是否可跳跃
-		self.able_jump = False
-		# 速度
-		self.speed = 0
+	def __init__(self, imagepath, **kwargs):
+		super(Pikachu, self).__init__(imagepath)
 		# 锚点
 		self.image_anchor = 0, 0
-		# 皮卡丘的位置
-		self.position = 80, 280
+		# 初始重置
+		self.reset(False)
+		# 更新
 		self.schedule(self.update)
 	'''声控跳跃'''
 	def jump(self, h):
-		if self.able_jump:
+		if self.is_able_jump:
 			self.y += 1
 			self.speed -= max(min(h, 10), 7)
-			self.able_jump = False
+			self.is_able_jump = False
 	'''着陆后静止'''
 	def land(self, y):
 		if self.y > y - 25:
-			self.able_jump = True
+			self.is_able_jump = True
 			self.speed = 0
 			self.y = y
 	'''更新(重力下降)'''
@@ -41,8 +38,11 @@ class Pikachu(cocos.sprite.Sprite):
 		if self.y < -85:
 			self.reset()
 	'''重置'''
-	def reset(self):
-		self.parent.reset()
-		self.able_jump = False
+	def reset(self, flag=True):
+		if flag: self.parent.reset()
+		# 是否可跳跃
+		self.is_able_jump = False
+		# 速度
 		self.speed = 0
+		# 位置
 		self.position = 80, 280
