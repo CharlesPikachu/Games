@@ -17,7 +17,6 @@ from modules.sprites.pikachu import Pikachu
 
 '''定义声控游戏类'''
 class VCGame(cocos.layer.ColorLayer):
-	# is_event_handler = True
 	def __init__(self):
 		super(VCGame, self).__init__(255, 255, 255, 255, 800, 600)
 		# frames_per_buffer
