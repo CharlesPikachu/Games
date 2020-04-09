@@ -134,6 +134,7 @@ class InnerBoard():
 		return removed_lines
 	'''坠落'''
 	def dropDown(self):
+		removed_lines = 0
 		while self.ableMove([self.current_coord[0], self.current_coord[1]+1]):
 			self.current_coord[1] += 1
 		x_min, x_max, y_min, y_max = self.current_tetris.getRelativeBoundary(self.current_direction)
