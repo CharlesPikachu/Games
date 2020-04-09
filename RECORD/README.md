@@ -7,7 +7,7 @@ Reference: https://www.raywenderlich.com/24252/beginning-game-programming-for-te
 ```
 #### 2018-06-14
 ```
-add Game2: Pikachu Go Go Go~~~, in https://github.com/CharlesPikachu/Games/tree/master/Game2
+add Game2: Pikachu Go Go Go, in https://github.com/CharlesPikachu/Games/tree/master/Game2
 Version: v0.1
 ```
 #### 2018-06-26
@@ -124,5 +124,10 @@ Version: v0.1
 #### 2020-02-21
 ```
 update Game1: Bunnies and Badgers, in https://github.com/CharlesPikachu/Games/tree/master/Game1
+Version: v0.2
+```
+#### 2020-04-09
+```
+update Game3: Puzzle pieces, in https://github.com/CharlesPikachu/Games/tree/master/Game3
 Version: v0.2
 ```
