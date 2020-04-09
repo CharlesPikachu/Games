@@ -131,3 +131,8 @@ Version: v0.2
 update Game3: Puzzle pieces, in https://github.com/CharlesPikachu/Games/tree/master/Game3
 Version: v0.2
 ```
+#### 2020-04-10
+```
+add Game23: 2048, in https://github.com/CharlesPikachu/Games/tree/master/Game23
+Version: v0.1
+```
