@@ -117,7 +117,7 @@ class Game2048(object):
 	'''保存最高分'''
 	def saveMaxScore(self):
 		f = open(self.max_score_filepath, 'w', encoding='utf-8')
-		f.write(self.max_score)
+		f.write(str(self.max_score))
 		f.close()
 	'''读取游戏最高分'''
 	def readMaxScore(self):
@@ -134,6 +134,15 @@ class Game2048(object):
 		for i in range(self.matrix_size[0]):
 			for j in range(self.matrix_size[1]):
 				if self.game_matrix[i][j] == 'null': return False
-				if (i == self.matrix_size[0] - 1) or (j == self.matrix_size[1] - 1): continue
-				if (self.game_matrix[i][j] == self.game_matrix[i+1][j]) or (self.game_matrix[i][j] == self.game_matrix[i][j+1]): return False
+				if (i == self.matrix_size[0] - 1) and (j == self.matrix_size[1] - 1):
+					continue
+				elif (i == self.matrix_size[0] - 1):
+					if (self.game_matrix[i][j] == self.game_matrix[i][j+1]):
+						return False
+				elif (j == self.matrix_size[1] - 1):
+					if (self.game_matrix[i][j] == self.game_matrix[i+1][j]):
+						return False
+				else:
+					if (self.game_matrix[i][j] == self.game_matrix[i+1][j]) or (self.game_matrix[i][j] == self.game_matrix[i][j+1]):
+						return False
 		return True

@@ -62,7 +62,7 @@ def drawGameIntro(screen, start_x, start_y, cfg):
 	font_size_small = 20
 	font_big = pygame.font.Font(cfg.FONTPATH, font_size_big)
 	font_small = pygame.font.Font(cfg.FONTPATH, font_size_small)
-	intros = ['TIPS:', 'use arrow keys to move the number block,', 'and the blocks with the same number will', 'be merged. Just try to merge the blocks as', 'many as you can!']
+	intros = ['TIPS:', 'Use arrow keys to move the number blocks.', 'Adjacent blocks with the same number will', 'be merged. Just try to merge the blocks as', 'many as you can!']
 	for idx, intro in enumerate(intros):
 		font = font_big if idx == 0 else font_small
 		text = font.render(intro, True, font_color)
