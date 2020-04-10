@@ -35,7 +35,7 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game20  |     Maze                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game20)     |   [click](https://mp.weixin.qq.com/s/s9jburcC4WaOO_0ce54-Rg) |
 |   Game21  |     Whac-A-Mole             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game21)     |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
 |   Game22  |     Gobang                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game22)     |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
-|   Game23  |     2048                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game23)     |   [click]()                                                  |
+|   Game23  |     2048                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game23)     |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
 
 # Record
 see RECORD dir please → [click](./RECORD)
