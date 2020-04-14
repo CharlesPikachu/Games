@@ -136,3 +136,8 @@ Version: v0.2
 add Game23: 2048, in https://github.com/CharlesPikachu/Games/tree/master/Game23
 Version: v0.1
 ```
+#### 2020-04-14
+```
+add Game24: Greedy Snake, in https://github.com/CharlesPikachu/Games/tree/master/Game24
+Version: v0.1
+```
