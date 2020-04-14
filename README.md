@@ -36,7 +36,7 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game21  |     Whac-A-Mole             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game21)     |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
 |   Game22  |     Gobang                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game22)     |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
 |   Game23  |     2048                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game23)     |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
-|   Game24  |     Greedy Snake            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game24)     |   [click]()                                                  |
+|   Game24  |     Greedy Snake            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game24)     |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
 
 # Record
 see RECORD dir please → [click](./RECORD)
