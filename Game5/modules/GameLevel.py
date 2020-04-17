@@ -148,7 +148,8 @@ class GameLevel():
 			pygame.sprite.groupcollide(enemy_bullets_group, self.scene_elems.get('brick_group'), True, True)
 			# --子弹和铁墙
 			for bullet in player_bullets_group:
-				pygame.sprite.spritecollide(bullet, self.scene_elems.get('iron_group'), bullet.is_stronger, None)
+				if pygame.sprite.spritecollide(bullet, self.scene_elems.get('iron_group'), bullet.is_stronger, None):
+					player_bullets_group.remove(bullet)
 			pygame.sprite.groupcollide(enemy_bullets_group, self.scene_elems.get('iron_group'), True, False)
 			# --子弹撞子弹
 			pygame.sprite.groupcollide(player_bullets_group, enemy_bullets_group, True, True)

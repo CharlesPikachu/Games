@@ -163,23 +163,25 @@ class PlayerTank(pygame.sprite.Sprite):
 		return False
 	'''提高坦克等级'''
 	def improveTankLevel(self):
-		if not self.booming_flag:
-			return
+		if self.booming_flag:
+			return False
 		self.tanklevel = min(self.tanklevel+1, len(self.player_tank_image_paths)-1)
 		self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
 		self.setDirection(self.direction)
 		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+		return True
 	'''降低坦克等级'''
 	def decreaseTankLevel(self):
-		if not self.booming_flag:
-			self.tanklevel -= 1
-			if self.tanklevel < 0:
-				self.num_lifes -= 1
-				self.booming_flag = True
-			else:
-				self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
-				self.setDirection(self.direction)
-				self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+		if self.booming_flag:
+			return False
+		self.tanklevel -= 1
+		if self.tanklevel < 0:
+			self.num_lifes -= 1
+			self.booming_flag = True
+		else:
+			self.tank_image = pygame.image.load(self.player_tank_image_paths[self.tanklevel]).convert_alpha()
+			self.setDirection(self.direction)
+			self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
 		return True if self.tanklevel < 0 else False
 	'''增加生命值'''
 	def addLife(self):
@@ -462,13 +464,14 @@ class EnemyTank(pygame.sprite.Sprite):
 			self.tank_direction_image = self.tank_image.subsurface((0, 144), (96, 48))
 	'''降低坦克等级'''
 	def decreaseTankLevel(self):
-		if not self.booming_flag:
-			self.tanklevel -= 1
-			self.tank_image = pygame.image.load(self.enemy_tank_image_paths[self.tanklevel]).convert_alpha()
-			self.setDirection(self.direction)
-			self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
-			if self.tanklevel < 0:
-				self.booming_flag = True
+		if self.booming_flag:
+			return False
+		self.tanklevel -= 1
+		self.tank_image = pygame.image.load(self.enemy_tank_image_paths[self.tanklevel]).convert_alpha()
+		self.setDirection(self.direction)
+		self.image = self.tank_direction_image.subsurface((48*int(self.switch_pointer), 0), (48, 48))
+		if self.tanklevel < 0:
+			self.booming_flag = True
 		return True if self.tanklevel < 0 else False
 	'''设置静止'''
 	def setStill(self):
