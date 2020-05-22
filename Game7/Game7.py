@@ -1,165 +1,128 @@
 '''
 Function:
-	仿Google小恐龙游戏
-作者:
+	仿谷歌浏览器小恐龙游戏
+Author:
 	Charles
 微信公众号:
 	Charles的皮卡丘
 '''
+import cfg
 import sys
-import math
-import time
 import random
 import pygame
-from pygame.locals import *
-from Scene import Scene
-from Obstacle import Plant, Ptera
-from Dinosaur import Dinosaur
+from modules.sprites.scene import *
+from modules.sprites.obstacle import *
+from modules.sprites.dinosaur import *
+from modules.interfaces.gameend import GameEndInterface
+from modules.interfaces.gamestart import GameStartInterface
 
 
-# 定义一些常量
-BACKGROUND = (250, 250, 250)
-WIDTH = 800
-HEIGHT = 400
-
-
-'''显示Gameover界面'''
-def show_gameover(screen):
-	screen.fill(BACKGROUND)
-	gameover_img = pygame.image.load('./images/others/gameover.png').convert_alpha()
-	gameover_rect = gameover_img.get_rect()
-	gameover_rect.left, gameover_rect.top = WIDTH//3, int(HEIGHT/2.4)
-	screen.blit(gameover_img, gameover_rect)
-	restart_img = pygame.image.load('./images/others/restart.png').convert_alpha()
-	restart_rect = restart_img.get_rect()
-	restart_rect.left, restart_rect.top = int(WIDTH/2.25), int(HEIGHT/2)
-	screen.blit(restart_img, restart_rect)
-	pygame.display.update()
+'''main'''
+def main(highest_score):
+	# 游戏初始化
+	pygame.init()
+	screen = pygame.display.set_mode(cfg.SCREENSIZE)
+	clock = pygame.time.Clock()
+	pygame.display.set_caption('T-Rex Rush —— Charles的皮卡丘')
+	# 导入所有声音文件
+	sounds = {}
+	for key, value in cfg.AUDIO_PATHS.items():
+		sounds[key] = pygame.mixer.Sound(value)
+	# 游戏开始界面
+	GameStartInterface(screen, sounds, cfg)
+	# 定义一些游戏中必要的元素和变量
+	score = 0
+	score_board = Scoreboard(cfg.IMAGE_PATHS['numbers'], position=(534, 15), bg_color=cfg.BACKGROUND_COLOR)
+	highest_score = highest_score
+	highest_score_board = Scoreboard(cfg.IMAGE_PATHS['numbers'], position=(435, 15), bg_color=cfg.BACKGROUND_COLOR, is_highest=True)
+	dino = Dinosaur(cfg.IMAGE_PATHS['dino'])
+	ground = Ground(cfg.IMAGE_PATHS['ground'], position=(0, cfg.SCREENSIZE[1]))
+	cloud_sprites_group = pygame.sprite.Group()
+	cactus_sprites_group = pygame.sprite.Group()
+	ptera_sprites_group = pygame.sprite.Group()
+	add_obstacle_timer = 0
+	score_timer = 0
+	# 游戏主循环
+	clock = pygame.time.Clock()
 	while True:
 		for event in pygame.event.get():
-			if event.type == QUIT:
-				sys.exit()
+			if event.type == pygame.QUIT:
 				pygame.quit()
-			if event.type == pygame.MOUSEBUTTONDOWN:
-				mouse_pos = pygame.mouse.get_pos()
-				if mouse_pos[0] < restart_rect.right and mouse_pos[0] > restart_rect.left and\
-					mouse_pos[1] < restart_rect.bottom and mouse_pos[1] > restart_rect.top:
-					return True
-
-
-'''将Score转为生成障碍物的概率'''
-def sigmoid(score):
-	probability = 1 / (1 + math.exp(-score))
-	return min(probability, 0.6)
-
-
-'''主函数'''
-def main():
-	# 初始化
-	pygame.init()
-	screen = pygame.display.set_mode((WIDTH, HEIGHT))
-	pygame.display.set_caption("T-Rex Rush-公众号: Charles的皮卡丘")
-	clock = pygame.time.Clock()
-	# 得分
-	score = 0
-	# 加载一些素材
-	jump_sound = pygame.mixer.Sound("./music/jump.wav")
-	jump_sound.set_volume(6)
-	die_sound = pygame.mixer.Sound("./music/die.wav")
-	die_sound.set_volume(6)
-	pygame.mixer.init()
-	pygame.mixer.music.load("./music/bg_music.mp3")
-	pygame.mixer.music.set_volume(0.6)
-	pygame.mixer.music.play(-1)
-	font = pygame.font.Font('./font/simkai.ttf', 20)
-	# 实例化
-	dinosaur = Dinosaur(WIDTH, HEIGHT)
-	scene = Scene(WIDTH, HEIGHT)
-	plants = pygame.sprite.Group()
-	pteras = pygame.sprite.Group()
-	# 产生障碍物事件
-	GenPlantEvent = pygame.constants.USEREVENT + 0
-	pygame.time.set_timer(GenPlantEvent, 1500)
-	GenPteraEvent = pygame.constants.USEREVENT + 1
-	pygame.time.set_timer(GenPteraEvent, 5000)
-	# 游戏是否结束了
-	running = True
-	# 是否可以产生障碍物flag
-	flag_plant = False
-	flag_ptera = False
-	t0 = time.time()
-	# 主循环
-	while running:
-		for event in pygame.event.get():
-			if event.type == QUIT:
 				sys.exit()
-				pygame.quit()
-			if event.type == GenPlantEvent:
-				flag_plant = True
-			if event.type == GenPteraEvent:
-				if score > 50:
-					flag_ptera = True
-		key_pressed = pygame.key.get_pressed()
-		if key_pressed[pygame.K_SPACE]:
-			dinosaur.is_jumping = True
-			jump_sound.play()
-		screen.fill(BACKGROUND)
-		time_passed = time.time() - t0
-		t0 = time.time()
-		# 场景
-		scene.move()
-		scene.draw(screen)
-		# 小恐龙
-		dinosaur.is_running = True
-		if dinosaur.is_jumping:
-			dinosaur.be_afraid()
-			dinosaur.jump(time_passed)
-		dinosaur.draw(screen)
-		# 障碍物-植物
-		if random.random() < sigmoid(score) and flag_plant:
-			plant = Plant(WIDTH, HEIGHT)
-			plants.add(plant)
-			flag_plant = False
-		for plant in plants:
-			plant.move()
-			if dinosaur.rect.left > plant.rect.right and not plant.added_score:
-				score += 1
-				plant.added_score = True
-			if plant.rect.right < 0:
-				plants.remove(plant)
-				continue
-			plant.draw(screen)
-		# 障碍物-飞龙
-		if random.random() < sigmoid(score) and flag_ptera:
-			if len(pteras) > 1:
-				continue
-			ptera = Ptera(WIDTH, HEIGHT)
-			pteras.add(ptera)
-			flag_ptera = False
-		for ptera in pteras:
-			ptera.move()
-			if dinosaur.rect.left > ptera.rect.right and not ptera.added_score:
-				score += 5
-				ptera.added_score = True
-			if ptera.rect.right < 0:
-				pteras.remove(ptera)
-				continue
-			ptera.draw(screen)
-		# 碰撞检测
-		if pygame.sprite.spritecollide(dinosaur, plants, False) or pygame.sprite.spritecollide(dinosaur, pteras, False):
-			die_sound.play()
-			running = False
-		# 显示得分
-		score_text = font.render("Score: "+str(score), 1, (0, 0, 0))
-		screen.blit(score_text, [10, 10])
-		pygame.display.flip()
-		clock.tick(60)
-	res = show_gameover(screen)
-	return res
+			elif event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_SPACE or event.key == pygame.K_UP:
+					dino.jump(sounds)
+				elif event.key == pygame.K_DOWN:
+					dino.duck()
+			elif event.type == pygame.KEYUP and event.key == pygame.K_DOWN:
+				dino.unduck()
+		screen.fill(cfg.BACKGROUND_COLOR)
+		# --随机添加云
+		if len(cloud_sprites_group) < 5 and random.randrange(0, 300) == 10:
+			cloud_sprites_group.add(Cloud(cfg.IMAGE_PATHS['cloud'], position=(cfg.SCREENSIZE[0], random.randrange(30, 75))))
+		# --随机添加仙人掌/飞龙
+		add_obstacle_timer += 1
+		if add_obstacle_timer > random.randrange(50, 150):
+			add_obstacle_timer = 0
+			random_value = random.randrange(0, 10)
+			if random_value >= 5 and random_value <= 7:
+				cactus_sprites_group.add(Cactus(cfg.IMAGE_PATHS['cacti']))
+			else:
+				position_ys = [cfg.SCREENSIZE[1]*0.82, cfg.SCREENSIZE[1]*0.75, cfg.SCREENSIZE[1]*0.60, cfg.SCREENSIZE[1]*0.20]
+				ptera_sprites_group.add(Ptera(cfg.IMAGE_PATHS['ptera'], position=(600, random.choice(position_ys))))
+		# --更新游戏元素
+		dino.update()
+		ground.update()
+		cloud_sprites_group.update()
+		cactus_sprites_group.update()
+		ptera_sprites_group.update()
+		score_timer += 1
+		if score_timer > (cfg.FPS//12):
+			score_timer = 0
+			score += 1
+			score = min(score, 99999)
+			if score > highest_score:
+				highest_score = score
+			if score % 100 == 0:
+				sounds['point'].play()
+			if score % 1000 == 0:
+				ground.speed -= 1
+				for item in cloud_sprites_group:
+					item.speed -= 1
+				for item in cactus_sprites_group:
+					item.speed -= 1
+				for item in ptera_sprites_group:
+					item.speed -= 1
+		# --碰撞检测
+		for item in cactus_sprites_group:
+			if pygame.sprite.collide_mask(dino, item):
+				dino.die(sounds)
+		for item in ptera_sprites_group:
+			if pygame.sprite.collide_mask(dino, item):
+				dino.die(sounds)
+		# --将游戏元素画到屏幕上
+		dino.draw(screen)
+		ground.draw(screen)
+		cloud_sprites_group.draw(screen)
+		cactus_sprites_group.draw(screen)
+		ptera_sprites_group.draw(screen)
+		score_board.set(score)
+		highest_score_board.set(highest_score)
+		score_board.draw(screen)
+		highest_score_board.draw(screen)
+		# --更新屏幕
+		pygame.display.update()
+		clock.tick(cfg.FPS)
+		# --游戏是否结束
+		if dino.is_dead:
+			break
+	# 游戏结束界面
+	return GameEndInterface(screen, cfg), highest_score
 
 
 '''run'''
 if __name__ == '__main__':
-	res = True
-	while res:
-		res = main()
+	highest_score = 0
+	while True:
+		flag, highest_score = main(highest_score)
+		if not flag: break
