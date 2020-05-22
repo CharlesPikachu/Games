@@ -22,7 +22,6 @@ def main(highest_score):
 	# 游戏初始化
 	pygame.init()
 	screen = pygame.display.set_mode(cfg.SCREENSIZE)
-	clock = pygame.time.Clock()
 	pygame.display.set_caption('T-Rex Rush —— Charles的皮卡丘')
 	# 导入所有声音文件
 	sounds = {}
