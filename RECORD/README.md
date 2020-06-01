@@ -146,3 +146,8 @@ Version: v0.1
 update Game7: T-Rex Rush, in https://github.com/CharlesPikachu/Games/tree/master/Game7
 Version: v0.2
 ```
+#### 2020-06-01
+```
+add Game25: Mine Sweeper, in https://github.com/CharlesPikachu/Games/tree/master/Game25
+Version: v0.1
+```
