@@ -37,7 +37,7 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game22  |     Gobang                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game22)     |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
 |   Game23  |     2048                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game23)     |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
 |   Game24  |     Greedy Snake            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game24)     |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
-|   Game25  |     Mine Sweeper            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game25)     |   [click]()                                                  |
+|   Game25  |     Mine Sweeper            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game25)     |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
 
 # Record
 see RECORD dir please → [click](./RECORD)
