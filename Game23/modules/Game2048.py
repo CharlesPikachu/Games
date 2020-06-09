@@ -122,7 +122,7 @@ class Game2048(object):
 	'''读取游戏最高分'''
 	def readMaxScore(self):
 		try:
-			f = open(filepath, 'r', encoding='utf-8')
+			f = open(self.max_score_filepath, 'r', encoding='utf-8')
 			score = int(f.read().strip())
 			f.close()
 			return score
