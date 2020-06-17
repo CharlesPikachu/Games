@@ -72,7 +72,7 @@ class Snake(pygame.sprite.Sprite):
 	'''获得完整的蛇身矩阵'''
 	@property
 	def coords(self):
-		return self.head_coord + self.tail_coords
+		return [self.head_coord] + self.tail_coords
 	'''判断游戏是否结束'''
 	@property
 	def isgameover(self):
