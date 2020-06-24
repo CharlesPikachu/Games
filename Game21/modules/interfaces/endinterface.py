@@ -34,6 +34,7 @@ def endInterface(screen, end_image_path, again_image_paths, score_info, font_pat
                 else:
                     again_image = again_images[0]
             elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
                 if event.button == 1 and mouse_pos[0] in list(range(419, 574)) and mouse_pos[1] in list(range(374, 416)):
                     return True
         screen.blit(end_image, (0, 0))

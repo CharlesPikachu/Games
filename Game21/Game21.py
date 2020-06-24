@@ -54,10 +54,12 @@ def main():
 	# 分数
 	your_score = 0
 	flag = False
+	# 初始时间
+	init_time = pygame.time.get_ticks()
 	# 游戏主循环
 	while True:
 		# --游戏时间为60s
-		time_remain = round((61000 - pygame.time.get_ticks()) / 1000.)
+		time_remain = round((61000 - (pygame.time.get_ticks() - init_time)) / 1000.)
 		# --游戏时间减少, 地鼠变位置速度变快
 		if time_remain == 40 and not flag:
 			hole_pos = random.choice(cfg.HOLE_POSITIONS)
