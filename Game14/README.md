@@ -1,7 +1,7 @@
 # Introduction
 https://mp.weixin.qq.com/s/UBVLDW2T-Y6R-0IaRfu81Q
 
-# Environment(Tested)
+# Environment
 ```
 OS: Windows10
 Python: Python3.5+(have installed necessary dependencies)
@@ -16,4 +16,4 @@ python Game14.py
 ```
 
 # Game Display
-![giphy](effect/running.gif)
+![giphy](demonstration/running.gif)

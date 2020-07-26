@@ -1,7 +1,7 @@
 # Introduction
 https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg
 
-# Environment(Tested)
+# Environment
 ```
 OS: Windows10
 Python: Python3.5+(have installed necessary dependencies)
@@ -16,4 +16,4 @@ run "python Game10.py"
 ```
 
 # Game Display
-![giphy](effect/running.gif)
+![giphy](demonstration/running.gif)
