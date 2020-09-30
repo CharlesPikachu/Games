@@ -1,16 +1,21 @@
-# Games
+# Games🎮🎮🕹🕹
 ```
 Some games created by python code.
-You can star this repository to keep track of the project if it's helpful for you, thank you for your support.
+You can star this repository to keep track of the project if it's helpful for you, 
+thank you for your support.
 ```
 
-# Statement
+# Statement 
 ```
-Most of the game materals(including music, fonts and pictures) in this repository are collected from the web, copyright belongs to the original author.
+Most of the game materals(including music, fonts and pictures) in this repository are collected from the web, 
+copyright belongs to the original author.
 This repository is created just for learning python(Commercial prohibition).
 ```
 
 # Contents
+
+enjoy the games 👇👇👇👇
+
 |   ID      |     Name of The Game        |   Code                                                                    |   Introduction                                               |
 |   :----:  |     :----:                  |   :----:                                                                  |   :----:                                                     |
 |   Game1   |     Bunnies and Badgers     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game1)      |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
@@ -40,8 +45,14 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game25  |     Mine Sweeper            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game25)     |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
 
 # Record
-see RECORD dir please → [click](./RECORD)
+see RECORD dir please → [click](./RECORD)   
 
+# support
+```
+ support us as we do it for just improving our skills   
+ keep supporting keep learning 
+```
+ 
 # More
 #### WeChat Official Accounts
 *Charles_pikachu*  
