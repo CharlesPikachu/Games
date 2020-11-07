@@ -1,4 +1,5 @@
 # Record
+
 #### 2018-06-13
 ```
 add Game1: Bunnies and Badgers, in https://github.com/CharlesPikachu/Games/tree/master/Game1
@@ -42,7 +43,7 @@ Version: v0.1
 ```
 #### 2018-09-11
 ```
-add Game9: Catch apples and coins, in https://github.com/CharlesPikachu/Games/tree/master/Game9
+add Game9: Catch coins, in https://github.com/CharlesPikachu/Games/tree/master/Game9
 Version: v0.1
 ```
 #### 2018-10-07
@@ -150,4 +151,9 @@ Version: v0.2
 ```
 add Game25: Mine Sweeper, in https://github.com/CharlesPikachu/Games/tree/master/Game25
 Version: v0.1
+```
+#### 2020-11-08
+```
+update Game9: Catch coins, in https://github.com/CharlesPikachu/Games/tree/master/Game9
+Version: v0.2
 ```

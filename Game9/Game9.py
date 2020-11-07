@@ -1,218 +1,125 @@
 '''
 Function:
-	接苹果/金币小游戏
-作者:
-	Charles
+    接金币小游戏
+Author:
+    Charles
 微信公众号:
-	Charles的皮卡丘
+    Charles的皮卡丘
 '''
 import os
+import cfg
 import sys
-import random
 import pygame
+import random
+from modules.hero import Hero
+from modules.food import Food
+from modules.endinterface import showEndGameInterface
 
 
-'''获取历史最高分'''
-def getScore():
-	if os.path.isfile('score'):
-		with open('score', 'r') as f:
-			score = f.readline().strip()
-			if not score:
-				score = 0
-	else:
-		score = 0
-	return score
-
-
-'''保存分数(仅当超过历史最高分时)'''
-def saveScore(score):
-	with open('score', 'w') as f:
-		f.write(score)
-
-
-'''定义接苹果/金币的人类精灵'''
-class FarmerSprite(pygame.sprite.Sprite):
-	def __init__(self, WIDTH, HEIGHT):
-		pygame.sprite.Sprite.__init__(self)
-		self.imgs = ['./imgs/farmer.png']
-		self.farmer = pygame.image.load(self.imgs[0]).convert_alpha()
-		self.direction_dict = {
-								'top': [0, (0, -1)],
-								'righttop': [1, (1, -1)],
-								'right': [2, (1, 0)],
-								'rightbottom': [3, (1, 1)],
-								'bottom': [4, (0, 1)],
-								'leftbottom': [5, (-1, 1)],
-								'left': [6, (-1, 0)],
-								'lefttop': [7, (-1, -1)]
-								}
-		# 当前农民方向
-		self.direction = 'left'
-		# 实现农民行走的效果
-		self.farmerIdx = 0
-		self.farmerIdxNum = 8
-		# 农民的位置
-		self.x, self.y = WIDTH/2, HEIGHT/1.1
-		# 速度
-		self.speed = 5
-		self.WIDTH, self.HEIGHT = WIDTH, HEIGHT
-		# 激活一下
-		self.move()
-	'''移动'''
-	def move(self, direction='left'):
-		if direction != self.direction:
-			self.direction = direction
-			self.farmerIdx = 0
-		else:
-			self.farmerIdx += 1
-			self.farmerIdx = self.farmerIdx % self.farmerIdxNum
-		farmerPos = self.farmerIdx * 96, self.direction_dict[self.direction][0] * 96
-		self.image = self.farmer.subsurface(farmerPos, (96, 96))
-		self.rect = self.image.get_rect()
-		self.x = self.x + self.direction_dict[self.direction][1][0] * self.speed
-		self.y = self.y + self.direction_dict[self.direction][1][1] * self.speed
-		self.rect.left, self.rect.top = self.x, self.y
-		# 避免农民走出游戏界面
-		self.rect.right = self.WIDTH if self.rect.right > self.WIDTH else self.rect.right
-		self.rect.left = 0 if self.rect.left < 0 else self.rect.left
-		self.rect.top = 0 if self.rect.top < 0 else self.rect.top
-		self.rect.bottom = self.HEIGHT if self.rect.bottom > self.HEIGHT else self.rect.bottom
-	'''画上去'''
-	def draw(self, screen):
-		screen.blit(self.image, self.rect)
-
-
-'''掉落的食物类'''
-class foodSprite(pygame.sprite.Sprite):
-	def __init__(self, WIDTH, HEIGHT):
-		pygame.sprite.Sprite.__init__(self)
-		self.imgs = ['./imgs/apple.png', './imgs/gold.png']
-		# 食物种类
-		self.kind = random.randint(0, 1)
-		# 食物价值
-		self.value = 10 if self.kind == 0 else 100
-		# 下落速度
-		self.speed = 3 if self.kind == 0 else 6
-		self.image = pygame.image.load(self.imgs[self.kind]).convert_alpha()
-		self.rect = self.image.get_rect()
-		self.x = random.randint(0, WIDTH-self.rect.width)
-		self.y = -50
-		self.rect.left, self.rect.top = self.x, self.y
-	'''移动'''
-	def move(self):
-		self.y += self.speed
-		self.rect.top = self.y
-	'''画到屏幕上'''
-	def draw(self, screen):
-		screen.blit(self.image, self.rect)
-
-
-'''显示游戏结束界面'''
-def GameOver(screen, width, height, score, highest):
-	screen.fill((255, 255, 255))
-	tfont = pygame.font.Font('./font/simkai.ttf', width//10)
-	cfont = pygame.font.Font('./font/simkai.ttf', width//20)
-	title = tfont.render('GameOver', True, (255, 0, 0))
-	content = cfont.render('Score: %s, Highest: %s' % (score, highest), True, (0, 0, 255))
-	trect = title.get_rect()
-	trect.midtop = (width/2, height/4)
-	crect = content.get_rect()
-	crect.midtop = (width/2, height/2)
-	screen.blit(title, trect)
-	screen.blit(content, crect)
-	pygame.display.update()
-	while True:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				sys.exit()
-			elif event.type == pygame.KEYDOWN:
-				return
+'''游戏初始化'''
+def initGame():
+    # 初始化pygame, 设置展示窗口
+    pygame.init()
+    screen = pygame.display.set_mode(cfg.SCREENSIZE)
+    pygame.display.set_caption('catch coins —— 微信公众号: Charles的皮卡丘')
+    # 加载必要的游戏素材
+    game_images = {}
+    for key, value in cfg.IMAGE_PATHS.items():
+        if isinstance(value, list):
+            images = []
+            for item in value: images.append(pygame.image.load(item))
+            game_images[key] = images
+        else:
+            game_images[key] = pygame.image.load(value)
+    game_sounds = {}
+    for key, value in cfg.AUDIO_PATHS.items():
+        if key == 'bgm': continue
+        game_sounds[key] = pygame.mixer.Sound(value)
+    # 返回初始化数据
+    return screen, game_images, game_sounds
 
 
 '''主函数'''
 def main():
-	# 初始化
-	pygame.init()
-	WIDTH = 800
-	HEIGHT = 600
-	screen = pygame.display.set_mode([WIDTH, HEIGHT])
-	pygame.display.set_caption('接金币/苹果-公众号: Charles的皮卡丘')
-	pygame.mixer.init()
-	pygame.mixer.music.load("./audios/DasBeste.mp3")
-	pygame.mixer.music.set_volume(0.4)
-	pygame.mixer.music.play(-1)
-	get_sound = pygame.mixer.Sound("./audios/get.wav")
-	get_sound.set_volume(6)
-	clock = pygame.time.Clock()
-	# 定义一些必要的参数并实例化农民
-	farmer = FarmerSprite(WIDTH, HEIGHT)
-	foodGroup = pygame.sprite.Group()
-	foodInterval = 100
-	foodCount = 0
-	direction = 'left'
-	font = pygame.font.Font('./font/simkai.ttf', 20)
-	score = 0
-	# 如果20个食物没接住的话就Game Over
-	maxDown = 20
-	while True:
-		if maxDown < 0:
-			highest = getScore()
-			if int(highest) < score:
-				saveScore(str(score))
-			GameOver(screen, WIDTH, HEIGHT, score, highest)
-		screen.fill([0, 160, 233])
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				pygame.quit()
-				sys.exit()
-		key_pressed = pygame.key.get_pressed()
-		if key_pressed[pygame.K_LEFT] or key_pressed[pygame.K_a]:
-			if direction in ['top', 'bottom', 'right']:
-				direction = 'left'
-			elif direction == 'left':
-				farmer.move(direction)
-		elif key_pressed[pygame.K_RIGHT] or key_pressed[pygame.K_d]:
-			if direction in ['top', 'bottom', 'left']:
-				direction = 'right'
-			elif direction == 'right':
-				farmer.move(direction)
-		elif key_pressed[pygame.K_UP] or key_pressed[pygame.K_w]:
-			if direction in ['right', 'left', 'bottom']:
-				direction = 'top'
-			elif direction == 'top':
-				farmer.move(direction)
-		elif key_pressed[pygame.K_DOWN] or key_pressed[pygame.K_s]:
-			if direction in ['right', 'left', 'top']:
-				direction = 'bottom'
-			elif direction == 'bottom':
-				farmer.move(direction)
-		farmer.draw(screen)
-		foodCount += 1
-		if foodCount > foodInterval:
-			food = foodSprite(WIDTH, HEIGHT)
-			foodGroup.add(food)
-			foodCount = 0
-		for food in foodGroup:
-			food.move()
-			if pygame.sprite.collide_rect(food, farmer):
-				foodGroup.remove(food)
-				score += food.value
-				get_sound.play()
-				continue
-			if food.rect.top > HEIGHT:
-				foodGroup.remove(food)
-				if food.kind == 0:
-					maxDown -= 1
-				continue
-			food.draw(screen)
-		life_text = font.render("Life: "+str(maxDown), 1, (0, 0, 0))
-		score_text = font.render("Score: "+str(score), 1, (0, 0, 0))
-		screen.blit(score_text, [10, 10])
-		screen.blit(life_text, [10, 35])
-		pygame.display.flip()
-		clock.tick(60)
+    # 初始化
+    screen, game_images, game_sounds = initGame()
+    # 播放背景音乐
+    pygame.mixer.music.load(cfg.AUDIO_PATHS['bgm'])
+    pygame.mixer.music.play(-1, 0.0)
+    # 字体加载
+    font = pygame.font.Font(cfg.FONT_PATH, 40)
+    # 定义hero
+    hero = Hero(game_images['hero'], position=(375, 520))
+    # 定义食物组
+    food_sprites_group = pygame.sprite.Group()
+    generate_food_freq = random.randint(10, 20)
+    generate_food_count = 0
+    # 当前分数/历史最高分
+    score = 0
+    highest_score = 0 if not os.path.exists(cfg.HIGHEST_SCORE_RECORD_FILEPATH) else int(open(cfg.HIGHEST_SCORE_RECORD_FILEPATH).read())
+    # 游戏主循环
+    clock = pygame.time.Clock()
+    while True:
+        # --填充背景
+        screen.fill(0)
+        screen.blit(game_images['background'], (0, 0))
+        # --倒计时信息
+        countdown_text = 'Count down: ' + str((90000 - pygame.time.get_ticks()) // 60000) + ":" + str((90000 - pygame.time.get_ticks()) // 1000 % 60).zfill(2)
+        countdown_text = font.render(countdown_text, True, (0, 0, 0))
+        countdown_rect = countdown_text.get_rect()
+        countdown_rect.topright = [cfg.SCREENSIZE[0]-30, 5]
+        screen.blit(countdown_text, countdown_rect)
+        # --按键检测
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+        key_pressed = pygame.key.get_pressed()
+        if key_pressed[pygame.K_a] or key_pressed[pygame.K_LEFT]:
+            hero.move(cfg.SCREENSIZE, 'left')
+        if key_pressed[pygame.K_d] or key_pressed[pygame.K_RIGHT]:
+            hero.move(cfg.SCREENSIZE, 'right')
+        # --随机生成食物
+        generate_food_count += 1
+        if generate_food_count > generate_food_freq:
+            generate_food_freq = random.randint(10, 20)
+            generate_food_count = 0
+            food = Food(game_images, random.choice(['gold',] * 10 + ['apple']), cfg.SCREENSIZE)
+            food_sprites_group.add(food)
+        # --更新食物
+        for food in food_sprites_group:
+            if food.update(): food_sprites_group.remove(food)
+        # --碰撞检测
+        for food in food_sprites_group:
+            if pygame.sprite.collide_mask(food, hero):
+                game_sounds['get'].play()
+                food_sprites_group.remove(food)
+                score += food.score
+                if score > highest_score: highest_score = score
+        # --画hero
+        hero.draw(screen)
+        # --画食物
+        food_sprites_group.draw(screen)
+        # --显示得分
+        score_text = f'Score: {score}, Highest: {highest_score}'
+        score_text = font.render(score_text, True, (0, 0, 0))
+        score_rect = score_text.get_rect()
+        score_rect.topleft = [5, 5]
+        screen.blit(score_text, score_rect)
+        # --判断游戏是否结束
+        if pygame.time.get_ticks() >= 90000:
+            break
+        # --更新屏幕
+        pygame.display.flip()
+        clock.tick(cfg.FPS)
+    # 游戏结束, 记录最高分并显示游戏结束画面
+    fp = open(cfg.HIGHEST_SCORE_RECORD_FILEPATH, 'w')
+    fp.write(str(highest_score))
+    fp.close()
+    return showEndGameInterface(screen, cfg, score, highest_score)
 
 
 '''run'''
 if __name__ == '__main__':
-	main()
+    while main():
+        pass
