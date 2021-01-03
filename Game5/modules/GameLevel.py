@@ -40,9 +40,13 @@ class GameLevel():
 		# 字体
 		self.font = pygame.font.Font(cfg.FONTPATH, cfg.HEIGHT//30)
 		# 关卡场景元素
-		self.scene_elems = {'brick_group': pygame.sprite.Group(), 'iron_group': pygame.sprite.Group(),
-							'ice_group': pygame.sprite.Group(), 'river_group': pygame.sprite.Group(),
-							'tree_group': pygame.sprite.Group()}
+		self.scene_elems = {
+			'brick_group': pygame.sprite.Group(), 
+			'iron_group': pygame.sprite.Group(),
+			'ice_group': pygame.sprite.Group(), 
+			'river_group': pygame.sprite.Group(),
+			'tree_group': pygame.sprite.Group()
+		}
 		# 解析关卡文件
 		self.__parseLevelFile()
 	'''开始游戏'''

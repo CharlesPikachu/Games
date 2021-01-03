@@ -14,11 +14,15 @@ AUDIO_PATHS = {
 }
 '''图片素材路径'''
 IMAGE_PATHS = {
-	'cacti': [os.path.join(os.getcwd(), 'resources/images/cacti-big.png'),
-			  os.path.join(os.getcwd(), 'resources/images/cacti-small.png')],
+	'cacti': [
+		os.path.join(os.getcwd(), 'resources/images/cacti-big.png'),
+		os.path.join(os.getcwd(), 'resources/images/cacti-small.png')
+	],
 	'cloud': os.path.join(os.getcwd(), 'resources/images/cloud.png'),
-	'dino': [os.path.join(os.getcwd(), 'resources/images/dino.png'),
-			 os.path.join(os.getcwd(), 'resources/images/dino_ducking.png')],
+	'dino': [
+		os.path.join(os.getcwd(), 'resources/images/dino.png'),
+		os.path.join(os.getcwd(), 'resources/images/dino_ducking.png')
+	],
 	'gameover': os.path.join(os.getcwd(), 'resources/images/gameover.png'),
 	'ground': os.path.join(os.getcwd(), 'resources/images/ground.png'),
 	'numbers': os.path.join(os.getcwd(), 'resources/images/numbers.png'),
