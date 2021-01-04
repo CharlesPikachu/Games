@@ -2,9 +2,11 @@
 import os
 
 
+'''屏幕长宽'''
 WIDTH = 500
 HEIGHT = 500
-CURRPATH = os.path.abspath(os.path.dirname(__file__))
+'''游戏素材路径'''
+CURRPATH = os.getcwd()
 RESOURCESDIRPATH = os.path.join(CURRPATH, 'resources')
 AUDIOSDIRPATH = os.path.join(RESOURCESDIRPATH, 'audios')
 FONTDIRPATH = os.path.join(RESOURCESDIRPATH, 'font')
@@ -15,4 +17,5 @@ FONTPATH = os.path.join(FONTDIRPATH, 'font.TTF')
 GOALSOUNDPATH = os.path.join(AUDIOSDIRPATH, 'goal.wav')
 HITSOUNDPATH = os.path.join(AUDIOSDIRPATH, 'hit.wav')
 BGMPATH = os.path.join(AUDIOSDIRPATH, 'bgm.mp3')
+'''颜色'''
 WHITE = (255, 255, 255)

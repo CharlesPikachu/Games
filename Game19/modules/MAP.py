@@ -7,7 +7,7 @@ Author:
 	Charles的皮卡丘
 '''
 import random
-from modules.Sprites import *
+from .Sprites import *
 
 
 '''.map文件解析器'''

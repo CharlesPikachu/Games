@@ -53,7 +53,7 @@ class Fruit(pygame.sprite.Sprite):
 		elif self.kind == 'cherry':
 			self.value = 10
 		else:
-			raise ValueError('Unknow fruit <%s>...' % self.kind)
+			raise ValueError('Unknow fruit %s...' % self.kind)
 		self.image = pygame.image.load(imagepath)
 		self.image = pygame.transform.scale(self.image, (blocksize, blocksize))
 		self.rect = self.image.get_rect()
@@ -186,7 +186,7 @@ class Hero(pygame.sprite.Sprite):
 				return False
 			self.coordinate[1] = self.coordinate[1] + 1
 		else:
-			raise ValueError('Unknow direction <%s>...' % direction)
+			raise ValueError('Unknow direction %s...' % direction)
 		self.rect.left, self.rect.top = self.coordinate[0] * self.blocksize, self.coordinate[1] * self.blocksize
 		return True
 	'''随机行动(AI电脑用)'''
