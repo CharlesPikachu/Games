@@ -10,6 +10,7 @@ import random
 from itertools import product
 
 
+'''五子棋AI算法'''
 class aiGobang():
     def __init__(self, ai_color, player_color, search_depth=1, **kwargs):
         assert search_depth % 2, 'search_depth must be odd number'

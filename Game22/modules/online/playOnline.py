@@ -8,11 +8,11 @@ Author:
 '''
 import sys
 import random
+from .server import *
+from .client import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from modules.online.server import *
-from modules.online.client import *
 
 
 '''联机对战'''

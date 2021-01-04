@@ -10,13 +10,12 @@ import socket
 import pygame
 import random
 import threading
+from ..misc import *
+from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from itertools import product
-from modules.misc.utils import *
-from modules.misc.Buttons import *
-from modules.misc.Chessman import *
 
 
 '''服务器端'''

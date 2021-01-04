@@ -10,9 +10,7 @@ import cfg
 import sys
 import time
 import pygame
-from modules.text import *
-from modules.gamemap import *
-from modules.emojibutton import *
+from modules import *
 
 
 '''主函数'''

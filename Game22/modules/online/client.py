@@ -10,13 +10,12 @@ import socket
 import pygame
 import random
 import threading
+from ..misc import *
+from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from itertools import product
-from modules.misc.utils import *
-from modules.misc.Buttons import *
-from modules.misc.Chessman import *
 
 
 '''客户端'''
@@ -42,7 +41,7 @@ class gobangClient(QWidget):
         self.whoseround = None
         # 当前窗口的基本设置
         self.setFixedSize(760, 650)
-        self.setWindowTitle('五子棋-微信公众号: Charles的皮卡丘')
+        self.setWindowTitle('五子棋 —— Charles的皮卡丘')
         self.setWindowIcon(QIcon(cfg.ICON_FILEPATH))
         # 背景图片
         palette = QPalette()

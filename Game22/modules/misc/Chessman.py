@@ -6,9 +6,9 @@ Author:
 微信公众号:
     Charles的皮卡丘
 '''
+from .utils import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from modules.misc.utils import *
 
 
 '''棋子类'''
