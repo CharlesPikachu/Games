@@ -11,9 +11,7 @@ import cfg
 import sys
 import pygame
 import random
-from modules.hero import Hero
-from modules.food import Food
-from modules.endinterface import showEndGameInterface
+from modules import *
 
 
 '''游戏初始化'''
@@ -21,7 +19,7 @@ def initGame():
     # 初始化pygame, 设置展示窗口
     pygame.init()
     screen = pygame.display.set_mode(cfg.SCREENSIZE)
-    pygame.display.set_caption('catch coins —— 微信公众号: Charles的皮卡丘')
+    pygame.display.set_caption('catch coins —— Charles的皮卡丘')
     # 加载必要的游戏素材
     game_images = {}
     for key, value in cfg.IMAGE_PATHS.items():
