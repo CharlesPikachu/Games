@@ -7,10 +7,10 @@ Author:
     Charles的皮卡丘
 '''
 import random
+from .misc import *
+from .shapes import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-from modules.misc import *
-from modules.shapes import *
 from PyQt5.QtWidgets import QFrame
 
 
@@ -36,24 +36,24 @@ class InnerBoard():
         return True
     '''向右移动'''
     def moveRight(self):
-        if self.ableMove([self.current_coord[0]+1, self.current_coord[1]]):
+        if self.ableMove([self.current_coord[0] + 1, self.current_coord[1]]):
             self.current_coord[0] += 1
     '''向左移动'''
     def moveLeft(self):
-        if self.ableMove([self.current_coord[0]-1, self.current_coord[1]]):
+        if self.ableMove([self.current_coord[0] - 1, self.current_coord[1]]):
             self.current_coord[0] -= 1
     '''顺时针转'''
     def rotateClockwise(self):
-        if self.ableMove(self.current_coord, (self.current_direction-1) % 4):
+        if self.ableMove(self.current_coord, (self.current_direction - 1) % 4):
             self.current_direction = (self.current_direction-1) % 4
     '''逆时针转'''
     def rotateAnticlockwise(self):
-        if self.ableMove(self.current_coord, (self.current_direction+1) % 4):
+        if self.ableMove(self.current_coord, (self.current_direction + 1) % 4):
             self.current_direction = (self.current_direction+1) % 4
     '''向下移动'''
     def moveDown(self):
         removed_lines = 0
-        if self.ableMove([self.current_coord[0], self.current_coord[1]+1]):
+        if self.ableMove([self.current_coord[0], self.current_coord[1] + 1]):
             self.current_coord[1] += 1
         else:
             x_min, x_max, y_min, y_max = self.current_tetris.getRelativeBoundary(self.current_direction)
@@ -68,7 +68,7 @@ class InnerBoard():
     '''坠落'''
     def dropDown(self):
         removed_lines = 0
-        while self.ableMove([self.current_coord[0], self.current_coord[1]+1]):
+        while self.ableMove([self.current_coord[0], self.current_coord[1] + 1]):
             self.current_coord[1] += 1
         x_min, x_max, y_min, y_max = self.current_tetris.getRelativeBoundary(self.current_direction)
         # 简单起见, 有超出屏幕就判定游戏结束
@@ -91,7 +91,7 @@ class InnerBoard():
         new_board_data = [0] * self.width * self.height
         new_y = self.height - 1
         removed_lines = 0
-        for y in range(self.height-1, -1, -1):
+        for y in range(self.height - 1, -1, -1):
             cell_count = sum([1 if self.board_data[x + y * self.width] > 0 else 0 for x in range(self.width)])
             if cell_count < self.width:
                 for x in range(self.width):
@@ -167,8 +167,8 @@ class ExternalBoard(QFrame):
             shape = self.inner_board.current_tetris.shape
             drawCell(painter, x * self.grid_size, y * self.grid_size, shape, self.grid_size)
         painter.setPen(QColor(0x777777))
-        painter.drawLine(0, self.height()-1, self.width(), self.height()-1)
-        painter.drawLine(self.width()-1, 0, self.width()-1, self.height())
+        painter.drawLine(0, self.height() - 1, self.width(), self.height() - 1)
+        painter.drawLine(self.width() - 1, 0, self.width() - 1, self.height())
         painter.setPen(QColor(0xCCCCCC))
         painter.drawLine(self.width(), 0, self.width(), self.height())
         painter.drawLine(0, self.height(), self.width(), self.height())

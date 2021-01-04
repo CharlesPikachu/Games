@@ -15,10 +15,10 @@ def drawCell(painter, x, y, shape, grid_size):
     if shape == 0:
         return
     color = QColor(colors[shape])
-    painter.fillRect(x+1, y+1, grid_size-2, grid_size-2, color)
+    painter.fillRect(x + 1, y + 1, grid_size - 2, grid_size - 2, color)
     painter.setPen(color.lighter())
-    painter.drawLine(x, y+grid_size-1, x, y)
-    painter.drawLine(x, y, x+grid_size-1, y)
+    painter.drawLine(x, y + grid_size - 1, x, y)
+    painter.drawLine(x, y, x + grid_size - 1, y)
     painter.setPen(color.darker())
-    painter.drawLine(x+1, y+grid_size-1, x+grid_size-1, y+grid_size-1)
-    painter.drawLine(x+grid_size-1, y+grid_size-1, x+grid_size-1, y+1)
+    painter.drawLine(x + 1, y + grid_size - 1, x + grid_size - 1, y + grid_size - 1)
+    painter.drawLine(x + grid_size - 1, y + grid_size - 1, x + grid_size - 1, y + 1)
