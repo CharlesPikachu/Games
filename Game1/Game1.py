@@ -6,6 +6,7 @@ Author:
 微信公众号: 
     Charles的皮卡丘
 '''
+import sys
 import cfg
 import math
 import random

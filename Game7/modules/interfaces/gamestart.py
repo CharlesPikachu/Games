@@ -8,7 +8,7 @@ Author:
 '''
 import sys
 import pygame
-from modules.sprites.dinosaur import Dinosaur
+from ..sprites import Dinosaur
 
 
 '''游戏开始界面'''
