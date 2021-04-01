@@ -42,6 +42,19 @@ This repository is created just for learning python(Commercial prohibition).
 # Record
 see RECORD dir please → [click](./RECORD)
 
+# Citation
+If you use this project in your research, please cite this project.
+```
+@misc{games2020,
+    author = {Zhenchao Jin},
+    title = {Games: Create interesting games by pure python},
+    year = {2020},
+    publisher = {GitHub},
+    journal = {GitHub repository},
+    howpublished = {\url{https://github.com/CharlesPikachu/Games}},
+}
+```
+
 # More
 #### WeChat Official Accounts
 *Charles_pikachu*  
