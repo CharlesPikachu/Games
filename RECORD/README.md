@@ -157,3 +157,8 @@ Version: v0.1
 update Game9: Catch coins, in https://github.com/CharlesPikachu/Games/tree/master/Game9
 Version: v0.2
 ```
+#### 2021-05-15
+```
+add Game26: Angry Birds, in https://github.com/CharlesPikachu/Games/tree/master/Game26
+Version: v0.1
+```
