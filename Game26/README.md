@@ -15,5 +15,9 @@ Step2:
 run "python Game26.py"
 ```
 
+# Reference
+[1]. https://github.com/estevaofon/angry-birds-python
+[2]. https://github.com/jatinmandav/Gaming-in-Python
+
 # Game Display
 ![giphy](demonstration/running.gif)

@@ -40,9 +40,9 @@ def main(cfg):
     quit_btn = Button(screen, 1000, 400, 300, 100, quitgame, (241, 148, 138), (245, 183, 177))
     quit_btn.addtext('QUIT', 60, cfg.FONTPATH['arfmoochikncheez'], cfg.BACKGROUND_COLOR)
     components.add(quit_btn)
-    mandav_label = Label(screen, cfg.SCREENSIZE[0] - 300, cfg.SCREENSIZE[1] - 80, 300, 100)
-    mandav_label.addtext('MANDAV', 60, cfg.FONTPATH['arfmoochikncheez'], (41, 41, 41))
-    components.add(mandav_label)
+    charles_label = Label(screen, cfg.SCREENSIZE[0] - 300, cfg.SCREENSIZE[1] - 80, 300, 100)
+    charles_label.addtext('CHARLES', 60, cfg.FONTPATH['arfmoochikncheez'], (41, 41, 41))
+    components.add(charles_label)
     clock = pygame.time.Clock()
     while True:
         for event in pygame.event.get():

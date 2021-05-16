@@ -190,8 +190,8 @@ class GameLevels():
             next_btn.addtext('RESTART', 60, self.cfg.FONTPATH['arfmoochikncheez'], self.cfg.BACKGROUND_COLOR)
         quit_btn = Button(self.screen, 1150, 500, 300, 100, self.quitgame, (241, 148, 138), (245, 183, 177))
         quit_btn.addtext('QUIT', 60, self.cfg.FONTPATH['arfmoochikncheez'], self.cfg.BACKGROUND_COLOR)
-        mandav_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
-        mandav_label.addtext('MANDAV', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
+        charles_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
+        charles_label.addtext('CHARLES', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
         clock = pygame.time.Clock()
         while True:
             for event in pygame.event.get():
@@ -204,7 +204,7 @@ class GameLevels():
                     if replay_btn.selected(): replay_btn.action()
                     if next_btn.selected(): next_btn.action()
                     if quit_btn.selected(): quit_btn.action()
-            for component in [replay_btn, next_btn, quit_btn, level_switch_label, score_label, mandav_label]:
+            for component in [replay_btn, next_btn, quit_btn, level_switch_label, score_label, charles_label]:
                 component.draw()
             pygame.display.update()
             clock.tick(self.cfg.FPS)
@@ -218,8 +218,8 @@ class GameLevels():
         replay_btn.addtext('TRY AGAIN', 60, self.cfg.FONTPATH['arfmoochikncheez'], self.cfg.BACKGROUND_COLOR)
         quit_btn = Button(self.screen, 1000, 500, 300, 100, self.quitgame, (241, 148, 138), (245, 183, 177))
         quit_btn.addtext('QUIT', 60, self.cfg.FONTPATH['arfmoochikncheez'], self.cfg.BACKGROUND_COLOR)
-        mandav_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
-        mandav_label.addtext('MANDAV', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
+        charles_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
+        charles_label.addtext('CHARLES', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
         clock = pygame.time.Clock()
         while True:
             for event in pygame.event.get():
@@ -231,7 +231,7 @@ class GameLevels():
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if replay_btn.selected(): replay_btn.action()
                     if quit_btn.selected(): quit_btn.action()
-            for component in [replay_btn, quit_btn, failure_label, score_label, mandav_label]:
+            for component in [replay_btn, quit_btn, failure_label, score_label, charles_label]:
                 component.draw()
             pygame.display.update()
             clock.tick(self.cfg.FPS)
@@ -245,8 +245,8 @@ class GameLevels():
         resume_btn.addtext('RESUME', 60, self.cfg.FONTPATH['arfmoochikncheez'], self.cfg.BACKGROUND_COLOR)
         quit_btn = Button(self.screen, 1150, 500, 300, 100, self.quitgame, (241, 148, 138), (245, 183, 177))
         quit_btn.addtext('QUIT', 60, self.cfg.FONTPATH['arfmoochikncheez'], self.cfg.BACKGROUND_COLOR)
-        mandav_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
-        mandav_label.addtext('MANDAV', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
+        charles_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
+        charles_label.addtext('CHARLES', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
         clock = pygame.time.Clock()
         while True:
             for event in pygame.event.get():
@@ -261,7 +261,7 @@ class GameLevels():
                     if replay_btn.selected(): replay_btn.action()
                     if resume_btn.selected(): return
                     if quit_btn.selected(): quit_btn.action()
-            for component in [replay_btn, resume_btn, quit_btn, pause_label, mandav_label]:
+            for component in [replay_btn, resume_btn, quit_btn, pause_label, charles_label]:
                 component.draw()
             pygame.display.update()
             clock.tick(self.cfg.FPS)
@@ -278,8 +278,8 @@ class GameLevels():
         birds_remaining_label.addtext(f"BIRDS REMAINING: {len(birds)}", 25, self.cfg.FONTPATH['Comic_Kings'], (236, 240, 241))
         pigs_remaining_label = Label(self.screen, 110, 90, 100, 50)
         pigs_remaining_label.addtext(f"PIGS REMAINING: {len(pigs)}", 25, self.cfg.FONTPATH['Comic_Kings'], (236, 240, 241))
-        mandav_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
-        mandav_label.addtext('MANDAV', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
+        charles_label = Label(self.screen, self.screen_size[0] - 270, self.screen_size[1] - 20, 300, 100)
+        charles_label.addtext('CHARLES', 60, self.cfg.FONTPATH['arfmoochikncheez'], (113, 125, 126))
         # 游戏主循环
         clock = pygame.time.Clock()
         blocks_to_remove, pigs_to_remove = [], []
@@ -410,7 +410,7 @@ class GameLevels():
             birds_remaining_label.draw()
             pigs_remaining_label.addtext(f"PIGS REMAINING: {len(pigs)}", 25, self.cfg.FONTPATH['Comic_Kings'], (236, 240, 241))
             pigs_remaining_label.draw()
-            mandav_label.draw()
+            charles_label.draw()
             # --画面刷新
             pygame.display.update()
             clock.tick(self.cfg.FPS)
