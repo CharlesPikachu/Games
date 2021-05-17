@@ -1,0 +1,2 @@
+pygame
+pillow

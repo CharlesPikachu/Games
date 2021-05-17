@@ -39,7 +39,7 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game24  |     Greedy Snake            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game24)     |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
 |   Game25  |     Mine Sweeper            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game25)     |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
 |   Game26  |     Angry Birds             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game26)     |   [click](https://mp.weixin.qq.com/s/-Z_4PEF7f3ZS1CKd9D6Brg) |
-|   Game27  |     Flip Card by Memory     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game27)     |   [click]() |
+|   Game27  |     Flip Card by Memory     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game27)     |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
 
 # Record
 see RECORD dir please → [click](./RECORD)

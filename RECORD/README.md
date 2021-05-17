@@ -162,3 +162,8 @@ Version: v0.2
 add Game26: Angry Birds, in https://github.com/CharlesPikachu/Games/tree/master/Game26
 Version: v0.1
 ```
+#### 2021-05-17
+```
+add Game27: Flip Card by Memory, in https://github.com/CharlesPikachu/Games/tree/master/Game27
+Version: v0.1
+```
