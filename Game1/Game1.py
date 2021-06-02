@@ -3,8 +3,7 @@ Function:
     Bunnies and Badgers
 Author: 
     Charles
-微信公众号: 
-    Charles的皮卡丘
+Test
 '''
 import sys
 import cfg
