@@ -98,6 +98,6 @@ HEIGHT = 630
 BORDER_LEN = 3
 GRID_SIZE = 24
 PANEL_WIDTH = 150
-TITLE = '坦克大战 —— Charles的皮卡丘'
+TITLE = 'Battle City —— Charles的皮卡丘'
 '''关卡'''
 LEVELFILEDIR = os.path.join(os.getcwd(), 'modules/levels')
