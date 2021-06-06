@@ -1,8 +1,10 @@
 '''配置文件'''
+'''configuration files'''
 import os
 
 
 '''图片素材路径'''
+'''Image material path'''
 IMAGE_PATHS = {
     '0': os.path.join(os.getcwd(), 'resources/images/0.bmp'),
     '1': os.path.join(os.getcwd(), 'resources/images/1.bmp'),
@@ -24,11 +26,14 @@ IMAGE_PATHS = {
     'mine': os.path.join(os.getcwd(), 'resources/images/mine.bmp')
 }
 '''字体路径'''
+'''Font path'''
 FONT_PATH = os.path.join(os.getcwd(), 'resources/font/font.TTF')
 FONT_SIZE = 40
 '''BGM路径'''
+'''BGM path'''
 BGM_PATH = os.path.join(os.getcwd(), 'resources/music/bgm.mp3')
 '''游戏相关参数'''
+'''Game Metrics'''
 FPS = 60
 GRIDSIZE = 20
 NUM_MINES = 99
@@ -36,5 +41,6 @@ GAME_MATRIX_SIZE = (30, 16)
 BORDERSIZE = 5
 SCREENSIZE = (GAME_MATRIX_SIZE[0] * GRIDSIZE + BORDERSIZE * 2, (GAME_MATRIX_SIZE[1] + 2) * GRIDSIZE + BORDERSIZE)
 '''颜色'''
+'''Color'''
 BACKGROUND_COLOR = (225, 225, 225)
 RED = (200, 0, 0)

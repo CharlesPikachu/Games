@@ -11,6 +11,7 @@ from .mine import Mine
 
 
 '''扫雷地图'''
+'''Mine map'''
 class MinesweeperMap():
     def __init__(self, cfg, images, **kwargs):
         self.cfg = cfg
@@ -35,14 +36,17 @@ class MinesweeperMap():
         self.mouse_pos = None
         self.mouse_pressed = None
     '''画出当前的游戏状态图'''
+    '''Draw a picture of the current state of the game'''
     def draw(self, screen):
         for row in self.mines_matrix:
             for item in row: item.draw(screen)
     '''设置当前的游戏状态'''
+    '''Set the current state of the game'''
     def setstatus(self, status_code):
         # 0: 正在进行游戏, 1: 游戏结束, -1: 游戏还没开始
         self.status_code = status_code
     '''根据玩家的鼠标操作情况更新当前的游戏状态地图'''
+    '''Updates the current game state map based on the player's mouse movements'''
     def update(self, mouse_pressed=None, mouse_pos=None, type_='down'):
         assert type_ in ['down', 'up']
         # 记录鼠标按下时的位置和按的键
@@ -105,6 +109,7 @@ class MinesweeperMap():
                     if self.mines_matrix[j][i].status_code == 5:
                         self.mines_matrix[j][i].setstatus(status_code=0)
     '''打开雷'''
+    ''' Open mine '''
     def openmine(self, x, y):
         mine_clicked = self.mines_matrix[y][x]
         if mine_clicked.is_mine_flag:
@@ -128,6 +133,7 @@ class MinesweeperMap():
                     self.openmine(i, j)
         return False
     '''获得坐标点的周围坐标点'''
+    ''' get around '''
     def getaround(self, row, col):
         coords = []
         for j in range(max(0, row-1), min(row+1, self.cfg.GAME_MATRIX_SIZE[1]-1)+1):
@@ -137,10 +143,12 @@ class MinesweeperMap():
                 coords.append((j, i))
         return coords
     '''是否正在游戏中'''
+    ''' Whether it is in the game '''
     @property
     def gaming(self):
         return self.status_code == 0
     '''被标记为雷的雷数目'''
+    ''' Number of mines marked as mines '''
     @property
     def flags(self):
         num_flags = 0
@@ -148,6 +156,7 @@ class MinesweeperMap():
             for item in row: num_flags += int(item.status_code == 2)
         return num_flags
     '''已经打开的雷的数目'''
+    '''Number of mines that have been opened'''
     @property
     def openeds(self):
         num_openeds = 0
