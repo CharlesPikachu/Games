@@ -26,3 +26,7 @@ BACKGROUNDPATHS = {
     'blankbg': os.path.join(os.getcwd(), f'resources/images/blankbg.png'),
     'gamebg': os.path.join(os.getcwd(), f'resources/images/gamebg.png'),
 }
+'''勇士图片路径'''
+HEROPATHS = {}
+for filename in os.listdir(os.path.join(os.getcwd(), 'resources/images/player/')):
+    HEROPATHS[filename.split('.')[0]] = os.path.join(os.getcwd(), f'resources/images/player/{filename}')
