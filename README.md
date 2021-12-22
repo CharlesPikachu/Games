@@ -1,14 +1,28 @@
+<div align="center">
+  <img src="./docs/logo.png" width="600"/>
+</div>
+<br />
+
+[![license](https://img.shields.io/github/license/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/blob/master/LICENSE)
+[![issue resolution](https://isitmaintained.com/badge/resolution/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
+[![open issues](https://isitmaintained.com/badge/open/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
+
+Documents: https://github.com/CharlesPikachu/Games/tree/master/docs
+
+
 # Games
 ```
 Create interesting games by pure python.
 You can star this repository to keep track of the project if it's helpful for you, thank you for your support.
 ```
 
+
 # Statement
 ```
 Most of the game materals(including music, fonts and pictures) in this repository are collected from the web, copyright belongs to the original author.
 This repository is created just for learning python(Commercial prohibition).
 ```
+
 
 # Contents
 |   ID      |     Name of The Game        |   Code                                                                    |   Introduction                                               |
@@ -41,8 +55,6 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game26  |     Angry Birds             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game26)     |   [click](https://mp.weixin.qq.com/s/-Z_4PEF7f3ZS1CKd9D6Brg) |
 |   Game27  |     Flip Card by Memory     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game27)     |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
 
-# Record
-see RECORD dir please → [click](./RECORD)
 
 # Citation
 If you use this project in your research, please cite this project.
@@ -57,7 +69,8 @@ If you use this project in your research, please cite this project.
 }
 ```
 
+
 # More
 #### WeChat Official Accounts
 *Charles_pikachu*  
-![img](pikachu.jpg)
+![img](./docs/pikachu.jpg)
