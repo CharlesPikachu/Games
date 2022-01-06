@@ -32,6 +32,8 @@ This repository is created just for learning python(Commercial prohibition).
 
 
 # TODO List
+|   ID      |  English Name               |    Core Code                                                              |   Introduction                                               |
+|   :----:  |  :----:                     |  :----:                                                                   |   :----:                                                     |
 |   Game2   |     Pikachu Go Go Go        |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game2)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) |                
 |   Game3   |     Puzzle pieces           |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game3)      |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
 |   Game4   |     Skier                   |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game4)      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
