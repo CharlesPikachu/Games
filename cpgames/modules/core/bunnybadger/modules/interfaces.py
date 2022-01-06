@@ -6,13 +6,12 @@ Author:
 微信公众号:
     Charles的皮卡丘
 '''
-import sys
 import pygame
+from ....utils import QuitGame
 
 
 '''游戏结束界面'''
-def showEndGameInterface(screen, exitcode, accuracy, game_images):
-    font = pygame.font.Font(None, 24)
+def ShowEndGameInterface(screen, exitcode, accuracy, game_images, font):
     text = font.render(f"Accuracy: {accuracy}%", True, (255, 0, 0))
     text_rect = text.get_rect()
     text_rect.centerx = screen.get_rect().centerx
@@ -21,8 +20,7 @@ def showEndGameInterface(screen, exitcode, accuracy, game_images):
         screen.fill(0)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+                QuitGame()
         if exitcode:
             screen.blit(game_images['youwin'], (0, 0))
         else:

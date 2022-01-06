@@ -7,7 +7,7 @@
 [![issue resolution](https://isitmaintained.com/badge/resolution/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
 [![open issues](https://isitmaintained.com/badge/open/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
 
-Documents: https://github.com/CharlesPikachu/Games/tree/master/docs
+Documents: None
 
 
 # Games
@@ -24,10 +24,14 @@ This repository is created just for learning python(Commercial prohibition).
 ```
 
 
-# Contents
-|   ID      |     Name of The Game        |   Code                                                                    |   Introduction                                               |
-|   :----:  |     :----:                  |   :----:                                                                  |   :----:                                                     |
-|   Game1   |     Bunnies and Badgers     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game1)      |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
+# Support List
+|   ID      |  English Name           |  Chinese Name           |   Core Code                                         |   Introduction                                               |
+|   :----:  |  :----:                 |  :----:                 |   :----:                                            |   :----:                                                     |
+|   Game1   |  Bunnies and Badgers    |  兔子和獾(射击游戏)     |   [click](./cpgames/modules/core/bunnybadger)       |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
+
+
+
+# TODO List
 |   Game2   |     Pikachu Go Go Go        |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game2)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) |                
 |   Game3   |     Puzzle pieces           |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game3)      |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
 |   Game4   |     Skier                   |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game4)      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
@@ -56,6 +60,41 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game27  |     Flip Card by Memory     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game27)     |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
 
 
+# Install
+
+#### Pip install
+```
+run "pip install cpgames"
+```
+
+#### Source code install
+```sh
+(1) Offline
+Step1: git clone https://github.com/CharlesPikachu/Games.git
+Step2: cd Games -> run "python setup.py install"
+(2) Online
+run "pip install git+https://github.com/CharlesPikachu/Games.git@master"
+```
+
+
+# Quick Start
+```python
+from cpgames import cpgames
+```
+
+
+# Screenshot
+
+
+# Projects in Charles_pikachu
+- [Games](https://github.com/CharlesPikachu/Games): Create interesting games by pure python.
+- [DecryptLogin](https://github.com/CharlesPikachu/DecryptLogin): APIs for loginning some websites by using requests.
+- [Musicdl](https://github.com/CharlesPikachu/musicdl): A lightweight music downloader written by pure python.
+- [Videodl](https://github.com/CharlesPikachu/videodl): A lightweight video downloader written by pure python.
+- [Pytools](https://github.com/CharlesPikachu/pytools): Some useful tools written by pure python.
+- [PikachuWeChat](https://github.com/CharlesPikachu/pikachuwechat): Play WeChat with itchat-uos.
+
+
 # Citation
 If you use this project in your research, please cite this project.
 ```
@@ -68,14 +107,6 @@ If you use this project in your research, please cite this project.
     howpublished = {\url{https://github.com/CharlesPikachu/Games}},
 }
 ```
-
-
-# Projects in Charles_pikachu
-- [DecryptLogin](https://github.com/CharlesPikachu/DecryptLogin): APIs for loginning some websites by using requests.
-- [Musicdl](https://github.com/CharlesPikachu/musicdl): A lightweight music downloader written by pure python.
-- [Videodl](https://github.com/CharlesPikachu/videodl): A lightweight video downloader written by pure python.
-- [Pytools](https://github.com/CharlesPikachu/pytools): Some useful tools written by pure python.
-- [PikachuWeChat](https://github.com/CharlesPikachu/pikachuwechat): Play WeChat with itchat-uos.
 
 
 # More
