@@ -1,7 +1,7 @@
 '''
 Function:
     定义block类，用于随机生成地面块
-作者:
+Author:
     Charles
 微信公众号:
     Charles的皮卡丘

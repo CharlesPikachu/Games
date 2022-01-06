@@ -34,8 +34,7 @@ class CPGames():
     '''执行对应的小程序'''
     def execute(self, game_type=None, config={}):
         assert game_type in self.supported_games, 'unsupport game_type %s...' % game_type
-        qt_games = [
-        ]
+        qt_games = []
         if game_type in qt_games:
             app = QApplication(sys.argv)
             client = self.supported_games[game_type](**config)
@@ -47,7 +46,8 @@ class CPGames():
     '''初始化'''
     def initialize(self):
         supported_games = {
-            'bunnybadger': BunnyBadgerGame
+            'bunnybadger': BunnyBadgerGame,
+            'voicecontrolpikachu': VoiceControlPikachuGame,
         }
         return supported_games
     '''获得所有支持的游戏信息'''

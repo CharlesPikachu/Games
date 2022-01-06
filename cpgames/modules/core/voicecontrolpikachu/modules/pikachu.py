@@ -1,7 +1,7 @@
 '''
 Function:
     定义皮卡丘类
-作者:
+Author:
     Charles
 微信公众号:
     Charles的皮卡丘

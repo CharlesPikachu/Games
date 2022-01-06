@@ -55,7 +55,7 @@ class Config():
 class BunnyBadgerGame(PygameBaseGame):
     game_type = 'bunnybadger'
     def __init__(self, **kwargs):
-        self.cfg = Config()
+        self.cfg = Config
         super(BunnyBadgerGame, self).__init__(config=self.cfg, **kwargs)
     '''运行游戏'''
     def run(self):

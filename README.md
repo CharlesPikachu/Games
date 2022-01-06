@@ -25,16 +25,16 @@ This repository is created just for learning python(Commercial prohibition).
 
 
 # Support List
-|   ID      |  English Name           |  Chinese Name           |   Core Code                                         |   Introduction                                               |
-|   :----:  |  :----:                 |  :----:                 |   :----:                                            |   :----:                                                     |
-|   Game1   |  Bunnies and Badgers    |  兔子和獾(射击游戏)     |   [click](./cpgames/modules/core/bunnybadger)       |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
+|   ID      |  English Name             |  Chinese Name           |   Core Code                                                |   Introduction                                               |
+|   :----:  |  :----:                   |  :----:                 |   :----:                                                   |   :----:                                                     |
+|   Game1   |  BunnyBadgerGame          |  兔子和獾(射击游戏)     |   [click](./cpgames/modules/core/bunnybadger)              |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
+|   Game2   |  VoiceControlPikachuGame  |  仿八分音符的声控小游戏 |   [click](./cpgames/modules/core/voicecontrolpikachu)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) | 
 
 
 
 # TODO List
 |   ID      |  English Name               |    Core Code                                                              |   Introduction                                               |
 |   :----:  |  :----:                     |  :----:                                                                   |   :----:                                                     |
-|   Game2   |     Pikachu Go Go Go        |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game2)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) |                
 |   Game3   |     Puzzle pieces           |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game3)      |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
 |   Game4   |     Skier                   |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game4)      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
 |   Game5   |     Tank War                |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game5)      |   [click](https://mp.weixin.qq.com/s/1xXULpT36P7LTO5HDbjptg) |

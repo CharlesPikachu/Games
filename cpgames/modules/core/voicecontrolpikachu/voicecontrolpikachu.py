@@ -1,40 +1,58 @@
 '''
 Function:
     仿八分音符的声控小游戏
-作者:
+Author:
     Charles
 微信公众号:
     Charles的皮卡丘
 '''
-import cfg
+import os
 import cocos
 import struct
-from modules import *
+import pyglet
 from cocos.sprite import Sprite
+from .modules import Pikachu, Block
 from pyaudio import PyAudio, paInt16
 
 
+'''配置类'''
+class Config():
+    # 根目录
+    rootdir = os.path.split(os.path.abspath(__file__))[0]
+    # 屏幕大小
+    SCREENSIZE = (800, 600)
+    # 标题
+    TITLE = '仿八分音符的声控小游戏 —— Charles的皮卡丘'
+    # 游戏图片路径
+    IMAGE_PATHS_DICT = {
+        'block': os.path.join(rootdir, 'resources/images/block.png'),
+        'pikachu': os.path.join(rootdir, 'resources/images/pikachu.png'),
+    }
+
+
 '''定义声控游戏类'''
-class VCGame(cocos.layer.ColorLayer):
-    def __init__(self):
-        super(VCGame, self).__init__(255, 255, 255, 255, 800, 600)
+class VoiceControlPikachuLayer(cocos.layer.ColorLayer):
+    def __init__(self, config):
+        super(VoiceControlPikachuLayer, self).__init__(255, 255, 255, 255, config.SCREENSIZE[0], config.SCREENSIZE[1])
+        pyglet.resource.path = [os.path.split(config.IMAGE_PATHS_DICT['block'])[0]]
+        pyglet.resource.reindex()
         # frames_per_buffer
         self.num_samples = 1000
         # 声控条
-        self.vbar = Sprite(cfg.BLOCK_IMAGE_PATH)
+        self.vbar = Sprite(os.path.split(config.IMAGE_PATHS_DICT['block'])[1])
         self.vbar.position = 20, 450
         self.vbar.scale_y = 0.1
         self.vbar.image_anchor = 0, 0
         self.add(self.vbar)
         # 皮卡丘
-        self.pikachu = Pikachu(cfg.PIKACHU_IMAGE_PATH)
+        self.pikachu = Pikachu(os.path.split(config.IMAGE_PATHS_DICT['pikachu'])[1])
         self.add(self.pikachu)
         # 地面
         self.floor = cocos.cocosnode.CocosNode()
         self.add(self.floor)
         position = 0, 100
         for i in range(120):
-            b = Block(cfg.BLOCK_IMAGE_PATH, position)
+            b = Block(os.path.split(config.IMAGE_PATHS_DICT['block'])[1], position)
             self.floor.add(b)
             position = b.x + b.width, b.height
         # 声音输入
@@ -68,7 +86,14 @@ class VCGame(cocos.layer.ColorLayer):
         self.floor.x = 0
 
 
-'''run'''
-if __name__ == '__main__':
-    cocos.director.director.init(caption="Pikachu Go Go Go —— Charles的皮卡丘")
-    cocos.director.director.run(cocos.scene.Scene(VCGame()))
+'''仿八分音符的声控小游戏'''
+class VoiceControlPikachuGame():
+    game_type = 'voicecontrolpikachu'
+    def __init__(self, **kwargs):
+        self.cfg = Config
+        for key, value in kwargs.items():
+            if hasattr(self, key): setattr(self, key, value)
+    '''运行游戏'''
+    def run(self):
+        cocos.director.director.init(caption=self.cfg.TITLE)
+        cocos.director.director.run(cocos.scene.Scene(VoiceControlPikachuLayer(self.cfg)))
