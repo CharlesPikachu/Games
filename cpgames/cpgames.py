@@ -47,6 +47,7 @@ class CPGames():
     def initialize(self):
         supported_games = {
             'bunnybadger': BunnyBadgerGame,
+            'puzzlepieces': PuzzlePiecesGame,
             'voicecontrolpikachu': VoiceControlPikachuGame,
         }
         return supported_games
