@@ -30,13 +30,12 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game1   |  bunnybadger              |  兔子和獾(射击游戏)     |   [click](./cpgames/modules/core/bunnybadger)              |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
 |   Game2   |  voicecontrolpikachu      |  仿八分音符的声控小游戏 |   [click](./cpgames/modules/core/voicecontrolpikachu)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) | 
 |   Game3   |  puzzlepieces             |  拼图小游戏             |   [click](./cpgames/modules/core/puzzlepieces)             |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
-
+|   Game4   |  ski                      |  滑雪游戏               |   [click](./cpgames/modules/core/ski)                      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
 
 
 # TODO List
 |   ID      |  English Name               |    Core Code                                                              |   Introduction                                               |
 |   :----:  |  :----:                     |  :----:                                                                   |   :----:                                                     |
-|   Game4   |     Skier                   |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game4)      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
 |   Game5   |     Tank War                |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game5)      |   [click](https://mp.weixin.qq.com/s/1xXULpT36P7LTO5HDbjptg) |
 |   Game6   |     FlappyBird              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game6)      |   [click](https://mp.weixin.qq.com/s/44CZjwvjnH0kkkKIn5U9Uw) |
 |   Game7   |     T-Rex Rush              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game7)      |   [click](https://mp.weixin.qq.com/s/PnvcSBe0Va3GVIodGIjYRg) |
