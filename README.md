@@ -3,11 +3,15 @@
 </div>
 <br />
 
+[![docs](https://img.shields.io/badge/docs-latest-blue)](https://cpgames.readthedocs.io/zh/latest/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cpgames)](https://pypi.org/project/cpgames/)
+[![PyPI](https://img.shields.io/pypi/v/cpgames)](https://pypi.org/project/cpgames)
 [![license](https://img.shields.io/github/license/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/blob/master/LICENSE)
+[![PyPI - Downloads](https://pepy.tech/badge/cpgames)](https://pypi.org/project/cpgames/)
 [![issue resolution](https://isitmaintained.com/badge/resolution/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
 [![open issues](https://isitmaintained.com/badge/open/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
 
-Documents: None
+Documents: https://cpgames.readthedocs.io/zh/latest/
 
 
 # Games
@@ -47,18 +51,13 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game18  |  breakoutclone            |  打砖块小游戏           |   [click](./cpgames/modules/core/breakoutclone)            |   [click](https://mp.weixin.qq.com/s/9tNVTA06dFthdugNs3TePA) |
 |   Game19  |  bomberman                |  炸弹人小游戏           |   [click](./cpgames/modules/core/bomberman)                |   [click](https://mp.weixin.qq.com/s/XzB_cJMFEtz6p_MvqiaCrA) |
 |   Game20  |  maze                     |  走迷宫小游戏           |   [click](./cpgames/modules/core/maze)                     |   [click](https://mp.weixin.qq.com/s/s9jburcC4WaOO_0ce54-Rg) |
-
-
-# TODO List
-|   ID      |  English Name               |    Core Code                                                              |   Introduction                                               |
-|   :----:  |  :----:                     |  :----:                                                                   |   :----:                                                     |
-|   Game21  |     Whac-A-Mole             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game21)     |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
-|   Game22  |     Gobang                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game22)     |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
-|   Game23  |     2048                    |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game23)     |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
-|   Game24  |     Greedy Snake            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game24)     |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
-|   Game25  |     Mine Sweeper            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game25)     |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
-|   Game26  |     Angry Birds             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game26)     |   [click](https://mp.weixin.qq.com/s/-Z_4PEF7f3ZS1CKd9D6Brg) |
-|   Game27  |     Flip Card by Memory     |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game27)     |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
+|   Game21  |  whacamole                |  打地鼠                 |   [click](./cpgames/modules/core/whacamole)                |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
+|   Game22  |  gobang                   |  五子棋小游戏           |   [click](./cpgames/modules/core/gobang)                   |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
+|   Game23  |  twozerofoureight         |  2048小游戏             |   [click](./cpgames/modules/core/twozerofoureight)         |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
+|   Game24  |  greedysnake              |  贪吃蛇小游戏           |   [click](./cpgames/modules/core/greedysnake)              |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
+|   Game25  |  minesweeper              |  扫雷小游戏             |   [click](./cpgames/modules/core/minesweeper)              |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
+|   Game26  |  angrybirds               |  愤怒的小鸟             |   [click](./cpgames/modules/core/angrybirds)               |   [click](https://mp.weixin.qq.com/s/-Z_4PEF7f3ZS1CKd9D6Brg) |
+|   Game27  |  flipcardbymemory         |  记忆翻牌小游戏         |   [click](./cpgames/modules/core/flipcardbymemory)         |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
 
 
 # Install
@@ -80,11 +79,17 @@ run "pip install git+https://github.com/CharlesPikachu/Games.git@master"
 
 # Quick Start
 ```python
+import random
 from cpgames import cpgames
+
+game_client = cpgames.CPGames()
+all_supports = game_client.getallsupported()
+game_client.execute(random.choice(list(all_supports.values())))
 ```
 
 
 # Screenshot
+![img](./docs/screenshot.gif)
 
 
 # Projects in Charles_pikachu

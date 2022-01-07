@@ -1,7 +1,7 @@
 '''title'''
 __title__ = 'cpgames'
 '''description'''
-__description__ = 'Games: Create interesting games by pure python..'
+__description__ = 'Games: Create interesting games by pure python'
 '''url'''
 __url__ = 'https://github.com/CharlesPikachu/Games'
 '''version'''
