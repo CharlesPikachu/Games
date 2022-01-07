@@ -47,6 +47,7 @@ class CPGames():
     def initialize(self):
         supported_games = {
             'ski': SkiGame,
+            'tankwar': TankWarGame,
             'bunnybadger': BunnyBadgerGame,
             'puzzlepieces': PuzzlePiecesGame,
             'voicecontrolpikachu': VoiceControlPikachuGame,

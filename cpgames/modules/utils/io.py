@@ -29,7 +29,9 @@ class PygameResourceLoader():
         assert isinstance(resources_dict, dict)
         resources = dict()
         for key, value in resources_dict.items():
-            if isinstance(value, list):
+            if isinstance(value, dict):
+                resources[key] = self.defaultload(value, load_func)
+            elif isinstance(value, list):
                 resources[key] = list()
                 for path in value: resources[key].append(load_func(path))
             else:
