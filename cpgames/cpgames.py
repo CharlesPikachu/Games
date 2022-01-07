@@ -34,7 +34,7 @@ class CPGames():
     '''执行对应的小程序'''
     def execute(self, game_type=None, config={}):
         assert game_type in self.supported_games, 'unsupport game_type %s...' % game_type
-        qt_games = []
+        qt_games = ['tetris']
         if game_type in qt_games:
             app = QApplication(sys.argv)
             client = self.supported_games[game_type](**config)
@@ -47,14 +47,24 @@ class CPGames():
     def initialize(self):
         supported_games = {
             'ski': SkiGame,
+            'maze': MazeGame,
+            'tetris': TetrisGame,
+            'pacman': PacmanGame,
+            'gemgem': GemGemGame,
             'tankwar': TankWarGame,
+            'sokoban': SokobanGame,
+            'pingpong': PingpongGame,
             'trexrush': TRexRushGame,
+            'bomberman': BomberManGame,
             'catchcoins': CatchCoinsGame,
             'flappybird': FlappyBirdGame,
             'aircraftwar': AircraftWarGame,
             'bunnybadger': BunnyBadgerGame,
             'puzzlepieces': PuzzlePiecesGame,
             'towerdefense': TowerDefenseGame,
+            'alieninvasion': AlienInvasionGame,
+            'breakoutclone': BreakoutcloneGame,
+            'twentyfourpoint': TwentyfourPointGame,
             'voicecontrolpikachu': VoiceControlPikachuGame,
         }
         return supported_games

@@ -43,7 +43,10 @@ class PygameResourceLoader():
         assert isinstance(font_paths_dict, dict)
         fonts = dict()
         for key, value in font_paths_dict.items():
-            fonts[key] = pygame.font.Font(value['name'], value['size'])
+            if not value.get('system_font', False):
+                fonts[key] = pygame.font.Font(value['name'], value['size'])
+            else:
+                fonts[key] = pygame.font.SysFont(value['name'], value['size'])
         return fonts
     '''播放背景音乐'''
     def playbgm(self):

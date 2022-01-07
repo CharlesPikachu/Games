@@ -2,3 +2,4 @@ cocos2d==0.6.5
 pyaudio
 pyglet==1.3.2
 pygame
+PyQt5

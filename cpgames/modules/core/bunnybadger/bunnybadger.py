@@ -24,7 +24,7 @@ class Config():
     # 屏幕大小
     SCREENSIZE = (640, 480)
     # 标题
-    TITLE = 'Bunnies and Badgers —— Charles的皮卡丘'
+    TITLE = '兔子和獾(射击游戏) —— Charles的皮卡丘'
     # 游戏图片路径
     IMAGE_PATHS_DICT = {
         'rabbit': os.path.join(rootdir, 'resources/images/dude.png'),
