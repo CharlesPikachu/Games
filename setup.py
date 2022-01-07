@@ -8,7 +8,7 @@ Author:
 GitHub:
     https://github.com/CharlesPikachu
 '''
-import pytools
+import cpgames
 from setuptools import setup, find_packages
 
 
