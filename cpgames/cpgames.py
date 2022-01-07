@@ -48,8 +48,13 @@ class CPGames():
         supported_games = {
             'ski': SkiGame,
             'tankwar': TankWarGame,
+            'trexrush': TRexRushGame,
+            'catchcoins': CatchCoinsGame,
+            'flappybird': FlappyBirdGame,
+            'aircraftwar': AircraftWarGame,
             'bunnybadger': BunnyBadgerGame,
             'puzzlepieces': PuzzlePiecesGame,
+            'towerdefense': TowerDefenseGame,
             'voicecontrolpikachu': VoiceControlPikachuGame,
         }
         return supported_games

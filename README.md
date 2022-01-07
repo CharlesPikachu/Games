@@ -32,16 +32,16 @@ This repository is created just for learning python(Commercial prohibition).
 |   Game3   |  puzzlepieces             |  拼图小游戏             |   [click](./cpgames/modules/core/puzzlepieces)             |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
 |   Game4   |  ski                      |  滑雪游戏               |   [click](./cpgames/modules/core/ski)                      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
 |   Game5   |  tankwar                  |  经典坦克大战小游戏     |   [click](./cpgames/modules/core/tankwar)                  |   [click](https://mp.weixin.qq.com/s/1xXULpT36P7LTO5HDbjptg) |
+|   Game6   |  flappybird               |  飞扬的小鸟小游戏       |   [click](./cpgames/modules/core/flappybird)               |   [click](https://mp.weixin.qq.com/s/44CZjwvjnH0kkkKIn5U9Uw) |
+|   Game7   |  trexrush                 |  仿谷歌浏览器小恐龙游戏 |   [click](./cpgames/modules/core/trexrush)                 |   [click](https://mp.weixin.qq.com/s/PnvcSBe0Va3GVIodGIjYRg) |
+|   Game8   |  towerdefense             |  塔防游戏               |   [click](./cpgames/modules/core/towerdefense)	           |   [click](https://mp.weixin.qq.com/s/mcnN3dF5tzWlRg91cnWTEw) |
+|   Game9   |  catchcoins               |  接金币小游戏           |   [click](./cpgames/modules/core/catchcoins)	           |   [click](https://mp.weixin.qq.com/s/ZmMm7MKo7VyWZUAHEe9_JQ) |
+|   Game10  |  aircraftwar              |  飞机大战               |   [click](./cpgames/modules/core/catchcoins)               |   [click](https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg) |
 
 
 # TODO List
 |   ID      |  English Name               |    Core Code                                                              |   Introduction                                               |
 |   :----:  |  :----:                     |  :----:                                                                   |   :----:                                                     |
-|   Game6   |     FlappyBird              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game6)      |   [click](https://mp.weixin.qq.com/s/44CZjwvjnH0kkkKIn5U9Uw) |
-|   Game7   |     T-Rex Rush              |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game7)      |   [click](https://mp.weixin.qq.com/s/PnvcSBe0Va3GVIodGIjYRg) |
-|   Game8   |     Tower Defense           |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game8)	  |   [click](https://mp.weixin.qq.com/s/mcnN3dF5tzWlRg91cnWTEw) |
-|   Game9   |     Catch coins             |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game9)	  |   [click](https://mp.weixin.qq.com/s/ZmMm7MKo7VyWZUAHEe9_JQ) |
-|   Game10  |     Aircraft war            |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game10)     |   [click](https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg) |
 |   Game11  |     Tetris                  |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game11)     |   [click](https://mp.weixin.qq.com/s/KFqpjmH6juZ2K8uKOoEaaA) |
 |   Game12  |     Sokoban                 |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game12)     |   [click](https://mp.weixin.qq.com/s/y6CZd4h3uo7602LrI7aFdQ) |
 |   Game13  |     Alien Invasion          |   [click](https://github.com/CharlesPikachu/Games/tree/master/Game13)     |   [click](https://mp.weixin.qq.com/s/9UylZkV3sVTQLjThIaVObg) |

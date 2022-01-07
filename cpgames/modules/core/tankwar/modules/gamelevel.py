@@ -15,6 +15,7 @@ from ....utils import QuitGame
 '''用于运行某一游戏关卡'''
 class GameLevel():
     def __init__(self, gamelevel, levelfilepath, is_dual_mode, cfg, resource_loader, **kwargs):
+        self.cfg = cfg
         # 关卡地图路径
         self.gamelevel = gamelevel
         self.levelfilepath = levelfilepath
@@ -275,7 +276,7 @@ class GameLevel():
                 is_win = True
                 is_running = False
             pygame.display.flip()
-            clock.tick(60)
+            clock.tick(self.cfg.FPS)
         screen = pygame.display.set_mode((self.width, self.height))
         return is_win
     '''显示游戏面板'''
