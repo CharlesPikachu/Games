@@ -35,9 +35,9 @@ class Config():
     BGM_PATH = os.path.join(rootdir, 'resources/audios/EineLiebe.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
-        'default_15': {'name': os.path.join(rootdir, 'resources/fonts/simkai.ttf'), 'size': 15},
-        'default_30': {'name': os.path.join(rootdir, 'resources/fonts/simkai.ttf'), 'size': 30},
-        'default_50': {'name': os.path.join(rootdir, 'resources/fonts/simkai.ttf'), 'size': 50},
+        'default_15': {'name': os.path.join(rootdir.replace('sokoban', 'base'), 'resources/fonts/simkai.ttf'), 'size': 15},
+        'default_30': {'name': os.path.join(rootdir.replace('sokoban', 'base'), 'resources/fonts/simkai.ttf'), 'size': 30},
+        'default_50': {'name': os.path.join(rootdir.replace('sokoban', 'base'), 'resources/fonts/simkai.ttf'), 'size': 50},
     }
     # 游戏图片路径
     IMAGE_PATHS_DICT = {

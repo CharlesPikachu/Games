@@ -31,8 +31,8 @@ class Config():
     BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
-        'default30': {'name': os.path.join(rootdir, 'resources/fonts/Gabriola.ttf'), 'size': 30},
-        'default60': {'name': os.path.join(rootdir, 'resources/fonts/Gabriola.ttf'), 'size': 60},
+        'default30': {'name': os.path.join(rootdir.replace('greedysnake', 'base'), 'resources/fonts/Gabriola.ttf'), 'size': 30},
+        'default60': {'name': os.path.join(rootdir.replace('greedysnake', 'base'), 'resources/fonts/Gabriola.ttf'), 'size': 60},
     }
 
 

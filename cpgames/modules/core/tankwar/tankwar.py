@@ -30,10 +30,10 @@ class Config():
     LEVELFILEDIR = os.path.join(rootdir, 'modules/levels')
     # 字体路径
     FONT_PATHS_DICT = {
-        'start': {'name': os.path.join(rootdir, 'resources/fonts/font.ttf'), 'size': SCREENSIZE[0] // 12},
-        'switch': {'name': os.path.join(rootdir, 'resources/fonts/font.ttf'), 'size': SCREENSIZE[0] // 20},
-        'end': {'name': os.path.join(rootdir, 'resources/fonts/font.ttf'), 'size': SCREENSIZE[0] // 12},
-        'gaming': {'name': os.path.join(rootdir, 'resources/fonts/font.ttf'), 'size': SCREENSIZE[0] // 30},
+        'start': {'name': os.path.join(rootdir.replace('tankwar', 'base'), 'resources/fonts/Gabriola.ttf'), 'size': SCREENSIZE[0] // 12},
+        'switch': {'name': os.path.join(rootdir.replace('tankwar', 'base'), 'resources/fonts/Gabriola.ttf'), 'size': SCREENSIZE[0] // 20},
+        'end': {'name': os.path.join(rootdir.replace('tankwar', 'base'), 'resources/fonts/Gabriola.ttf'), 'size': SCREENSIZE[0] // 12},
+        'gaming': {'name': os.path.join(rootdir.replace('tankwar', 'base'), 'resources/fonts/Gabriola.ttf'), 'size': SCREENSIZE[0] // 30},
     }
     # 游戏声音路径
     SOUND_PATHS_DICT = {

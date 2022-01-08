@@ -34,7 +34,7 @@ class Config():
     # 背景音乐路径
     BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
     # 字体路径
-    FONTPATH = os.path.join(rootdir, 'resources/fonts/Gabriola.ttf')
+    FONTPATH = os.path.join(rootdir.replace('twozerofoureight', 'base'), 'resources/fonts/Gabriola.ttf')
 
 
 '''2048小游戏'''

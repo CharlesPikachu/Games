@@ -42,8 +42,8 @@ class Config():
     }
     # 字体路径
     FONT_PATHS_DICT = {
-        'default_s': {'name': os.path.join(rootdir, 'resources/fonts/simkai.ttf'), 'size': 20},
-        'default_l': {'name': os.path.join(rootdir, 'resources/fonts/simkai.ttf'), 'size': 50},
+        'default_s': {'name': os.path.join(rootdir.replace('aircraftwar', 'base'), 'resources/fonts/simkai.ttf'), 'size': 20},
+        'default_l': {'name': os.path.join(rootdir.replace('aircraftwar', 'base'), 'resources/fonts/simkai.ttf'), 'size': 50},
     }
 
 

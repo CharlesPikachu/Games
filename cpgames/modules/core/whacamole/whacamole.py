@@ -38,7 +38,7 @@ class Config():
         'hammering': os.path.join(rootdir, 'resources/audios/hammering.wav'),
     }
     # 字体路径
-    FONT_PATH = os.path.join(rootdir, 'resources/fonts/Gabriola.ttf')
+    FONT_PATH = os.path.join(rootdir.replace('whacamole', 'base'), 'resources/fonts/Gabriola.ttf')
     # 游戏图片路径
     IMAGE_PATHS_DICT = {
         'hammer': [os.path.join(rootdir, 'resources/images/hammer0.png'), os.path.join(rootdir, 'resources/images/hammer1.png')],

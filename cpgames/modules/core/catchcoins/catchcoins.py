@@ -45,8 +45,8 @@ class Config():
     }
     # 字体路径
     FONT_PATHS_DICT = {
-        'default_s': {'name': os.path.join(rootdir, 'resources/fonts/font.TTF'), 'size': 40},
-        'default_l': {'name': os.path.join(rootdir, 'resources/fonts/font.TTF'), 'size': 60},
+        'default_s': {'name': os.path.join(rootdir.replace('catchcoins', 'base'), 'resources/fonts/Gabriola.TTF'), 'size': 40},
+        'default_l': {'name': os.path.join(rootdir.replace('catchcoins', 'base'), 'resources/fonts/Gabriola.TTF'), 'size': 60},
     }
 
 
