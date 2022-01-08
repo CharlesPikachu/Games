@@ -29,7 +29,7 @@ class Config():
     # 屏幕大小
     SCREENSIZE = (640, 640)
     # 标题
-    TITLE = 'Bunnies and Badgers —— Charles的皮卡丘'
+    TITLE = '拼图小游戏 —— Charles的皮卡丘'
     # 游戏图片路径
     IMAGE_PATHS_DICT = {}
     for item in os.listdir(os.path.join(rootdir, 'resources/images')):
