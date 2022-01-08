@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'pytools'
-copyright = '2021, Charles'
-author = 'Charles'
+project = 'cpgames'
+copyright = '2022, Zhenchao Jin'
+author = 'Zhenchao Jin'
 release = '0.1.0'
 
 # -- General configuration ---------------------------------------------------
