@@ -33,7 +33,7 @@ class Config():
     PURPLE = (255, 0, 255)
     SKYBLUE = (0, 191, 255)
     # 背景音乐路径
-    BGM_PATH = os.path.join(rootdir, 'resources/audios/bg.mp3')
+    BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
         'default_s': {'name': os.path.join(rootdir, 'resources/fonts/ALGER.TTF'), 'size': 18},

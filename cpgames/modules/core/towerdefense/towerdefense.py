@@ -83,7 +83,7 @@ class Config():
         },
     }
     # 背景音乐路径
-    BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
+    BGM_PATH = os.path.join(rootdir.replace('towerdefense', 'base'), 'resources/audios/liuyuedeyu.mp3')
     # 不同难度的settings
     DIFFICULTY_PATHS_DICT = {
         'easy': os.path.join(rootdir, 'resources/difficulties/easy.json'),

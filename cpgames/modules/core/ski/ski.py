@@ -40,9 +40,9 @@ class Config():
     BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
-        '1/5screenwidth': {'name': os.path.join(rootdir, 'resources/fonts/FZSTK.TTF'), 'size': SCREENSIZE[0] // 5},
-        '1/20screenwidth': {'name': os.path.join(rootdir, 'resources/fonts/FZSTK.TTF'), 'size': SCREENSIZE[0] // 20},
-        'default': {'name': os.path.join(rootdir, 'resources/fonts/FZSTK.TTF'), 'size': 30},
+        '1/5screenwidth': {'name': os.path.join(rootdir.replace('ski', 'base'), 'resources/fonts/simkai.ttf'), 'size': SCREENSIZE[0] // 5},
+        '1/20screenwidth': {'name': os.path.join(rootdir.replace('ski', 'base'), 'resources/fonts/simkai.ttf'), 'size': SCREENSIZE[0] // 20},
+        'default': {'name': os.path.join(rootdir.replace('ski', 'base'), 'resources/fonts/simkai.ttf'), 'size': 30},
     }
 
 

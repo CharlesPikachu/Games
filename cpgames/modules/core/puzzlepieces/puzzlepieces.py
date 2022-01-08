@@ -36,9 +36,9 @@ class Config():
         IMAGE_PATHS_DICT[item] = os.path.join(rootdir, f'resources/images/{item}')
     # 字体路径
     FONT_PATHS_DICT = {
-        '1/4screenwidth': {'name': os.path.join(rootdir, 'resources/fonts/FZSTK.TTF'), 'size': SCREENSIZE[0] // 4},
-        '1/15screenwidth': {'name': os.path.join(rootdir, 'resources/fonts/FZSTK.TTF'), 'size': SCREENSIZE[0] // 15},
-        '1/20screenwidth': {'name': os.path.join(rootdir, 'resources/fonts/FZSTK.TTF'), 'size': SCREENSIZE[0] // 20},
+        '1/4screenwidth': {'name': os.path.join(rootdir.replace('puzzlepieces', 'base'), 'resources/fonts/simkai.ttf'), 'size': SCREENSIZE[0] // 4},
+        '1/15screenwidth': {'name': os.path.join(rootdir.replace('puzzlepieces', 'base'), 'resources/fonts/simkai.ttf'), 'size': SCREENSIZE[0] // 15},
+        '1/20screenwidth': {'name': os.path.join(rootdir.replace('puzzlepieces', 'base'), 'resources/fonts/simkai.ttf'), 'size': SCREENSIZE[0] // 20},
     }
 
 

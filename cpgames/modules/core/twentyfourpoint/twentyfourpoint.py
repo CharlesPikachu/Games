@@ -66,7 +66,7 @@ class Config():
         'warn': os.path.join(rootdir, 'resources/audios/warn.wav'),
     }
     # 背景音乐路径
-    BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
+    BGM_PATH = os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/audios/liuyuedeyu.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
         'default': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 30},

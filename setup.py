@@ -19,7 +19,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 '''package data'''
 package_data = {
-    'cpgames.modules.core.base': ['resources/fonts/*'],
+    'cpgames.modules.core.base': ['resources/fonts/*', 'resources/audios/*'],
     'cpgames.modules.core.aircraftwar': ['resources/audios/*', 'resources/images/*'],
     'cpgames.modules.core.alieninvasion': ['resources/*'],
     'cpgames.modules.core.angrybirds': ['resources/audios/*', 'resources/fonts/*', 'resources/images/*'],
@@ -36,8 +36,8 @@ package_data = {
     'cpgames.modules.core.minesweeper': ['resources/audios/*', 'resources/fonts/*', 'resources/images/*'],
     'cpgames.modules.core.pacman': ['resources/audios/*', 'resources/fonts/*', 'resources/images/*'],
     'cpgames.modules.core.pingpong': ['resources/audios/*', 'resources/images/*'],
-    'cpgames.modules.core.puzzlepieces': ['resources/fonts/*', 'resources/images/*'],
-    'cpgames.modules.core.ski': ['resources/audios/*', 'resources/fonts/*', 'resources/images/*'],
+    'cpgames.modules.core.puzzlepieces': ['resources/images/*'],
+    'cpgames.modules.core.ski': ['resources/audios/*', 'resources/images/*'],
     'cpgames.modules.core.sokoban': ['resources/audios/*', 'resources/images/*', 'resources/levels/*'],
     'cpgames.modules.core.tankwar': ['resources/audios/*', 'resources/images/bullet/*', 'resources/images/enemyTank/*', 'resources/images/food/*', 'resources/images/home/*', 'resources/images/others/*', 'resources/images/playerTank/*', 'resources/images/scene/*'],
     'cpgames.modules.core.tankwar.modules': ['levels/*'],
