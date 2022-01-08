@@ -11,7 +11,7 @@
 [![issue resolution](https://isitmaintained.com/badge/resolution/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
 [![open issues](https://isitmaintained.com/badge/open/CharlesPikachu/Games.svg)](https://github.com/CharlesPikachu/Games/issues)
 
-Documents: https://cpgames.readthedocs.io/zh/latest/
+Documents: http://cpgames.readthedocs.io/
 
 
 # Games
