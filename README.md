@@ -105,6 +105,7 @@ game_client.execute(random.choice(list(all_supports.values())))
 - [Videodl](https://github.com/CharlesPikachu/videodl): A lightweight video downloader written by pure python.
 - [Pytools](https://github.com/CharlesPikachu/pytools): Some useful tools written by pure python.
 - [PikachuWeChat](https://github.com/CharlesPikachu/pikachuwechat): Play WeChat with itchat-uos.
+- [Pydrawing](https://github.com/CharlesPikachu/pydrawing): Beautify your image or video.
 
 
 # Citation
