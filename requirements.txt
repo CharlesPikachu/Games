@@ -1,5 +1,5 @@
-cocos2d==0.6.5
+cocos2d
 pyaudio
-pyglet==1.3.2
+pyglet
 pygame
 PyQt5
