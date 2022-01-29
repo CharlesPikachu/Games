@@ -14,6 +14,7 @@ from .whacamole import WhacAMoleGame
 from .catchcoins import CatchCoinsGame
 from .flappybird import FlappyBirdGame
 from .angrybirds import AngryBirdsGame
+from .magictower import MagicTowerGame
 from .aircraftwar import AircraftWarGame
 from .bunnybadger import BunnyBadgerGame
 from .minesweeper import MineSweeperGame

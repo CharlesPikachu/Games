@@ -11,19 +11,9 @@ import warnings
 from PyQt5.QtWidgets import QApplication
 if __name__ == '__main__':
     from modules import *
-    from __init__ import __version__
 else:
     from .modules import *
-    from .__init__ import __version__
 warnings.filterwarnings('ignore')
-
-
-'''basic info'''
-BASICINFO = '''************************************************************
-Function: Python小游戏合集 V%s
-Author: Charles
-微信公众号: Charles的皮卡丘
-************************************************************''' % (__version__)
 
 
 '''Python实用工具集'''
@@ -61,6 +51,7 @@ class CPGames():
             'catchcoins': CatchCoinsGame,
             'flappybird': FlappyBirdGame,
             'angrybirds': AngryBirdsGame,
+            'magictower': MagicTowerGame,
             'aircraftwar': AircraftWarGame,
             'bunnybadger': BunnyBadgerGame,
             'minesweeper': MineSweeperGame,
@@ -83,7 +74,7 @@ class CPGames():
         return all_supports
     '''repr'''
     def __repr__(self):
-        return BASICINFO
+        return 'Python小游戏合集; 作者: Charles; 微信公众号: Charles的皮卡丘'
 
 
 '''run'''
