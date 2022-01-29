@@ -343,7 +343,7 @@ class Hero(pygame.sprite.Sprite):
         # 我方打怪物一次扣多少血
         diff_our = self.attack_power - monster[3]
         # 怪物打我方一次扣多少血
-        diff_monster = monster[2] - self.defense_power
+        diff_monster = max(monster[2] - self.defense_power, 0)
         # 更新战斗面板的频率
         update_count, update_interval, update_hero = 0, 5, False
         # 主循环
