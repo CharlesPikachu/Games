@@ -128,6 +128,3 @@ If you use this project in your research, please cite this project.
 #### WeChat Official Accounts
 *Charles_pikachu*  
 ![img](./docs/pikachu.jpg)
-
-#### Donate
-![img](./docs/alipay.JPG)
