@@ -35,7 +35,7 @@ class Config():
     BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
-        'default': {'name': os.path.join(rootdir, 'resources/fonts/font.TTF'), 'size': 40},
+        'default': {'name': os.path.join(rootdir, 'resources/fonts/font.ttf'), 'size': 40},
     }
     # 游戏图片路径
     IMAGE_PATHS_DICT = {

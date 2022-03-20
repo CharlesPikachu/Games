@@ -36,8 +36,8 @@ class Config():
     BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
-        'default_s': {'name': os.path.join(rootdir, 'resources/fonts/ALGER.TTF'), 'size': 18},
-        'default_l': {'name': os.path.join(rootdir, 'resources/fonts/ALGER.TTF'), 'size': 24},
+        'default_s': {'name': os.path.join(rootdir, 'resources/fonts/ALGER.ttf'), 'size': 18},
+        'default_l': {'name': os.path.join(rootdir, 'resources/fonts/ALGER.ttf'), 'size': 24},
     }
     # 游戏图片路径
     IMAGE_PATHS_DICT = {

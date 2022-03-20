@@ -44,7 +44,7 @@ class Config():
     }
     # 字体路径
     FONT_PATHS_DICT = {
-        'default': {'name': os.path.join(rootdir.replace('gemgem', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 25},
+        'default': {'name': os.path.join(rootdir.replace('gemgem', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 25},
     }
     # 游戏图片路径
     IMAGE_PATHS_DICT = {

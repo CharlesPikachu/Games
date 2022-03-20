@@ -26,8 +26,8 @@ class Config():
     FPS = 30
     # 字体路径
     FONT_PATHS_NOPRELOAD_DICT = {
-        'font_cn': os.path.join(rootdir, 'resources/fonts/font_cn.TTF'),
-        'font_en': os.path.join(rootdir, 'resources/fonts/font_en.TTF')
+        'font_cn': os.path.join(rootdir, 'resources/fonts/font_cn.ttf'),
+        'font_en': os.path.join(rootdir, 'resources/fonts/font_en.ttf')
     }
     # 游戏地图路径
     MAPPATHS = [

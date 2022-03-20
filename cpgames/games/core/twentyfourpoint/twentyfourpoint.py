@@ -69,10 +69,10 @@ class Config():
     BGM_PATH = os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/audios/liuyuedeyu.mp3')
     # 字体路径
     FONT_PATHS_DICT = {
-        'default': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 30},
-        'answer': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 20},
-        'info': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 40},
-        'number': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 50},
+        'default': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 30},
+        'answer': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 20},
+        'info': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 40},
+        'number': {'name': os.path.join(rootdir.replace('twentyfourpoint', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 50},
     }
 
 

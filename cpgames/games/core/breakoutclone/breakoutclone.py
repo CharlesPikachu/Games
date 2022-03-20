@@ -42,8 +42,8 @@ class Config():
     FPS_GAMING = 50
     # 字体路径
     FONT_PATHS_DICT = {
-        'default20': {'name': os.path.join(rootdir.replace('breakoutclone', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 20},
-        'default30': {'name': os.path.join(rootdir.replace('breakoutclone', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 30},
+        'default20': {'name': os.path.join(rootdir.replace('breakoutclone', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 20},
+        'default30': {'name': os.path.join(rootdir.replace('breakoutclone', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 30},
     }
     # 背景音乐路径
     BGM_PATH = os.path.join(rootdir, 'resources/audios/bgm.mp3')

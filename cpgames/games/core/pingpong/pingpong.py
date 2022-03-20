@@ -35,9 +35,9 @@ class Config():
     }
     # 字体路径
     FONT_PATHS_DICT = {
-        'default20': {'name': os.path.join(rootdir.replace('pingpong', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 20},
-        'default30': {'name': os.path.join(rootdir.replace('pingpong', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 30},
-        'default50': {'name': os.path.join(rootdir.replace('pingpong', 'base'), 'resources/fonts/MaiandraGD.TTF'), 'size': 50},
+        'default20': {'name': os.path.join(rootdir.replace('pingpong', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 20},
+        'default30': {'name': os.path.join(rootdir.replace('pingpong', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 30},
+        'default50': {'name': os.path.join(rootdir.replace('pingpong', 'base'), 'resources/fonts/MaiandraGD.ttf'), 'size': 50},
     }
     # 游戏图片路径
     IMAGE_PATHS_DICT = {
