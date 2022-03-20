@@ -66,8 +66,8 @@ This repository is created just for learning python(Commercial prohibition).
 
 #### Whl install
 ```sh
-wget https://github.com/CharlesPikachu/Games/releases/download/v0.1.0/cpgames-0.1.0-py3-none-any.whl
-pip install cpgames-0.1.0-py3-none-any.whl
+wget https://github.com/CharlesPikachu/Games/releases/download/v0.1.1/cpgames-0.1.1-py3-none-any.whl
+pip install cpgames-0.1.1-py3-none-any.whl
 ```
 
 #### Pip install

@@ -48,7 +48,7 @@ package_data = {
     'cpgames.modules.core.twozerofoureight': ['resources/audios/*'],
     'cpgames.modules.core.voicecontrolpikachu': ['resources/images/*'],
     'cpgames.modules.core.whacamole': ['resources/audios/*', 'resources/images/*'],
-    'cpgames.modules.core.magictower': ['resources/images/*', 'resources/levels/*', 'resources/fonts/*'],
+    'cpgames.modules.core.magictower': ['resources/images/*', 'resources/levels/*', 'resources/fonts/*', 'resources/images/map0/*', 'resources/images/map1/*', 'resources/images/player/*'],
 }
 
 
