@@ -72,9 +72,9 @@ class CPGames():
         for key, value in self.supported_games.items():
             all_supports[value.game_type] = key
         return all_supports
-    '''repr'''
-    def __repr__(self):
-        return 'Python小游戏合集; 作者: Charles; 微信公众号: Charles的皮卡丘'
+    '''str'''
+    def __str__(self):
+        return 'Welcome to use CPGames!\nYou can visit https://github.com/CharlesPikachu/Games for more details.'
 
 
 '''run'''
