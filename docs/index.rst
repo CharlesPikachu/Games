@@ -13,5 +13,5 @@ CPGames中文文档
 	Install.md
 	Quickstart.md
 	Changelog.md
-	RelatedProjects.md
+	Recommend.md
 	Author.md

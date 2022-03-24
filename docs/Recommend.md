@@ -1,4 +1,4 @@
-# 相关项目
+# 项目推荐
 
 - [Python制作小游戏](https://github.com/CharlesPikachu/Games)
 
