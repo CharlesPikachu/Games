@@ -408,6 +408,36 @@ game_client = cpgames.CPGames()
 game_client.execute('flipcardbymemory')
 ```
 
+#### 魔塔小游戏
+
+**1.公众号文章链接** 
+
+[点击查看]()
+
+**2.调用示例代码**
+
+```python
+from cpgames import cpgames
+
+game_client = cpgames.CPGames()
+game_client.execute('magictower')
+```
+
+#### 热血足球小游戏
+
+**1.公众号文章链接** 
+
+[点击查看]()
+
+**2.调用示例代码**
+
+```python
+from cpgames import cpgames
+
+game_client = cpgames.CPGames()
+game_client.execute('bloodfootball')
+```
+
 
 ## 随机运行一个小游戏
 

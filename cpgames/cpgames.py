@@ -10,9 +10,9 @@ import sys
 import warnings
 from PyQt5.QtWidgets import QApplication
 if __name__ == '__main__':
-    from modules import *
+    from core import *
 else:
-    from .modules import *
+    from .core import *
 warnings.filterwarnings('ignore')
 
 
@@ -58,6 +58,7 @@ class CPGames():
             'greedysnake': GreedySnakeGame,
             'puzzlepieces': PuzzlePiecesGame,
             'towerdefense': TowerDefenseGame,
+            'bloodfootball': BloodFootballGame,
             'alieninvasion': AlienInvasionGame,
             'breakoutclone': BreakoutcloneGame,
             'twentyfourpoint': TwentyfourPointGame,
