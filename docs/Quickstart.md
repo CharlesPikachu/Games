@@ -427,7 +427,7 @@ game_client.execute('magictower')
 
 **1.公众号文章链接** 
 
-[点击查看]()
+[点击查看](https://mp.weixin.qq.com/s/DKLs0y-yXkkQbcXcdlQu3w)
 
 **2.调用示例代码**
 
