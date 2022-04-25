@@ -12,8 +12,8 @@
 在终端运行如下命令即可(请保证python在环境变量中):
 
 ```sh
-wget https://github.com/CharlesPikachu/Games/releases/download/v0.1.1/cpgames-0.1.1-py3-none-any.whl
-pip install cpgames-0.1.1-py3-none-any.whl
+wget https://github.com/CharlesPikachu/Games/releases/download/v0.1.2/cpgames-0.1.2-py3-none-any.whl
+pip install cpgames-0.1.2-py3-none-any.whl
 ```
 
 
