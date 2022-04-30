@@ -32,35 +32,35 @@ This repository is created just for learning python(Commercial prohibition).
 # Support List
 |   ID      |  English Name             |  Chinese Name           |   Core Code                                                |   Introduction                                               |
 |   :----:  |  :----:                   |  :----:                 |   :----:                                                   |   :----:                                                     |
-|   Game1   |  bunnybadger              |  兔子和獾(射击游戏)     |   [click](./cpgames/modules/core/bunnybadger)              |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
-|   Game2   |  voicecontrolpikachu      |  仿八分音符的声控小游戏 |   [click](./cpgames/modules/core/voicecontrolpikachu)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) | 
-|   Game3   |  puzzlepieces             |  拼图小游戏             |   [click](./cpgames/modules/core/puzzlepieces)             |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
-|   Game4   |  ski                      |  滑雪游戏               |   [click](./cpgames/modules/core/ski)                      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
-|   Game5   |  tankwar                  |  经典坦克大战小游戏     |   [click](./cpgames/modules/core/tankwar)                  |   [click](https://mp.weixin.qq.com/s/1xXULpT36P7LTO5HDbjptg) |
-|   Game6   |  flappybird               |  飞扬的小鸟小游戏       |   [click](./cpgames/modules/core/flappybird)               |   [click](https://mp.weixin.qq.com/s/44CZjwvjnH0kkkKIn5U9Uw) |
-|   Game7   |  trexrush                 |  仿谷歌浏览器小恐龙游戏 |   [click](./cpgames/modules/core/trexrush)                 |   [click](https://mp.weixin.qq.com/s/PnvcSBe0Va3GVIodGIjYRg) |
-|   Game8   |  towerdefense             |  塔防游戏               |   [click](./cpgames/modules/core/towerdefense)	           |   [click](https://mp.weixin.qq.com/s/mcnN3dF5tzWlRg91cnWTEw) |
-|   Game9   |  catchcoins               |  接金币小游戏           |   [click](./cpgames/modules/core/catchcoins)	           |   [click](https://mp.weixin.qq.com/s/ZmMm7MKo7VyWZUAHEe9_JQ) |
-|   Game10  |  aircraftwar              |  飞机大战               |   [click](./cpgames/modules/core/catchcoins)               |   [click](https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg) |
-|   Game11  |  tetris                   |  俄罗斯方块             |   [click](./cpgames/modules/core/tetris)                   |   [click](https://mp.weixin.qq.com/s/KFqpjmH6juZ2K8uKOoEaaA) |
-|   Game12  |  sokoban                  |  推箱子                 |   [click](./cpgames/modules/core/sokoban)                  |   [click](https://mp.weixin.qq.com/s/y6CZd4h3uo7602LrI7aFdQ) |
-|   Game13  |  alieninvasion            |  外星人入侵小游戏       |   [click](./cpgames/modules/core/alieninvasion)            |   [click](https://mp.weixin.qq.com/s/9UylZkV3sVTQLjThIaVObg) |
-|   Game14  |  pacman                   |  吃豆人小游戏           |   [click](./cpgames/modules/core/pacman)                   |   [click](https://mp.weixin.qq.com/s/UBVLDW2T-Y6R-0IaRfu81Q) |
-|   Game15  |  gemgem                   |  消消乐                 |   [click](./cpgames/modules/core/gemgem)                   |   [click](https://mp.weixin.qq.com/s/H0dFwoEcJT-JPKfNvPt2Kw) |
-|   Game16  |  twentyfourpoint          |  24点小游戏             |   [click](./cpgames/modules/core/twentyfourpoint)          |   [click](https://mp.weixin.qq.com/s/raronw7X0WlntI48nUOvoQ) |
-|   Game17  |  pingpong                 |  乒乓球小游戏           |   [click](./cpgames/modules/core/pingpong)                 |   [click](https://mp.weixin.qq.com/s/C6v0Zj8-fhysqRQ_lcEZIQ) |
-|   Game18  |  breakoutclone            |  打砖块小游戏           |   [click](./cpgames/modules/core/breakoutclone)            |   [click](https://mp.weixin.qq.com/s/9tNVTA06dFthdugNs3TePA) |
-|   Game19  |  bomberman                |  炸弹人小游戏           |   [click](./cpgames/modules/core/bomberman)                |   [click](https://mp.weixin.qq.com/s/XzB_cJMFEtz6p_MvqiaCrA) |
-|   Game20  |  maze                     |  走迷宫小游戏           |   [click](./cpgames/modules/core/maze)                     |   [click](https://mp.weixin.qq.com/s/s9jburcC4WaOO_0ce54-Rg) |
-|   Game21  |  whacamole                |  打地鼠                 |   [click](./cpgames/modules/core/whacamole)                |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
-|   Game22  |  gobang                   |  五子棋小游戏           |   [click](./cpgames/modules/core/gobang)                   |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
-|   Game23  |  twozerofoureight         |  2048小游戏             |   [click](./cpgames/modules/core/twozerofoureight)         |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
-|   Game24  |  greedysnake              |  贪吃蛇小游戏           |   [click](./cpgames/modules/core/greedysnake)              |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
-|   Game25  |  minesweeper              |  扫雷小游戏             |   [click](./cpgames/modules/core/minesweeper)              |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
-|   Game26  |  angrybirds               |  愤怒的小鸟             |   [click](./cpgames/modules/core/angrybirds)               |   [click](https://mp.weixin.qq.com/s/-Z_4PEF7f3ZS1CKd9D6Brg) |
-|   Game27  |  flipcardbymemory         |  记忆翻牌小游戏         |   [click](./cpgames/modules/core/flipcardbymemory)         |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
-|   Game28  |  magictower               |  魔塔小游戏             |   [click](./cpgames/modules/core/magictower)               |   [click]()                                                  |
-|   Game29  |  bloodfootball            |  热血足球小游戏         |   [click](./cpgames/modules/core/bloodfootball)            |   [click](https://mp.weixin.qq.com/s/DKLs0y-yXkkQbcXcdlQu3w) |
+|   Game1   |  bunnybadger              |  兔子和獾(射击游戏)     |   [click](./cpgames/core/games/bunnybadger)              |   [click](https://mp.weixin.qq.com/s/_-AChGldQzdwXN-ljcCMFQ) |
+|   Game2   |  voicecontrolpikachu      |  仿八分音符的声控小游戏 |   [click](./cpgames/core/games/voicecontrolpikachu)      |   [click](https://mp.weixin.qq.com/s/NmK5fAMoOHahOf6OvV6XFA) | 
+|   Game3   |  puzzlepieces             |  拼图小游戏             |   [click](./cpgames/core/games/puzzlepieces)             |   [click](https://mp.weixin.qq.com/s/tcmrbNCptka2ZTfEs-W_Lg) |
+|   Game4   |  ski                      |  滑雪游戏               |   [click](./cpgames/core/games/ski)                      |   [click](https://mp.weixin.qq.com/s/2MVTEa4ut9TOAgBOOWEUSg) |
+|   Game5   |  tankwar                  |  经典坦克大战小游戏     |   [click](./cpgames/core/games/tankwar)                  |   [click](https://mp.weixin.qq.com/s/1xXULpT36P7LTO5HDbjptg) |
+|   Game6   |  flappybird               |  飞扬的小鸟小游戏       |   [click](./cpgames/core/games/flappybird)               |   [click](https://mp.weixin.qq.com/s/44CZjwvjnH0kkkKIn5U9Uw) |
+|   Game7   |  trexrush                 |  仿谷歌浏览器小恐龙游戏 |   [click](./cpgames/core/games/trexrush)                 |   [click](https://mp.weixin.qq.com/s/PnvcSBe0Va3GVIodGIjYRg) |
+|   Game8   |  towerdefense             |  塔防游戏               |   [click](./cpgames/core/games/towerdefense)	           |   [click](https://mp.weixin.qq.com/s/mcnN3dF5tzWlRg91cnWTEw) |
+|   Game9   |  catchcoins               |  接金币小游戏           |   [click](./cpgames/core/games/catchcoins)	           |   [click](https://mp.weixin.qq.com/s/ZmMm7MKo7VyWZUAHEe9_JQ) |
+|   Game10  |  aircraftwar              |  飞机大战               |   [click](./cpgames/core/games/catchcoins)               |   [click](https://mp.weixin.qq.com/s/n-f_6sh8bB7-dtIFJLbnFg) |
+|   Game11  |  tetris                   |  俄罗斯方块             |   [click](./cpgames/core/games/tetris)                   |   [click](https://mp.weixin.qq.com/s/KFqpjmH6juZ2K8uKOoEaaA) |
+|   Game12  |  sokoban                  |  推箱子                 |   [click](./cpgames/core/games/sokoban)                  |   [click](https://mp.weixin.qq.com/s/y6CZd4h3uo7602LrI7aFdQ) |
+|   Game13  |  alieninvasion            |  外星人入侵小游戏       |   [click](./cpgames/core/games/alieninvasion)            |   [click](https://mp.weixin.qq.com/s/9UylZkV3sVTQLjThIaVObg) |
+|   Game14  |  pacman                   |  吃豆人小游戏           |   [click](./cpgames/core/games/pacman)                   |   [click](https://mp.weixin.qq.com/s/UBVLDW2T-Y6R-0IaRfu81Q) |
+|   Game15  |  gemgem                   |  消消乐                 |   [click](./cpgames/core/games/gemgem)                   |   [click](https://mp.weixin.qq.com/s/H0dFwoEcJT-JPKfNvPt2Kw) |
+|   Game16  |  twentyfourpoint          |  24点小游戏             |   [click](./cpgames/core/games/twentyfourpoint)          |   [click](https://mp.weixin.qq.com/s/raronw7X0WlntI48nUOvoQ) |
+|   Game17  |  pingpong                 |  乒乓球小游戏           |   [click](./cpgames/core/games/pingpong)                 |   [click](https://mp.weixin.qq.com/s/C6v0Zj8-fhysqRQ_lcEZIQ) |
+|   Game18  |  breakoutclone            |  打砖块小游戏           |   [click](./cpgames/core/games/breakoutclone)            |   [click](https://mp.weixin.qq.com/s/9tNVTA06dFthdugNs3TePA) |
+|   Game19  |  bomberman                |  炸弹人小游戏           |   [click](./cpgames/core/games/bomberman)                |   [click](https://mp.weixin.qq.com/s/XzB_cJMFEtz6p_MvqiaCrA) |
+|   Game20  |  maze                     |  走迷宫小游戏           |   [click](./cpgames/core/games/maze)                     |   [click](https://mp.weixin.qq.com/s/s9jburcC4WaOO_0ce54-Rg) |
+|   Game21  |  whacamole                |  打地鼠                 |   [click](./cpgames/core/games/whacamole)                |   [click](https://mp.weixin.qq.com/s/OFtW2Lx5i0Y9GXrF_PyqaA) |
+|   Game22  |  gobang                   |  五子棋小游戏           |   [click](./cpgames/core/games/gobang)                   |   [click](https://mp.weixin.qq.com/s/79aBuK_EytVAbDp5hY8cHA) |
+|   Game23  |  twozerofoureight         |  2048小游戏             |   [click](./cpgames/core/games/twozerofoureight)         |   [click](https://mp.weixin.qq.com/s/WJhg4J0MuuEcmDasRzuE9Q) |
+|   Game24  |  greedysnake              |  贪吃蛇小游戏           |   [click](./cpgames/core/games/greedysnake)              |   [click](https://mp.weixin.qq.com/s/YdRLYz4BnfgRZMYqKvDnRA) |
+|   Game25  |  minesweeper              |  扫雷小游戏             |   [click](./cpgames/core/games/minesweeper)              |   [click](https://mp.weixin.qq.com/s/O2nKNsWUigrKomW3l29Zlw) |
+|   Game26  |  angrybirds               |  愤怒的小鸟             |   [click](./cpgames/core/games/angrybirds)               |   [click](https://mp.weixin.qq.com/s/-Z_4PEF7f3ZS1CKd9D6Brg) |
+|   Game27  |  flipcardbymemory         |  记忆翻牌小游戏         |   [click](./cpgames/core/games/flipcardbymemory)         |   [click](https://mp.weixin.qq.com/s/H5UisWDWubdaQEBo-sH6iA) |
+|   Game28  |  magictower               |  魔塔小游戏             |   [click](./cpgames/core/games/magictower)               |   [click]()                                                  |
+|   Game29  |  bloodfootball            |  热血足球小游戏         |   [click](./cpgames/core/games/bloodfootball)            |   [click](https://mp.weixin.qq.com/s/DKLs0y-yXkkQbcXcdlQu3w) |
 
 
 # Install
