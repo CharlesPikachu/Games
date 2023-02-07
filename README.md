@@ -1,3 +1,5 @@
+Hi there
+
 <div align="center">
   <img src="./docs/logo.png" width="600"/>
 </div>
