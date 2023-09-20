@@ -1,3 +1,4 @@
+# myname is shamitha 
 <div align="center">
   <img src="./docs/logo.png" width="600"/>
 </div>
