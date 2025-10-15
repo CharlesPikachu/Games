@@ -1,4 +1,5 @@
 '''
+Amazing Game!
 Function:
     滑雪小游戏
 Author:
