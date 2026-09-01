@@ -65,24 +65,30 @@ This repository is created just for learning python(Commercial prohibition).
 
 # Install
 
-#### Whl install
+### Whl install
 ```sh
 wget https://github.com/CharlesPikachu/Games/releases/download/v0.1.2/cpgames-0.1.2-py3-none-any.whl
 pip install cpgames-0.1.2-py3-none-any.whl
 ```
 
-#### Pip install
+### Pip install
 ```
 run "pip install cpgames"
 ```
 
-#### Source code install
+### Source code install
+
+#### (1) Offline
 ```sh
-(1) Offline
-Step1: git clone https://github.com/CharlesPikachu/Games.git
-Step2: cd Games -> run "python setup.py install"
-(2) Online
-run "pip install git+https://github.com/CharlesPikachu/Games.git@master"
+git clone https://github.com/CharlesPikachu/Games.git
+cd Games
+python3 -m venv .venv
+pip install -r requirements.txt
+python setup.py install
+```
+#### (2) Online
+```sh
+pip install git+https://github.com/CharlesPikachu/Games.git@master
 ```
 
 
